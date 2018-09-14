@@ -1,0 +1,15 @@
+Overview: briefly describe the requirement of this program
+
+Design: briefly describe the modules in your design and why you choose your current design.
+
+Implementation: briefly describe the concrete data structures used in each module. List the advantage and disadvantage of using these data structures. Explain whether there are alternative ways to implement this program.
+
+Analysis: for each command submit, execute and random, give a rough analysis about the time efficiency of your implementation.
+
+Accomplishment: state clearly which parts of the assignment you completed.
+
+Testing: list the test cases you have covered to test your program. For each test case, describe the data you used and the result shown by your program. Alternatively, if you used script to capture the sample run of your program, then you only need to describe your test cases and refer to your typescript file for the test run result.
+
+Known Bug:
+
+Note: anything you would like to draw to the attention of the marker.

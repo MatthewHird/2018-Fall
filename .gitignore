@@ -1,0 +1,12 @@
+
+csci260/assignment_1/\.idea/
+
+csci260/assignment_1/CMakeLists\.txt
+
+csci260/assignment_1/cmake-build-debug/
+
+*.o
+
+csci260/assignment_1/pex1
+
+csci260/assignment_1/batch_TEST\.txt

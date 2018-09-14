@@ -1,0 +1,25 @@
+6
+4.2
+smithl
+emacs
+abc.txt
+7.6
+frankdtl
+dbaccess
+ora.da /user/lib/
+5.5
+ivelshaj
+slink
+dlcp.d -l
+9.1
+dornamel
+mail
+
+12.5
+smithl
+more
+aldi_la12
+6.3
+sveiaght
+gdbk
+/home/sveiaght/equation
