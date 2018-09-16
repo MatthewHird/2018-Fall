@@ -1,3 +1,4 @@
+import argparse
 from assembler import Assembler
 
 
@@ -28,4 +29,15 @@ class SsbcCompiler:
 
 
 if __name__ == '__main__':
-    SsbcCompiler.build_file(comments=True, display=True)
+    parser = argparse.ArgumentParser(description='Compile SSBC18 assembly code to SSBC18 machine code.')
+    parser.add_argument('infile', help='path of assembly code file to process')
+    parser.add_argument('outfile', default='mac', nargs='?',
+                        help='path of machine code file create (default: \'./mac\')')
+    parser.add_argument('-c', '--comments', action='store_true',
+                        help='flag to add assembly comments to machine code file')
+    parser.add_argument('-d', '--display', action='store_true',
+                        help='flag to display created machine code in terminal')
+
+    args = parser.parse_args()
+    SsbcCompiler.build_file(in_file_path=args.infile, out_file_path=args.outfile,
+                            comments=args.comments, display=args.display)
