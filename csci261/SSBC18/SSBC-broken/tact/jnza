@@ -1,0 +1,61 @@
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
+Port A value: 11111111 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 

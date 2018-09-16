@@ -1,0 +1,554 @@
+System Testing SSBC.v5.r1
+=========================
+
+Assumptions
+-----------
+   test case machine code is located starting at memory location 00
+   all variables are stored on the stack
+
+   4K RAM at 0..4095
+   1K RAM/IO at 64512..65535
+
+Test Environment
+----------------
+   entire SSBC system exercised using the ssbc simulator with 
+   I/O redirection such that
+      test input stored in files
+      test output saved in files, checked with delta testing
+      directory structure
+         SSBC-261
+            tinpMac/ test cases stored one per file
+            tinpKey/ test case key strokes (same file name)
+            texp/    expected test output (same file name)
+            tact/    actual test output (same file name)
+
+    cew interactive driver menu
+
+         +------------------------+
+         |  R: RESET              |
+         |  b: BREAK              |
+         |  r: RUN                |
+         |  A: READ PORT A        |
+         |  B: WRITE PORT B       |
+         |  C: READ PORT C        |
+         |  D: WRITE PORT D       |
+         |  s: STATUS             |
+         |  q: Quit               |
+         |                        |
+         |  Enter menu selection: |
+         +------------------------+
+
+Test Case Selection Strategy
+----------------------------
+   normal cases (fault signal not asserted)
+      in the main, each test case to be a minimal program to 
+      observe instruction execution
+   exception case (fault signal asserted)
+      see fault test case 
+      no other exception testing performed
+         
+Test Implementation Strategy
+----------------------------
+   for each file f in tinpMac/
+      copy tinpMac/f to mac
+      simulate ssbc < tinpKey/f > tact/f
+      diff tact/f texp/f
+      
+Test Invocation
+---------------
+   make runtest
+
+Test Implementation
+-------------------     
+   data transfer instructions
+   
+      pushimm
+      -------
+         testing responsibility passed to popext test case 
+
+      popinh
+      ------
+         testing responsibility passed to popext test case 
+
+      pushext
+      -------
+
+         Machine code: tinpMac/pushext
+         Test objective: 
+            read input from D
+
+         00000011 pushext D
+         11111111 
+         11111111
+         00000101 popext C
+         11111111 
+         11111110
+         00000001 halt
+         00000000 C should have the value at D
+
+         Key strokes: tinpKey/pushext
+
+         R
+         C
+         D
+         1
+         r
+         C
+         q
+
+         Expected Output: texp/pushext
+
+      popext
+      ------
+
+         Machine code: tinpMac/popext
+         Test objective: 
+           write data to A
+
+         00000010 pushimm FF
+         11111111
+         00000010 pushimm F0
+         11110000
+         00000100 popinh
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value FF
+
+         Key strokes: tinpKey/popext
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/popext
+
+      pushind
+      -------
+         untested 
+
+      popind
+      -------
+         untested 
+
+
+
+   data operation instructions
+
+      add
+      ---
+
+         Machine code: tinpMac/add
+         Test objective: 
+            calculate 3 + 1
+
+         00000010 pushimm 1
+         00000001
+         00000010 pushimm 3
+         00000011
+         00001000 add
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value 4
+
+         Key strokes: tinpKey/add
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/add
+
+      sub
+      ---
+
+         Machine code: tinpMac/suba
+         Test objective: 
+            calculate 3 - 1
+
+         00000010 pushimm 1
+         00000001
+         00000010 pushimm 3
+         00000011
+         00001001 sub
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value 000000010
+
+         Key strokes: tinpKey/suba
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/suba
+
+         Machine code: tinpMac/subb
+         Test objective: 
+            calculate 1 - 3
+
+         00000010 pushimm 3
+         00000011
+         00000010 pushimm 1
+         00000001
+         00001001 sub
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value 100000010
+
+         Key strokes: tinpKey/subb
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/subb
+
+      nor
+      ---
+
+         Machine code: tinpMac/nora
+         Test objective: 
+            calculate 3 nor 1
+
+         00000010 pushimm 1
+         00000001
+         00000010 pushimm 3
+         00000011
+         00001010 nor
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value 11111100
+
+         Key strokes: tinpKey/nora
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/nora
+
+         Machine code: tinpMac/norb
+         Test objective: 
+            make sure nor operation does not modify the flags
+            coming soon
+
+         Key strokes: tinpKey/norb
+
+         Expected Output: texp/norb
+
+   program control instructions
+         
+      jnz
+      ---
+
+         Machine code: tinpMac/jnza
+         Test objective: 
+           clear Z using add operation
+           jump to XX 
+
+         00000010 pushimm FF
+         11111111 
+         00000010 pushimm 1
+         00000001 
+         00000010 pushimm 0
+         00000000
+         00001000 add (Z is now cleared)
+         00000100 popinh (remove add answer from stack)
+         00000110 jnz XX
+         00000000
+         00001101
+         00000010 pushimm F0
+         11110000
+         00000101 XX: popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value FF
+
+         Key strokes: tinpKey/jnza
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/jnza
+
+         Machine code: tinpMac/jnzb
+         Test objective: 
+           set Z using add operation
+           fall through to XX 
+
+         00000010 pushimm FF
+         11111111 
+         00000010 pushimm 0
+         00000000 
+         00000010 pushimm 0
+         00000000
+         00001000 add (Z is now set)
+         00000100 popinh (remove add answer from stack)
+         00000110 jnz XX
+         00000000
+         00001101
+         00000010 pushimm F0
+         11110000
+         00000101 XX: popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value F0
+
+         Key strokes: tinpKey/jnzb
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/jnzb
+
+      jnn
+      ---
+
+         Machine code: tinpMac/jnna
+         Test objective: 
+           clear N using sub operation
+           jump to XX 
+
+         00000010 pushimm FF
+         11111111 
+         00000010 pushimm 0
+         00000000 
+         00000010 pushimm 0
+         00000000
+         00001001 sub (N is now cleared)
+         00000100 popinh (remove sub answer from stack)
+         00000111 jnn XX
+         00000000
+         00001101
+         00000010 pushimm 00
+         10000000
+         00000101 XX: popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value FF
+
+         Key strokes: tinpKey/jnna
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/jnna
+
+         Machine code: tinpMac/jnnb
+         Test objective: 
+           set N using sub operation
+           fall through to XX 
+
+         00000010 pushimm FF
+         11111111 
+         00000010 pushimm 1
+         00000001 
+         00000010 pushimm 0
+         00000000
+         00001001 sub (N is now set)
+         00000100 popinh (remove sub answer from stack)
+         00000111 jnn XX
+         00000000
+         00001101
+         00000010 pushimm F0
+         11110000
+         00000101 XX: popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value F0
+
+         Key strokes: tinpKey/jnnb
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/jnnb
+
+      sirsp
+      -----
+         untested 
+
+      halt
+      ----
+
+         Machine code: tinpMac/halt
+         Test objective: 
+            halt without asserting fault
+
+         00000001 halt
+         00000000 halt signal asserted, fault signal Dis-asserted
+
+         Key strokes: tinpKey/halt
+
+         R
+         s
+         r
+         s
+         q
+
+         Expected Output: texp/halt
+
+         Machine code: tinpMac/fault
+         Test objective: 
+            assert fault because of 10000000 opcode
+
+         10000000 fault
+         00000000 fault signal asserted
+
+         Key strokes: tinpKey/fault
+
+         R
+         s
+         r
+         s
+         q
+
+         Expected Output: texp/fault
+
+   ports/PSW
+
+      A
+      -
+         testing responsibility passed to popext test case 
+  
+      B
+      -
+         untested 
+
+      C
+      -
+         testing responsibility passed to pushext test case 
+
+      D
+      -
+         testing responsibility passed to pushext test case 
+
+      PSW
+      ---
+
+         Machine code: tinpMac/restoreZa
+         Test objective: 
+              set Z using add operation
+              clear Z by writing to PSW
+              jump to XX 
+
+         00000010 pushimm FF
+         1111111 
+         00000010 pushimm 0
+         00000000 
+         00000010 pushimm 0
+         00000000
+         00001000 add (Z is now set)
+         00000100 popinh (remove add answer from stack)
+         00000010 pushimm 00 (set up word to clear Z) 
+         00000000
+         00000101 popext to PSW
+         11111111
+         11111011
+         00000110 jnz XX
+         00000000 
+         00010010
+         00000010 pushimm F0
+         11110000
+         00000101 XX: popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value FF
+
+         Key strokes: tinpKey/restoreZa
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/restoreZa
+
+         Machine code: tinpMac/setN
+         Test objective: 
+            set N using add operation
+            write PSW to A
+
+         00000010 pushimm FF
+         11111111 
+         00000010 pushimm 1
+         00000001 
+         00000010 push 0
+         00000000
+         00001001 sub (N is now set) 
+         00000011 pushext PSW 
+         11111111
+         11111011
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value at PSW
+
+         Key strokes: tinpKey/setN
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/setN
+
+         Machine code: tinpMac/setZ
+         Test objective: 
+            set Z using add operation
+            write PSW to A
+
+         00000010 pushimm FF
+         11111111 
+         00000010 push 0
+         00000000 
+         00000010 push 0
+         00000000
+         00001000 add (Z is now set) 
+         00000011 pushext PSW 
+         11111111
+         11111011
+         00000101 popext A
+         11111111 
+         11111100
+         00000001 halt
+         00000000 A should have the value at PSW
+
+         Key strokes: tinpKey/setZ
+
+         R
+         r
+         A
+         q
+
+         Expected Output: texp/setZ
+

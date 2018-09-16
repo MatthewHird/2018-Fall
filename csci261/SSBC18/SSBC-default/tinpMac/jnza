@@ -1,0 +1,18 @@
+00000010 pushimm FF
+11111111 
+00000010 pushimm 1
+00000001 
+00000010 pushimm 0
+00000000
+00001000 add (Z is now cleared)
+00000100 popinh (remove add answer from stack)
+00000110 jnz XX
+00000000
+00001101
+00000010 pushimm F0
+11110000
+00000101 XX: popext A
+11111111 
+11111100
+00000001 halt
+00000000 A should have the value FF

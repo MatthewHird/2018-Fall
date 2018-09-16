@@ -1,0 +1,50 @@
+# csh Script to be used with SSBC
+# P Walsh
+
+echo "          SSBC System Test --- Log" >! log
+echo "" >> log
+date >> log
+echo "" >> log
+finger $USER >> log
+echo "" >> log
+
+rm -f tact/*
+
+set errnum = 0
+set testnum = 0
+
+rm -f .mac
+mv mac .mac
+foreach X (tinpKey/*)
+   @ testnum = ($testnum + 1)
+   set Y = ${X:t}
+   (cp tinpMac/$Y mac)
+   (./ssbc.pl < $X  >! tact/$Y) 
+   (diff tact/$Y texp/$Y) >! /dev/null
+   if ($status)  then
+      @ errnum = ($errnum + 1)
+      echo "" >> log
+      echo "---- BEGIN ERROR REPORT -----" >> log
+      echo "---- Test File Name: $X ----" >> log
+      echo "---- Test File Contents ----" >> log
+      cat  $X >>  log
+      echo "---- Expected Output ----" >> log
+      cat  texp/$Y  >> log
+      echo "---- Actual Output ----" >> log
+      cat  tact/$Y  >> log
+      echo "---- END ERROR REPORT -----" >> log
+      echo "" >> log
+   endif
+end
+
+rm -f mac
+mv .mac mac
+
+echo "" >> log
+echo "**** LOG SUMMARY ****" >> log
+echo "" >> log
+
+echo "Number of Test Cases: $testnum" >> log
+echo "Number of Test Failures: $errnum" >> log
+echo "" >> log
+

@@ -1,0 +1,8 @@
+00000011 pushext D
+11111111 
+11111111
+00000101 popext C
+11111111 
+11111110
+00000001 halt
+00000000 C should have the value at D

@@ -1,0 +1,45 @@
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-- Sigma 5 Example   (assembly language)                                 
+--   File Name
+--      sigma5
+
+--   Author/Date
+--      Peter Walsh Jan 2002
+
+--   Assumptions
+--      none
+
+--   Behaviour
+--      calculates 5+4+3+2+1 and writes answer to port C
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+-- assign values to variables
+      pushimm 0           
+      popext 0200         -- save value on top of stack in variable sum 
+                          -- (location 0200)  
+      pushimm 5           
+L:    popext 0201         -- save value on top of stack in variable n
+                          -- (location 0201)
+
+-- calculate and save new partial sum
+      pushext 0201        -- push current value of n on the stack
+      pushext 0200        -- push current value of sum on the stack
+      add
+      popext  0200        -- save new value of sum
+
+-- push the value of n-1 on the stack
+      pushimm 1
+      pushext 0201        -- push current value of n on the stack
+      sub
+
+-- goto L if Z=0
+      jnz L
+
+-- clean last value of n off the stack
+      popinh
+
+-- write value of sum to port C
+      pushext 0200
+      popext FFFE
+
+      halt

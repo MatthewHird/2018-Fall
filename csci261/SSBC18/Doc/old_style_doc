@@ -1,0 +1,109 @@
+SSBC Ver 2.2-c.1
+++++++++++++++++
+
+INSTRUCTIONS
+
+Notation for operands:
+----------------------
+ii     = one byte of immediate data.
+hh     = high order byte of a 16 bit address
+ll     = low order byte of a 16 bit address
+s1     = byte at the top of the stack
+s2     = byte below s1
+s3     = byte below s2
+
+Flags:
+------
+Z flag is set if the result of an add or a sub is 0; else it is cleared.  
+N flag is set if the result of an add or a sub is negative (most
+significant bit being 1); else it is cleared.  
+Z is memory mapped to the MSB of 0xFFFBs (PSW).
+N is memory mapped to the 2nd MSB of 0xFFFB (PSW).
+
+
+Operation      OPCODES     MODE          BEHAVIOUR
+---------      -------     ----          ---------
+halt           00000001    inherent      halt program execution
+pushimm ii     00000010    immediate     store data ii on the stack
+pushext hh ll  00000011    extended      store data at location hh ll
+                                         on the stack 
+popinh         00000100    inherent      remove  s1 from the stack
+popext  hh ll  00000101    extended      remove s1 from the stack 
+                                         and store it at location hh ll 
+jnz hh ll      00000110    immediate     jump to address hh ll if Z=0  
+jnn hh ll      00001010    immediate     jump to address hh ll if N=0  
+add            00000111    stack         remove s1 and s2 from the 
+                           immediate     stack and store s1 + s2 
+                                         on the stack
+sub            00001000    stack         remove s1 and s2 from the
+                           immediate     stack and store  s1 - s2 
+                                         on the stack
+nor            00001001    stack         remove s1 and s2 from the 
+                           immediate     stack and store s1 nor s2 
+                                         on the stack
+pushsext       00001011    stack         remore s1 and s2 from the 
+                           extended      stack and store data at 
+                                         location s1 s2 on the stack
+popsext        00001100    stack         remove s1, s2 and s3 from 
+                           extended      the stack and store s1  at 
+                                         location s2 s3 
+
+
+INPUT/OUTPUT
+
+Port Name   	Direction  Address	Notes
+---------   	---------  -------	-----
+PSW (8 bits)   	read/write 0xFFFB 	MSB=Z, 2nd MSB=N
+A (8 bits)  	read       0xFFFC
+B (8 bits)  	write      0xFFFD
+C (8 bits)  	read       0xFFFE
+D (8 bits)  	write      0xFFFF
+
+MICROINSTRUCTIONS
+
+Registers 
+---------
+Program counter (PC) 16 bits
+Stack pointer (SP) 16 bits
+Memory index register (MIR) 16 bits
+Memory index register low (MIRL) 8 bits
+Memory index register high (MIRH) 8 bits
+ALU registers (R0, R1, R2) 8 bits each
+Instruction Register (IR) 8 bits
+
+Busses/Signals
+--------------
+Internal address bus (int_abus) 16 bits
+Internal read data bus (int_rbus) 8 bits
+Internal write data bus (int_wbus) 8 bits
+ALU output (alu_out) 8 bits
+
+Operation          Behaviour/Meaning
+---------          -----------------
+halt               halt the CU
+fault              signal a fault
+break              break before the execution of the next instruction
+br                 bus request
+wr                 read/write request
+initPC             PC <= 0
+initSP             SP <= 0xFFFA
+abusPC             int_abus <= PC
+abusSP             int_abus <= SP
+abusMIR            int_abus <= MIR
+IRrbus             IR <= int_rbus
+R0rbus             R0 <= int_rbus
+R1rbus             R1 <= int_rbus
+R2rbus             R2 <= int_rbus
+R2alu              R2 <= alu_out
+addop              alu_out <= R0 + R1
+subop              alu_out <= R0 - R1
+norop              alu_out <= R0 nor R1
+PCMIR              PC <= MIR
+incPC              PC <= PC + 1
+incSP              SP <= SP + 1
+incMIR             MIR <= MIR + 1
+decSP              SP <= SP - 1
+decMIR             MIR <= MIR - 1
+MIRLrbus           MIRL <= int_rbus
+MIRHrbus           MIRH <= int_rbus
+MIRMIRHL           MIR <= MIRH&MIRL

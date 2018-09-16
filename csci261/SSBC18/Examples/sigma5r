@@ -1,0 +1,71 @@
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-- Sigma 5 Recursive Example                                    
+--   File Name
+--      sigma5r
+
+--   Author/Date
+--      Peter Walsh Feb 2002
+
+--   Assumptions
+--      program uses recursion to advantage
+
+--   Behaviour
+--      program writes sigma(5) to port A where
+--      sigma(n)=n+sigma(n-1), n>=0 and sigma(0)=0
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+-- =============================Main===========================
+
+      pushimm 0           -- clear Z
+      popext PSW
+      pushimm L(YY)       -- save L(YY) on stack 
+      pushimm H(YY)       -- save H(YY) on stack
+      pushimm 5           -- save parameter n on the stack
+      jnz sigma5r         -- jump to subroutine, return address on the stack
+YY:   popext A            -- write returned value of sigma(n) to port A
+      halt                                
+
+-- =============================Subroutine ===========================
+    
+-- Assumptions
+--   PSW is destroyed
+--   caller places return address on the stack followed
+--   by a single byte parameter
+--   callee removes return address from the stack and 
+--   places the return value on the stack
+
+--   in the machine code file, main and sigma5r are separated by a 
+--   single byte with value 00h 
+
+-- Behaviour
+--   n is passed in as a parameter on the stack and sigma(n) is returned
+--   on the stack
+   
+sigma5r:pushimm 0         
+      add
+      jnz reccall
+      popext PSW               -- clear Z
+      -- self modifying code to take care or subroutine return
+      popext sigma5r + 12h     -- save high byte of return address
+      popext sigma5r + 13h     -- save low byte of return address
+      pushimm 0                -- place return value on the stack
+      jnz                      -- return
+reccall:popext hold            -- save parameter n in hold
+      pushext hold             -- restore n to the stack
+      pushimm L(recret)        -- save L(recret) on stack 
+      pushimm H(recret)        -- save H(recret) on stack
+      pushimm 1                -- place n-1 on the stack
+      pushext hold              
+      sub
+      pushimm 0                -- clear Z
+      popext PSW
+      jnz sigma5r              -- recursive call to sigma5r
+recret:add                     -- add n and sigm(n-1)
+      popext hold
+      pushimm 0
+      popext PSW               -- clear Z
+      -- self modifying code to take care or subroutine return
+      popext sigma5r + 3fh     -- save high byte of return address
+      popext sigma5r + 40h     -- save low byte of return address
+      pushext hold             -- place sigma(n) on the stack
+      jnz                      -- return

@@ -1,0 +1,51 @@
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-- Subroutine Example                                    
+--   File Name
+--      subroutine
+
+--   Author/Date
+--      Peter Walsh Jan 2002
+--      Rev Jan 2004
+
+--   Assumptions
+--      none
+
+--   Behaviour
+--      main calls subroutine to write 01h to port A
+--      on return, main writes 01h to port C
+---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+-- =============================Main===========================
+
+      pushext PSW         -- save PSW 
+      pushimm 0           -- clear Z
+      popext PSW
+      pushimm L(YY)       -- save L(YY) on stack 
+      pushimm H(YY)       -- save H(YY) on stack
+      jnz XX              -- jump to subroutine, return address on the stack
+YY:   popext PSW          -- restore PSW
+      pushimm 1           -- write 1 to port C
+      popext C
+      halt                                
+
+-- =============================Subroutine XX===========================
+    
+-- Assumptions
+--   PSW is saved/restored by the caller
+--   caller places return address on the stack
+--   callee removes return address from the stack
+--
+--   in the machine code file, main and subroutine are separated by a 
+--   single byte with value 00h 
+
+-- Behaviour
+--   write 1 to port A
+   
+XX:   pushimm 1         -- write 1 to A
+      popext A
+      pushimm 0
+      popext PSW        -- clear Z
+      -- self modifying code to take care or subroutine return
+      popext XX+17d     -- save high byte of return address
+      popext XX+18d     -- save low byte of return address
+      jnz               -- return

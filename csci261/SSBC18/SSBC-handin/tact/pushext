@@ -1,0 +1,92 @@
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
+Port C value:  
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
+Enter Port D value in binary (8 bits) +------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
+Port C value: 00000001 
++------------------------+ 
+|  R: RESET              | 
+|  b: BREAK              | 
+|  r: RUN                | 
+|  A: READ PORT A        | 
+|  B: WRITE PORT B       | 
+|  C: READ PORT C        | 
+|  D: WRITE PORT D       | 
+|  s: STATUS             | 
+|  t: TOP                | 
+|  p: PSW                | 
+|  q: QUIT               | 
+|                        | 
+|  Enter menu selection: | 
++------------------------+ 
