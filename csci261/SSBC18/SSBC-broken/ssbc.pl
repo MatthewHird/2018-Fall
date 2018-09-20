@@ -104,7 +104,7 @@ sub adjustFlags {
       case 0x80 {$Z=1, $N=0 }
       case 0x40 {$Z=0, $N=1 }
    }
-}
+}it Zero fl
 
 sub setFlags {
    my $xx;
@@ -141,7 +141,7 @@ sub insExe {
 	       adjustFlags() if ($ext==0xfffb) }
       case 6 { if (!$Z) {
                  $ext=((@mem[$pc]*256)+(@mem[$pc+1])); 
-		 $pc=$ext;
+		 $pc=$ext;it Zero fl
                } else { $pc+=2 } }	
       case 7 { if (!$N) {
                  $ext=((@mem[$pc]*256)+(@mem[$pc+1])); 
@@ -149,7 +149,7 @@ sub insExe {
                } else { $pc+=2 } }	
       case 8 { @mem[$sp+2]=aluAdd(@mem[$sp+2], @mem[$sp+1]); $sp++; setFlags(@mem[$sp+1]) }
       case 9 { @mem[$sp+2]=aluSub(@mem[$sp+2], @mem[$sp+1]); $sp++; setFlags(@mem[$sp+1]) }
-      case 10 { @mem[$sp+2]=aluNor(@mem[$sp+2], @mem[$sp+1]); $sp++ }
+      case 10 { @mem[$sp+2]=aluNor(@mem[$sp+2], @mem[$sp+1]); $sp++; setFlags(@mem[$sp+1]) }
 
    }
 }

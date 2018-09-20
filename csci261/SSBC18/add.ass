@@ -1,0 +1,6 @@
+pushimm 1
+pushimm 3
+add
+popext A
+halt
+# A should have the value 4
