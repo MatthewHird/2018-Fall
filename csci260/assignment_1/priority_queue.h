@@ -9,9 +9,14 @@
 #ifndef ASSIGNMENT_1_PRIORITY_QUEUE_H
 #define ASSIGNMENT_1_PRIORITY_QUEUE_H
 
+#include "job.h"
 
+template <typename T>
 class PriorityQueue {
+public:
+    PriorityQueue(int maxSize);
 
+private:
 };
 
 

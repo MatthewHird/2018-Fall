@@ -21,6 +21,15 @@ public:
     void run(std::string batchFilePath="batch.txt");
 
 private:
+
+    void menu();
+    void loadBatchFile(std::string batchFilePath);
+    void saveBatchFile(std::string batchFilePath);
+
+    void submitJob();
+    void executeNext();
+    void executeRandom();
+    void quitProgram();
 };
 
 
