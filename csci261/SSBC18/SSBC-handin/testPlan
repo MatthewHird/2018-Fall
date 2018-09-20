@@ -242,14 +242,29 @@ Test Implementation
 
          Expected Output: texp/nora
 
-         Machine code: tinpMac/norb
+         Machine code: tinpMac/norz
+
+         00000010 pushimm 00
+         00000000
+         00000010 pushimm 00
+         00000000
+         00001000 add
+         00000010 pushimm 01
+         00000001
+         00001010 nor
+         00000001 halt
+
          Test objective: 
             make sure nor operation does not modify the flags
-            coming soon
 
-         Key strokes: tinpKey/norb
+         Key strokes: tinpKey/norz
 
-         Expected Output: texp/norb
+         R
+         r
+         p
+         q
+
+         Expected Output: texp/norz
 
    program control instructions
          

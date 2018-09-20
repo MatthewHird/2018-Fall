@@ -1,7 +1,7 @@
 import re
 
 
-class Assembler:
+class AssMacConverter:
     opcodes = {'noop': '00000000', 'halt': '00000001', 'pushimm': '00000010',
                'pushext': '00000011', 'popinh': '00000100', 'popext': '00000101',
                'jnz': '00000110', 'jnn': '00000111', 'add': '00001000',
@@ -39,13 +39,13 @@ class Assembler:
             comment = ''
             arg_count = 0
 
-            m1 = re.search('#', line)
+            m1 = re.search('--', line)
             if m1:
                 comment = line[m1.end():].strip()
                 line = line[:m1.start()].strip()
 
             if re.fullmatch('\s*', line):
-                ass_instruct = 'noop'
+                continue
             else:
                 m2 = re.match('[a-zA-Z]+:', line)
                 if m2:
@@ -138,7 +138,7 @@ class Assembler:
                 if self.ass_operands[pc]:
                     mac_string += ' ' + self.ass_operands[pc]
                 if self.ass_comments[pc]:
-                    mac_string += '   # ' + self.ass_comments[pc]
+                    mac_string += '  -- ' + self.ass_comments[pc]
             mac_string += '\n'
         mac_string = mac_string.strip()
 

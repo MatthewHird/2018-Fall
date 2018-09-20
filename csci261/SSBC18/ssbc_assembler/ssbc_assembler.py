@@ -1,13 +1,13 @@
 import argparse
-from assembler import Assembler
+from ass_mac_converter import AssMacConverter
 
 
-class SsbcCompiler:
+class SsbcAssembler:
     @classmethod
     def build_file(cls, in_file_path="test.ass", out_file_path="test.mac", comments=False, display=False):
-        assembler = Assembler()
+        ass_mac_converter = AssMacConverter()
         ass_file_string = cls.__load_file(in_file_path)
-        mac_file_string = assembler.run(ass_file_string, comments)
+        mac_file_string = ass_mac_converter.run(ass_file_string, comments)
         if out_file_path:
             cls.__write_file(out_file_path, mac_file_string)
         if display:
@@ -39,5 +39,5 @@ if __name__ == '__main__':
                         help='flag to display created machine code in terminal')
 
     args = parser.parse_args()
-    SsbcCompiler.build_file(in_file_path=args.infile, out_file_path=args.outfile,
-                            comments=args.comments, display=args.display)
+    SsbcAssembler.build_file(in_file_path=args.infile, out_file_path=args.outfile,
+                             comments=args.comments, display=args.display)

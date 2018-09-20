@@ -1,12 +1,12 @@
 pushimm FF
 pushimm 0
 pushimm 0
-add #(Z is now set)
-popinh #(remove add answer from stack)
-pushimm 00 #(set up word to clear Z)
+add --(Z is now set)
+popinh --(remove add answer from stack)
+pushimm 00 --(set up word to clear Z)
 popext PSW
 jnz XX
 pushimm F0
 XX: popext A
 halt
-#A should have the value FF
+--A should have the value FF

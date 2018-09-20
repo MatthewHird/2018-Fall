@@ -1,17 +1,17 @@
           SSBC System Test --- Log
 
-Fri Sep 14 22:33:06 PDT 2018
+Thu Sep 20 15:58:26 PDT 2018
 
-Login: hirdm          			Name: matt
+Login: hirdm          			Name: Matthew Hird
 Directory: /home/hirdm              	Shell: /bin/bash
-On since Fri Sep 14 07:06 (PDT) on tty7 from :0
-   15 hours 26 minutes idle
+On since Wed Sep 19 09:58 (PDT) on tty7 from :0
+   1 day 6 hours idle
 No mail.
 No Plan.
 
 
 **** LOG SUMMARY ****
 
-Number of Test Cases: 15
+Number of Test Cases: 16
 Number of Test Failures: 0
 
