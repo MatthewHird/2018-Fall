@@ -1,0 +1,55 @@
+--  Task2 Assembly Code                                   
+--    File Name
+--      task2
+--
+--    Author; Date
+--      Matthew Hird; Sept 27, 2018
+--
+--    Assumptions
+--      none
+--
+--    Behaviour
+--      main calls subroutine XX, passing in n=0
+--      based on the value of n, XX writes either 1 or 2 to port A
+--      on return, main restores PSW, then halts
+
+-- ----------------------------Main----------------------------
+
+      pushext PSW         -- store PSW on stack
+      pushimm L(YY)       -- pass low return address
+      pushimm H(YY)       -- pass high return address
+      pushext Pn          -- pass parameter n
+      jnz XX              -- jump to subroutine XX
+YY:   popext PSW          -- restore PSW
+      halt  
+    
+Pn:   val 0               -- parameter n                
+
+-- ------------------------Subroutine XX-----------------------
+    
+--    Assumptions
+--      PSW is saved/restored by the caller
+--      x = param_x = input parameter
+--      Hr = H(return) = high byte of return address
+--      Lr = L(return) = low byte of return address
+
+--      stack in: param_x/H(return)/L(return)
+--      stack out:
+
+--    Behaviour
+--      write 2 to port A
+--      then if x=0, write 1 to port A
+   
+XX:   pushimm 2         -- write 2 to A
+      popext A          
+      pushimm 0         
+      add               
+      popinh            
+      jnz XXA           -- if x=0, write 1 to A
+      pushimm 1         
+      popext A          
+XXA:  pushimm 0         
+      popext PSW        -- Z=0, N=0
+      popext XXR+1d     -- sets high byte of return address
+      popext XXR+2d     -- sets low byte of return address
+XXR:  jnz 0000

@@ -4,8 +4,8 @@ pushimm 0
 add --(Z is now set)
 popinh --(remove add answer from stack)
 pushimm 00 --(set up word to clear Z)
-popext PSW
-jnz XX
-pushimm F0
+popext XX
+jnz XX+10d
+pushimm L(XX)
 XX: popext A
 halt --A should have the value FF
