@@ -1,0 +1,9 @@
+00000010 pushimm 00
+00000000
+00000010 pushimm 00
+00000000
+00001000 add  -- sets z flag to 1, n flag to = 0
+00000010 pushimm 01
+00000001
+00001010 nor  -- puts 11111110 on stack
+00000001 halt  -- z flag should = 1, n flag should = 0

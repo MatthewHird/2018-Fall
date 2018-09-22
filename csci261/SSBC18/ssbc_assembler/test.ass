@@ -8,5 +8,4 @@ popext PSW
 jnz XX
 pushimm F0
 XX: popext A
-halt
---A should have the value FF
+halt --A should have the value FF

@@ -1,0 +1,6 @@
+pushimm 00
+pushimm 00
+add -- sets z flag to 1, n flag to = 0
+pushimm 01
+nor -- puts 11111110 on stack
+halt -- z flag should = 1, n flag should = 0

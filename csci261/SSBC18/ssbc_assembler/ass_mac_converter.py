@@ -1,4 +1,6 @@
 import re
+from my_exceptions import InvalidLabelError, DuplicateLabelError, AssemblyOpcodeError, InvalidOperandError, \
+    LabelShadowMemoryLocationError
 
 
 class AssMacConverter:
@@ -31,6 +33,7 @@ class AssMacConverter:
         self.assembly_inputs = []
 
         pc = 0
+        ass_line_count = -1
         for full_line in assembly_string.splitlines():
             line = full_line
             label = ''
@@ -38,6 +41,8 @@ class AssMacConverter:
             ass_oper = ''
             comment = ''
             arg_count = 0
+
+            ass_line_count += 1
 
             m1 = re.search('--', line)
             if m1:
@@ -47,12 +52,20 @@ class AssMacConverter:
             if re.fullmatch('\s*', line):
                 continue
             else:
-                m2 = re.match('[a-zA-Z]+:', line)
+                m2 = re.match('.*:', line)
                 if m2:
-                    label = line[:m2.end() - 1]
-                    self.label_names[label] = ('%X' % pc).zfill(4)
+                    label = line[:m2.end() - 1].strip()
+                    if re.fullmatch('[A-Z][a-zA-Z0-9_]*', label):
+                        if re.match('[0-9A-F]{4}', label):
+                            raise LabelShadowMemoryLocationError(label, ass_line_count)
+                        elif label in self.label_names:
+                            raise DuplicateLabelError(label, ass_line_count)
+                        else:
+                            self.label_names[label] = ('%X' % pc).zfill(4)
 
-                    line = line[m2.end():].strip()
+                        line = line[m2.end():].strip()
+                    else:
+                        raise InvalidLabelError(label, ass_line_count)
 
                 m3 = re.search(' ', line)
                 if m3:
@@ -71,8 +84,10 @@ class AssMacConverter:
                 arg_count = 2
             elif ass_instruct == 'jnn':
                 arg_count = 2
-
-            self.mac_code.append(self.opcodes.get(ass_instruct))
+            if ass_instruct in self.opcodes:
+                self.mac_code.append(self.opcodes.get(ass_instruct))
+            else:
+                raise AssemblyOpcodeError(ass_instruct, ass_line_count)
             self.label_list.append(label)
             self.ass_instructions.append(ass_instruct)
             self.ass_operands.append(ass_oper)
@@ -104,24 +119,29 @@ class AssMacConverter:
 
                 if arg_count == 1:
                     operand = self.ass_operands[pc]
-                    if re.fullmatch('[0-9A-Fa-f]{1,2}', operand):
+                    if re.fullmatch('[0-9A-F]{1,2}', operand):
                         self.mac_code[pc + 1] = bin(int(operand, 16)).replace('0b', '').zfill(8)
-                    elif re.fullmatch('\+\d+', operand):
-                        self.mac_code[pc + 1] = '0' + bin(int(operand[1:])).replace('0b', '').zfill(7)
-                    elif re.fullmatch('-\d+', operand):
-                        self.mac_code[pc + 1] = '1' + bin(int(operand[1:])).replace('0b', '').zfill(7)
+                    elif re.fullmatch('\d+d', operand):
+                        self.mac_code[pc + 1] = '0' + bin(int(operand[:-1])).replace('0b', '').zfill(7)
+                    elif re.fullmatch('-\d+d', operand):
+                        self.mac_code[pc + 1] = '1' + bin(int(operand[1:-1])).replace('0b', '').zfill(7)
                     elif re.fullmatch('[01]{8}', operand):
                         self.mac_code[pc + 1] = operand
+                    else:
+                        raise InvalidOperandError(operand, pc)
                 elif arg_count == 2:
                     operand = self.ass_operands[pc]
                     if self.label_names.get(operand):
                         operand = self.label_names.get(operand)
-                    if re.fullmatch('[0-9A-Fa-f]{4}', operand):
+                    if re.fullmatch('[0-9A-F]{4}', operand):
                         self.mac_code[pc + 1] = bin(int(operand[:2], 16)).replace('0b', '').zfill(8)
                         self.mac_code[pc + 2] = bin(int(operand[2:], 16)).replace('0b', '').zfill(8)
-                    elif re.fullmatch('[01]{16}', operand):
+                    elif re.fullmatch('[01]{8}[b]?\s*[01]{8}[b]?', operand):
+                        operand = operand.replace('b', '').replace(' ', '')
                         self.mac_code[pc + 1] = operand[:8]
                         self.mac_code[pc + 2] = operand[8:]
+                    else:
+                        raise InvalidOperandError(operand, pc)
             pc += 1
 
     def __build_mac_string(self, comments):

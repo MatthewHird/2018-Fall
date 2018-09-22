@@ -1,6 +1,0 @@
-pushimm 00
-pushimm 00
-add
-pushimm 01
-nor
-halt
