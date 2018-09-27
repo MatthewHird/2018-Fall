@@ -1,9 +1,48 @@
-00000010 pushimm 00
+00000011 pushext PSW  -- store PSW on stack
+11111111
+11111011
+00000010 pushimm L(YY)  -- pass low return address
+00001101
+00000010 pushimm H(YY)  -- pass high return address
 00000000
-00000010 pushimm 00
+00000011 pushext B  -- pass parameter n from port B
+11111111
+11111101
+00000110 jnz XX  -- jump to subroutine XX
+00000000
+00010001
+00000101 YY: popext PSW  -- restore PSW
+11111111
+11111011
+00000001 halt
+00000010 XX: pushimm 2  -- write 2 to A
+00000010
+00000101 popext A
+11111111
+11111100
+00000010 pushimm 0
 00000000
 00001000 add
-00000010 pushimm 01
+00000100 popinh
+00000110 jnz XXA  -- if x=0, write 1 to A
+00000000
+00100010
+00000010 pushimm 1
 00000001
-00001010 nor
-00000001 halt
+00000101 popext A
+11111111
+11111100
+00000010 XXA: pushimm 0
+00000000
+00000101 popext PSW  -- Z=0, N=0
+11111111
+11111011
+00000101 popext XXR+1d  -- sets high byte of return address
+00000000
+00101110
+00000101 popext XXR+2d  -- sets low byte of return address
+00000000
+00101111
+00000110 XXR: jnz 0000
+00000000
+00000000

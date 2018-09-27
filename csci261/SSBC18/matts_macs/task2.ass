@@ -18,12 +18,10 @@
       pushext PSW         -- store PSW on stack
       pushimm L(YY)       -- pass low return address
       pushimm H(YY)       -- pass high return address
-      pushext Pn          -- pass parameter n
+      pushext B           -- pass parameter n from port B
       jnz XX              -- jump to subroutine XX
 YY:   popext PSW          -- restore PSW
-      halt  
-    
-Pn:   val 0               -- parameter n                
+      halt             
 
 -- ------------------------Subroutine XX-----------------------
     
