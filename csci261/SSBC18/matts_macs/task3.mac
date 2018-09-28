@@ -1,73 +1,71 @@
-00000011 main: pushext B
+00000011 Main: pushext B  -- set 'a' to value read from Port B
 11111111
 11111101
-00000101 popext aa
+00000101 popext a
 00000000
-00011110
-00000010 pushimm L(m1)
-00010111
-00000010 pushimm H(m1)
+00011101
+00000010 pushimm L(M1)  -- pass return address
+00010110
+00000010 pushimm H(M1)
 00000000
-00000010 pushimm L(aa)
-00011110
-00000010 pushimm H(aa)
+00000010 pushimm L(a)  -- pass 'a' as parameter address x
+00011101
+00000010 pushimm H(a)
 00000000
 00000010 pushimm 0
 00000000
-00000010 pushimm 1
-00000001
-00001000 add
-00000100 popinh
-00000110 jnz xx
-00000000
-00011111
-00000011 m1: pushext aa
+00000101 popext PSW  -- set Z=0, N=0
+11111111
+11111011
+00000110 jnz Inc  -- call subroutine Increment (a += 1)
 00000000
 00011110
-00000101 popext C
+00000011 M1: pushext a
+00000000
+00011101
+00000101 popext C  -- write 'a' to Port C
 11111111
 11111110
 00000001 halt
-00000000 aa: val 00
-00000101 xx: popext xxa+1d
+00000000 a: val 00
+00000101 Inc: popext I1 +1d  -- 'load' address x to be incremented
+00000000
+00110111
+00000101 popext I1 +2d
 00000000
 00111000
-00000101 popext xxa+2d
+00000101 popext IRet +1d  -- set return address
 00000000
-00111001
-00000101 popext xxr+1d
+01000101
+00000101 popext IRet +2d
 00000000
-01000111
-00000101 popext xxr+2d
+01000110
+00000011 pushext I1 +1d  -- 'load' address x to be written to
 00000000
-01001000
-00000011 pushext xxa+1d
+00110111
+00000101 popext I2 +1d
+00000000
+00111101
+00000011 pushext I1 +2d
 00000000
 00111000
-00000101 popext xxb+1d
+00000101 popext I2 +2d
 00000000
 00111110
-00000011 pushext xxa+2d
-00000000
-00111001
-00000101 popext xxb+2d
-00000000
-00111111
-00000011 xxa: pushext 0000
+00000011 I1: pushext 0000  -- push value referenced by x
 00000000
 00000000
 00000010 pushimm 1
 00000001
-00001000 add
-00000101 xxb: popext 0000
+00001000 add  -- increment value by 1
+00000101 I2: popext 0000  -- write new value into address x
 00000000
 00000000
 00000010 pushimm 0
 00000000
-00000010 pushimm 1
-00000001
-00001000 add
-00000100 popinh
-00000110 xxr: jnz 0000
+00000101 popext PSW
+11111111
+11111011
+00000110 IRet: jnz 0000  -- return from Increment
 00000000
 00000000
