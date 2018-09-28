@@ -14,22 +14,28 @@
 
 class BatchQueue {
 public:
-    BatchQueue();
+    explicit BatchQueue(int queueCapacity=10, std::string batchFilePath="batch.txt");
+    ~BatchQueue()= default;
 
-    ~BatchQueue();
-
-    void run(std::string batchFilePath="batch.txt");
+    void run(int queueCapacity=10, std::string batchFilePath="batch.txt");
 
 private:
 
     void menu();
-    void loadBatchFile(std::string batchFilePath);
-    void saveBatchFile(std::string batchFilePath);
+    void loadBatchFile(std::string& batchFilePath);
+    void saveBatchFile(std::string& batchFilePath);
 
     void submitJob();
     void executeNext();
     void executeRandom();
     void quitProgram();
+
+    float getFloatInput();
+    std::string getWordInput();
+    std::string getLineInput();
+
+    int queueCapacity;
+    std::string batchFilePath;
 };
 
 

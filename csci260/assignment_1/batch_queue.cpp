@@ -1,3 +1,5 @@
+#include <utility>
+
 //------------------------------------------------------------------------------
 // @file       batch_queue.cpp
 // @author     Matthew Hird
@@ -12,18 +14,18 @@
 #include <iostream>
 
 
-BatchQueue::BatchQueue() {}
+BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
+    : queueCapacity(queueCapacity)
+    , batchFilePath(std::move(batchFilePath))
+{}
 
 
-BatchQueue::~BatchQueue() {}
-
-
-void BatchQueue::run(std::string batchFilePath) {
-    std::cout << batchFilePath << "\n";
+void BatchQueue::run(int queueCapacity, std::string batchFilePath) {
+    std::cout << queueCapacity << " " << batchFilePath << "\n";
 }
 
 
-void menu() {
+void BatchQueue::menu() {
     // menu options are:
     // submit
     // execute
@@ -33,10 +35,10 @@ void menu() {
 }
 
 
-void BatchQueue::loadBatchFile(std::string batchFilePath) {}
+void BatchQueue::loadBatchFile(std::string& batchFilePath) {}
 
 
-void BatchQueue::saveBatchFile(std::string batchFilePath) {}
+void BatchQueue::saveBatchFile(std::string& batchFilePath) {}
 
 
 void BatchQueue::submitJob() {}
@@ -49,3 +51,12 @@ void BatchQueue::executeRandom() {}
 
 
 void BatchQueue::quitProgram() {}
+
+
+float BatchQueue::getFloatInput() {}
+
+
+std::string BatchQueue::getWordInput() {}
+
+
+std::string BatchQueue::getLineInput() {}
