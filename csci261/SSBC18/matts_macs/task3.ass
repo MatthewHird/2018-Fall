@@ -1,0 +1,68 @@
+--  Task2 Assembly Code                                   
+--    File Name
+--      task2
+--
+--    Author; Date
+--      Matthew Hird; Oct 4, 2018
+--
+--    Assumptions
+--      none
+--
+--    Behaviour
+--      Read a value from Port B and store the value
+--      at address label 'aa'. Invoke the subroutine Increment,
+--      passing the address 'aa' as a parameter on the stack.
+--      On return from Increment, write the value stored at
+--      address 'aa' to Port C.
+
+-- ----------------------------Main----------------------------
+
+main:   pushext B
+        popext aa
+        pushimm L(m1)
+        pushimm H(m1)
+        pushimm L(aa)
+        pushimm H(aa)
+        pushimm 0
+        pushimm 1
+        add
+        popinh
+        jnz xx
+m1:     pushext aa
+        popext C
+        halt    
+        
+aa:     val 00         
+
+-- ------------------------Increment-----------------------
+    
+--    Assumptions
+--      PSW is saved/restored by the caller
+--      xx = address_xx = input parameter
+--      Hr = H(return) = high byte of return address
+--      Lr = L(return) = low byte of return address
+
+--      stack in: param_x/H(return)/L(return)
+--      stack out:
+
+--    Behaviour
+--      Increment implements the following pseudo code
+--      *aa=*aa+1 (increment the value referenced by aa by 1) 
+   
+xx:     popext xxa+1d
+        popext xxa+2d
+        popext xxr+1d
+        popext xxr+2d
+        pushext xxa+1d
+        popext xxb+1d
+        pushext xxa+2d
+        popext xxb+2d
+xxa:    pushext 0000
+        pushimm 1
+        add
+xxb:    popext 0000
+        pushimm 0
+        pushimm 1
+        add
+        popinh  
+xxr:    jnz 0000
