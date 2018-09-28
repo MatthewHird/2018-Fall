@@ -55,7 +55,7 @@ class AssMacConverter:
                 m2 = re.match('.*:', line)
                 if m2:
                     label = line[:m2.end() - 1].strip()
-                    if re.fullmatch('[A-Z][a-zA-Z0-9_]*', label):
+                    if re.fullmatch('[A-Za-z][a-zA-Z0-9_]*', label):
                         if re.match('[0-9A-F]{4}', label):
                             raise LabelShadowMemoryLocationError(label, ass_line_count)
                         elif label in self.label_names:
@@ -125,7 +125,7 @@ class AssMacConverter:
 
                 if arg_count == 1:
                     operand = self.ass_operands[pc]
-                    if re.fullmatch('[HL]\(\s*[A-Z][a-zA-Z0-9_]*\s*\)', operand):
+                    if re.fullmatch('[HL]\(\s*[A-Za-z][a-zA-Z0-9_]*\s*\)', operand):
                         half = operand[0]
                         operand = operand[2:-1].strip()
                         if self.label_names.get(operand):
@@ -148,7 +148,7 @@ class AssMacConverter:
                     operand = self.ass_operands[pc]
                     if self.label_names.get(operand):
                         operand = self.label_names.get(operand)
-                    elif re.fullmatch('[A-Z][a-zA-Z0-9_]*\s*\+\s*[0-9]+d', operand):
+                    elif re.fullmatch('[A-Za-z][a-zA-Z0-9_]*\s*\+\s*[0-9]+d', operand):
                         ops = re.split('\s*\+\s*', operand)
                         if self.label_names.get(ops[0]):
                             operand = int(self.label_names.get(ops[0]), 16) + int(ops[1].strip('d'))
