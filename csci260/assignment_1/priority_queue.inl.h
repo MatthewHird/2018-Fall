@@ -1,46 +1,49 @@
 //------------------------------------------------------------------------------
-// @file       priority_queue.cpp
+// @file       priority_queue.inl.h
 // @author     Matthew Hird
 // @date       September 13, 2018
 //
 // @brief      x
 //------------------------------------------------------------------------------
 
-template <typename Data>
-PriorityQueue<Data>::PriorityQueue(int maxSize) {}
+
+template <typename Priority, typename Data>
+PriorityQueue<Priority,Data>::PriorityQueue(int maxSize) {
+    minHeap = new MinHeap<Priority,Data>(maxSize);
+}
 
 
-template <typename Data>
-PriorityQueue<Data>::~PriorityQueue() {}
+template <typename Priority, typename Data>
+PriorityQueue<Priority,Data>::~PriorityQueue() {}
 
 
-template <typename Data>
-void PriorityQueue<Data>::insert(int priority, const Data& data) {}
+template <typename Priority, typename Data>
+void PriorityQueue<Priority,Data>::insert(double priority, const Data &data) {}
 
 
-template <typename Data>
-Data* PriorityQueue<Data>::removeMin() {}
+template <typename Priority, typename Data>
+Data* PriorityQueue<Priority,Data>::removeMin() {}
 
 
-template <typename Data>
-Data* PriorityQueue<Data>::removeRandom() {}
+template <typename Priority, typename Data>
+Data* PriorityQueue<Priority,Data>::removeRandom() {}
 
 
-template <typename Data>
-int PriorityQueue<Data>::minPriority() const {}
+template <typename Priority, typename Data>
+double PriorityQueue<Priority,Data>::minPriority() const {}
 
 
-template <typename Data>
-const Data* PriorityQueue<Data>::minData() const {}
+template <typename Priority, typename Data>
+const Data* PriorityQueue<Priority,Data>::minData() const {}
 
 
-template <typename Data>
-bool PriorityQueue<Data>::isEmpty() const {}
+template <typename Priority, typename Data>
+bool PriorityQueue<Priority,Data>::isEmpty() const {}
 
 
-template <typename Data>
-bool PriorityQueue<Data>::isFull() const {}
+template <typename Priority, typename Data>
+bool PriorityQueue<Priority,Data>::isFull() const {}
 
 
-template <typename Data>
-int PriorityQueue<Data>::size() const {}
+template <typename Priority, typename Data>
+int PriorityQueue<Priority,Data>::size() const {}

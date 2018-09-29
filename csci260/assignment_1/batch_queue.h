@@ -10,12 +10,14 @@
 #define ASSIGNMENT_1_BATCH_QUEUE_H
 
 #include <iostream>
+#include "job.h"
+#include "priority_queue.h"
 
 
 class BatchQueue {
 public:
     explicit BatchQueue(int queueCapacity=10, std::string batchFilePath="batch.txt");
-    ~BatchQueue()= default;
+    ~BatchQueue();
 
     void run(int queueCapacity=10, std::string batchFilePath="batch.txt");
 
@@ -36,6 +38,7 @@ private:
 
     int queueCapacity;
     std::string batchFilePath;
+    PriorityQueue<double,Job>* priorityQueue;
 };
 
 

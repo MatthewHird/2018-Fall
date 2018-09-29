@@ -17,7 +17,14 @@
 BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
     : queueCapacity(queueCapacity)
     , batchFilePath(std::move(batchFilePath))
-{}
+{
+    priorityQueue = new PriorityQueue<double,Job>(queueCapacity);
+}
+
+
+BatchQueue::~BatchQueue() {
+    delete priorityQueue;
+}
 
 
 void BatchQueue::run(int queueCapacity, std::string batchFilePath) {

@@ -9,17 +9,20 @@
 #ifndef ASSIGNMENT_1_PRIORITY_QUEUE_H
 #define ASSIGNMENT_1_PRIORITY_QUEUE_H
 
-template <typename Data>
+#include "min_heap.h"
+
+
+template <typename Priority, typename Data>
 class PriorityQueue {
 public:
-    PriorityQueue(int maxSize);
+    explicit PriorityQueue(int maxSize);
     ~PriorityQueue();
 
-    void insert(int priority, const Data& data);
+    void insert(double priority, const Data &data);
     Data* removeMin();
     Data* removeRandom();
 
-    int minPriority() const;
+    double minPriority() const;
     const Data* minData() const;
 
     bool isEmpty() const;
@@ -27,14 +30,8 @@ public:
     int size() const;
 
 private:
-    struct Node {
-        int priority;
-        Data* data;
-    };
 
-    Node* heapArray;
-    int maxSize;
-    int nodeCount;
+    MinHeap<Priority,Data>* minHeap;
 };
 
 #include "priority_queue.inl.h"
