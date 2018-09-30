@@ -6,15 +6,18 @@
 // @brief      x
 //------------------------------------------------------------------------------
 
+#include <exception>
+#include <regex>
 #include "job.h"
 
 
-Job::Job(float estExecTime, std::string& submitterId, std::string& startCommand, std::string& resourceList)
-    : estExecTime(estExecTime)
-    , submitterId(submitterId)
-    , startCommand(startCommand)
-    , resourceList(resourceList)
-{}
+Job::Job(float estExecTime, std::string& submitterId, std::string& startCommand, std::string& resourceList) throw()
+{
+    setEstExecTime(estExecTime);
+    setSubmitterId(submitterId);
+    setStartCommand(startCommand);
+    setResourceList(resourceList);
+}
 
 
 void Job::setEstExecTime(float estExecTime) {
@@ -23,6 +26,9 @@ void Job::setEstExecTime(float estExecTime) {
 
 
 void Job::setSubmitterId(std::string &submitterId) {
+    if (submitterId.length() > 8 || std::regex_search(submitterId, std::regex("\\s"))) {
+        // throw invalid submitterId exception
+    }
     this->submitterId = submitterId;
 }
 

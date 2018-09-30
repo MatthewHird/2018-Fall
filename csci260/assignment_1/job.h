@@ -13,8 +13,9 @@
 
 class Job {
 public:
+    Job()= default;
     Job(float estExecTime, std::string& submitterId, std::string& startCommand,
-            std::string& resourceList);
+            std::string& resourceList) throw();
     ~Job()= default;
 
     void setEstExecTime(float estExecTime);
@@ -29,8 +30,8 @@ public:
 
 private:
     float estExecTime;
-    std::string submitterId; // max length 8 chars
-    std::string startCommand;
+    std::string submitterId; // max length 8 chars, single word
+    std::string startCommand; // single word
     std::string resourceList; // max length 80 chars
 };
 

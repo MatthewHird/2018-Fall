@@ -18,7 +18,7 @@ BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
     : queueCapacity(queueCapacity)
     , batchFilePath(std::move(batchFilePath))
 {
-    priorityQueue = new PriorityQueue<double,Job>(queueCapacity);
+    priorityQueue = new PriorityQueue<float,Job>(queueCapacity);
 }
 
 
@@ -60,10 +60,16 @@ void BatchQueue::executeRandom() {}
 void BatchQueue::quitProgram() {}
 
 
-float BatchQueue::getFloatInput() {}
+float BatchQueue::getFloatInput() {
+    return 0;
+}
 
 
-std::string BatchQueue::getWordInput() {}
+std::string BatchQueue::getWordInput() {
+    return "";
+}
 
 
-std::string BatchQueue::getLineInput() {}
+std::string BatchQueue::getLineInput() {
+    return "";
+}

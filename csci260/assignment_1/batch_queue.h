@@ -12,6 +12,7 @@
 #include <iostream>
 #include "job.h"
 #include "priority_queue.h"
+#include "my_exceptions.h"
 
 
 class BatchQueue {
@@ -38,7 +39,7 @@ private:
 
     int queueCapacity;
     std::string batchFilePath;
-    PriorityQueue<double,Job>* priorityQueue;
+    PriorityQueue<float,Job>* priorityQueue;
 };
 
 
