@@ -20,7 +20,7 @@ public:
     explicit PriorityQueue(int maxSize);
     ~PriorityQueue();
 
-    void insert(Priority priority, const Data &data) throw(FullHeapException);
+    void insert(Priority priority, Data *data) throw(FullHeapException);
     Data* removeMin();
     Data* removeRandom();
 

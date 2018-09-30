@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    BatchQueue batchQueue;
-    batchQueue.run(queueCapacity);
+    BatchQueue batchQueue(queueCapacity);
+    batchQueue.run();
     return 0;
 }

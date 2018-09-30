@@ -22,15 +22,15 @@ PriorityQueue<Priority,Data>::PriorityQueue(int maxSize)
 
 template <typename Priority, typename Data>
 PriorityQueue<Priority,Data>::~PriorityQueue() {
-    for (int i = 0; i < maxSize; i++) {
-        delete heapArray[i].data;
-    }
-    delete heapArray;
+//    for (int i = 0; i < maxSize; i++) {
+//        delete heapArray[i].data;
+//    }
+//    delete heapArray;
 }
 
 
 template <typename Priority, typename Data>
-void PriorityQueue<Priority,Data>::insert(Priority priority, const Data &data) throw(FullHeapException) {
+void PriorityQueue<Priority,Data>::insert(Priority priority, Data *data) throw(FullHeapException) {
     if (isFull()) {
         throw FullHeapException();
     }
@@ -94,7 +94,7 @@ int PriorityQueue<Priority,Data>::getSize() const {
 template <typename Priority, typename Data>
 void PriorityQueue<Priority,Data>::upheap(int index) {
     int i = index;
-    while (i > 0 && heapArray[i] < heapArray[parentIndex(i)]) {
+    while (i > 0 && heapArray[i].priority < heapArray[parentIndex(i)].priority) {
         swap(&heapArray[i], &heapArray[parentIndex(i)]);
         i = parentIndex(i);
     }
@@ -153,7 +153,7 @@ int PriorityQueue<Priority,Data>::parentIndex(int index) {
 
 template <typename Priority, typename Data>
 void PriorityQueue<Priority,Data>::swap(Node *x, Node *y) {
-    int temp = *x;
+    Node temp = *x;
     *x = *y;
     *y = temp;
 }

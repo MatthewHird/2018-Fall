@@ -20,11 +20,12 @@ public:
     explicit BatchQueue(int queueCapacity=10, std::string batchFilePath="batch.txt");
     ~BatchQueue();
 
-    void run(int queueCapacity=10, std::string batchFilePath="batch.txt");
+    void run();
 
 private:
 
     void menu();
+    void displayMenuOptions();
     void loadBatchFile(std::string &batchFilePath);
     void saveBatchFile(std::string &batchFilePath);
 
@@ -37,6 +38,7 @@ private:
     std::string getWordInput();
     std::string getLineInput();
 
+    const std::string CMD_PROMPT = ">>>  ";
     int queueCapacity;
     std::string batchFilePath;
     PriorityQueue<float,Job>* priorityQueue;
