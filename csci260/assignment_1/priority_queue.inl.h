@@ -8,6 +8,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include "my_exceptions.h"
 
 
 template <typename Priority, typename Data>
@@ -29,16 +30,16 @@ PriorityQueue<Priority,Data>::~PriorityQueue() {
 
 
 template <typename Priority, typename Data>
-void PriorityQueue<Priority,Data>::insert(Priority priority, const Data &data) throw() {
+void PriorityQueue<Priority,Data>::insert(Priority priority, const Data &data) throw(FullHeapException) {
     if (isFull()) {
-        // throw full_heap_exception
+        throw FullHeapException();
     }
 
     heapArray[size] = Node();
     heapArray[size].priority = priority;
     heapArray[size].data = data;
+    upheap(size);
     size++;
-    // upheap
 }
 
 
@@ -47,7 +48,7 @@ Data* PriorityQueue<Priority,Data>::removeMin() {
     Node tempNode = std::move(heapArray[0]);
     heapArray[0] = std::move(heapArray[size - 1]);
     size--;
-    // downheap
+    downheap(0);
     return tempNode.data;
 }
 
@@ -91,37 +92,68 @@ int PriorityQueue<Priority,Data>::getSize() const {
 
 
 template <typename Priority, typename Data>
-void PriorityQueue<Priority,Data>::upheap(int index) {}
-
-
-template <typename Priority, typename Data>
-void PriorityQueue<Priority,Data>::downheap(int index) {}
-
-
-template <typename Priority, typename Data>
-void PriorityQueue<Priority,Data>::decreasePriority(int index, Priority newValue) throw() {
-    if (newValue < 0) {
-        // invalid priority exception
+void PriorityQueue<Priority,Data>::upheap(int index) {
+    int i = index;
+    while (i > 0 && heapArray[i] < heapArray[parentIndex(i)]) {
+        swap(&heapArray[i], &heapArray[parentIndex(i)]);
+        i = parentIndex(i);
     }
-    heapArray[index].priority = newValue;
-
-    // upheap
 }
 
 
 template <typename Priority, typename Data>
-int PriorityQueue<Priority,Data>::leftChild(int index) {
+void PriorityQueue<Priority,Data>::downheap(int index) {
+    int i = index;
+    int minChildIndex;
+    while (leftChildIndex(i) < size) {
+        if (rightChildIndex(i) >= size) {
+            minChildIndex = leftChildIndex(i);
+        } else {
+            if (heapArray[leftChildIndex(i)] < heapArray[rightChildIndex(i)]) {
+                minChildIndex = leftChildIndex(i);
+            } else {
+                minChildIndex = rightChildIndex(i);
+            }
+        }
+        if (heapArray[minChildIndex] < heapArray[i]) {
+            swap(&heapArray[i], &heapArray[minChildIndex]);
+        }
+        i = minChildIndex;
+    }
+}
+
+
+template <typename Priority, typename Data>
+void PriorityQueue<Priority,Data>::decreasePriority(int index, Priority newValue) throw(InvalidPriority) {
+    if (newValue < 0) {
+        throw InvalidPriority();
+    }
+    heapArray[index].priority = newValue;
+    upheap(index);
+}
+
+
+template <typename Priority, typename Data>
+int PriorityQueue<Priority,Data>::leftChildIndex(int index) {
     return 2 * index + 1;
 }
 
 
 template <typename Priority, typename Data>
-int PriorityQueue<Priority,Data>::rightChild(int index) {
+int PriorityQueue<Priority,Data>::rightChildIndex(int index) {
     return 2 * index + 2;
 }
 
 
 template <typename Priority, typename Data>
-int PriorityQueue<Priority,Data>::parent(int index) {
+int PriorityQueue<Priority,Data>::parentIndex(int index) {
     return (index - 1) / 2;
+}
+
+
+template <typename Priority, typename Data>
+void PriorityQueue<Priority,Data>::swap(Node *x, Node *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }

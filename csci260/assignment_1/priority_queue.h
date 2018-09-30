@@ -20,7 +20,7 @@ public:
     explicit PriorityQueue(int maxSize);
     ~PriorityQueue();
 
-    void insert(Priority priority, const Data &data) throw();
+    void insert(Priority priority, const Data &data) throw(FullHeapException);
     Data* removeMin();
     Data* removeRandom();
 
@@ -41,17 +41,18 @@ private:
     void downheap(int index);
     // heapify
 
-    void decreasePriority(int index, Priority newValue) throw();
+    void decreasePriority(int index, Priority newValue) throw(InvalidPriority);
 
-    int leftChild(int index);
-    int rightChild(int index);
-    int parent(int index);
+    int leftChildIndex(int index);
+    int rightChildIndex(int index);
+    int parentIndex(int index);
+
+    void swap(Node *x, Node *y);
 
     Node* heapArray;
     int maxSize;
     int size;
 };
-
 
 #include "priority_queue.inl.h"
 

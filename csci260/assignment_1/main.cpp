@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 
         try {
             queueCapacity = std::stoi(argv[1]);
-        } catch(std::invalid_argument& e) {
+        } catch(std::invalid_argument &e) {
             queueCapacity = 0;
         }
 

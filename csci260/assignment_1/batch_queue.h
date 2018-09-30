@@ -25,8 +25,8 @@ public:
 private:
 
     void menu();
-    void loadBatchFile(std::string& batchFilePath);
-    void saveBatchFile(std::string& batchFilePath);
+    void loadBatchFile(std::string &batchFilePath);
+    void saveBatchFile(std::string &batchFilePath);
 
     void submitJob();
     void executeNext();
@@ -41,6 +41,5 @@ private:
     std::string batchFilePath;
     PriorityQueue<float,Job>* priorityQueue;
 };
-
 
 #endif //ASSIGNMENT_1_BATCH_QUEUE_H

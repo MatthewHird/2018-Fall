@@ -5,23 +5,26 @@
 //
 // @brief      x
 //------------------------------------------------------------------------------
-#include <iostream>
 
 #ifndef ASSIGNMENT_1_JOB_H
 #define ASSIGNMENT_1_JOB_H
 
+#include <iostream>
+#include "my_exceptions.h"
+
 
 class Job {
 public:
-    Job()= default;
-    Job(float estExecTime, std::string& submitterId, std::string& startCommand,
-            std::string& resourceList) throw();
+    Job();
+    Job(float estExecTime, std::string &submitterId, std::string &startCommand, std::string &resourceList)
+            throw(InvalidEstExecTime, InvalidSubmitterId,
+                    InvalidStartCommand, InvalidResourceList);
     ~Job()= default;
 
-    void setEstExecTime(float estExecTime);
-    void setSubmitterId(std::string& submitterId);
-    void setStartCommand(std::string& startCommand);
-    void setResourceList(std::string& resourceList);
+    void setEstExecTime(float estExecTime) throw(InvalidEstExecTime);
+    void setSubmitterId(std::string &submitterId) throw(InvalidSubmitterId);
+    void setStartCommand(std::string &startCommand) throw(InvalidStartCommand);
+    void setResourceList(std::string &resourceList) throw(InvalidResourceList);
 
     float getEstExecTime();
     std::string getSubmitterId();
@@ -29,11 +32,10 @@ public:
     std::string getResourceList();
 
 private:
-    float estExecTime;
+    float estExecTime; // positive float
     std::string submitterId; // max length 8 chars, single word
     std::string startCommand; // single word
     std::string resourceList; // max length 80 chars
 };
-
 
 #endif //ASSIGNMENT_1_JOB_H

@@ -42,10 +42,10 @@ void BatchQueue::menu() {
 }
 
 
-void BatchQueue::loadBatchFile(std::string& batchFilePath) {}
+void BatchQueue::loadBatchFile(std::string &batchFilePath) {}
 
 
-void BatchQueue::saveBatchFile(std::string& batchFilePath) {}
+void BatchQueue::saveBatchFile(std::string &batchFilePath) {}
 
 
 void BatchQueue::submitJob() {}
