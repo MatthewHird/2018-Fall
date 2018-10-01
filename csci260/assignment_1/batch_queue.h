@@ -41,6 +41,7 @@ private:
     const std::string CMD_PROMPT = ">>>  ";
     int queueCapacity;
     std::string batchFilePath;
+    std::string testOutputFile = "batch_TEST.txt";
     PriorityQueue<float,Job>* priorityQueue;
 };
 

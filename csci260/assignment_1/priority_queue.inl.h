@@ -16,7 +16,7 @@ PriorityQueue<Priority,Data>::PriorityQueue(int maxSize)
         : maxSize(maxSize)
         , size(0)
 {
-    heapArray = new Node[maxSize];
+//    heapArray = new Node[maxSize];
 }
 
 
@@ -109,13 +109,13 @@ void PriorityQueue<Priority,Data>::downheap(int index) {
         if (rightChildIndex(i) >= size) {
             minChildIndex = leftChildIndex(i);
         } else {
-            if (heapArray[leftChildIndex(i)] < heapArray[rightChildIndex(i)]) {
+            if (heapArray[leftChildIndex(i)].priority < heapArray[rightChildIndex(i)].priority) {
                 minChildIndex = leftChildIndex(i);
             } else {
                 minChildIndex = rightChildIndex(i);
             }
         }
-        if (heapArray[minChildIndex] < heapArray[i]) {
+        if (heapArray[minChildIndex].priority < heapArray[i].priority) {
             swap(&heapArray[i], &heapArray[minChildIndex]);
         }
         i = minChildIndex;

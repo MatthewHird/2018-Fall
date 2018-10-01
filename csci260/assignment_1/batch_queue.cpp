@@ -14,6 +14,7 @@
 #include <iostream>
 #include <algorithm>
 #include <regex>
+#include <fstream>
 
 
 BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
@@ -81,10 +82,85 @@ void BatchQueue::displayMenuOptions() {
 }
 
 
-void BatchQueue::loadBatchFile(std::string &batchFilePath) {}
+void BatchQueue::loadBatchFile(std::string &batchFilePath) {
+    std::ifstream inputFile;
+    inputFile.open(batchFilePath.c_str());
+    try {
+        if (inputFile.fail()) {
+            std::cout << "Failed to load inputFile: unable to open " << batchFilePath << "\n";
+        } else {
+            int entryCount;
+            inputFile >> entryCount;
+            inputFile.ignore();
+
+            for (int i = 0; i < entryCount; i++) {
+                float estExecTime = 0;
+                std::string submitterId;
+                std::string startCommand;
+                std::string resourceList;
+
+                inputFile >> estExecTime;
+                inputFile.ignore();
+                std::getline(inputFile, submitterId);
+                std::getline(inputFile, startCommand);
+                std::getline(inputFile, resourceList);
+
+                Job job;
+                try {
+                    job = Job(estExecTime, submitterId, startCommand, resourceList);
+
+                } catch (std::exception &e) {
+                    std::cout << e.what();
+                    std::cout << "Failed to load inputFile: inputFile contains invalid data\n";
+                    break;
+                }
+
+                try {
+                    priorityQueue->insert(estExecTime, &job);
+                } catch (FullHeapException &e) {
+                    std::cout << "Failed to load entry " << (i + 1) << " from inputFile: batch queue is full\n";
+                }
+
+            }
+            inputFile.close();
+        }
+    } catch (std::exception &e) {
+        std::cout << "Failed to load inputFile: invalid syntax in " << batchFilePath << "\n";
+    }
+}
 
 
-void BatchQueue::saveBatchFile(std::string &batchFilePath) {}
+void BatchQueue::saveBatchFile(std::string &batchFilePath) {
+    int entryCount = priorityQueue->getSize();
+    std::stringstream stringStream;
+    stringStream << entryCount << "\n";
+
+    for (int i = 0; i < entryCount; i++) {
+        Job* job = priorityQueue->removeMin();
+
+        stringStream << job->getEstExecTime() << "\n";
+        stringStream << job->getSubmitterId() << "\n";
+        stringStream << job->getStartCommand() << "\n";
+        stringStream << job->getResourceList() << "\n";
+    }
+
+    std::string saveString = stringStream.str();
+
+    std::ofstream outFile;
+    outFile.open(batchFilePath.c_str());
+    if (outFile.fail()) {
+        std::cout << "Failed to open " << batchFilePath << ": attempting to save to backup file batch_queue_backup.txt instead\n";
+        outFile.open("batch_queue_backup.txt");
+        if (outFile.fail()) {
+            std::cout << "Failed to open batch_queue_backup.txt: aborting program without saving\n";
+
+        } else {
+            outFile << saveString;
+        }
+    } else {
+        outFile << saveString;
+    }
+}
 
 
 void BatchQueue::submitJob() {
@@ -142,16 +218,16 @@ void BatchQueue::submitJob() {
         }
     }
 
-    Job job;
+    Job* job;
     try {
-        job = Job(estExecTime, submitterId, startCommand, resourceList);
+        job = new Job(estExecTime, submitterId, startCommand, resourceList);
     } catch (std::exception &e) {
         std::cout << e.what();
         return;
     }
 
     try {
-        priorityQueue->insert(estExecTime, &job);
+        priorityQueue->insert(estExecTime, job);
     } catch (FullHeapException &e) {
         std::cout << e.what();
         return;
@@ -160,14 +236,19 @@ void BatchQueue::submitJob() {
 }
 
 
-void BatchQueue::executeNext() {}
+void BatchQueue::executeNext() {
+    Job* job = priorityQueue->removeMin();
+    std::cout << job->getEstExecTime() << " " << job->getSubmitterId() << " "
+        << job->getStartCommand() << " " << job->getResourceList() << "\n";
+}
 
 
 void BatchQueue::executeRandom() {}
 
 
 void BatchQueue::quitProgram() {
-    saveBatchFile(batchFilePath);
+//    saveBatchFile(batchFilePath);
+    saveBatchFile(testOutputFile);
     std::cout << "Exit message\n";
 }
 
