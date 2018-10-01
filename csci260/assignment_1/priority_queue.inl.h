@@ -16,16 +16,16 @@ PriorityQueue<Priority,Data>::PriorityQueue(int maxSize)
         : maxSize(maxSize)
         , size(0)
 {
-//    heapArray = new Node[maxSize];
+    heapArray = new Node[maxSize];
 }
 
 
 template <typename Priority, typename Data>
 PriorityQueue<Priority,Data>::~PriorityQueue() {
-//    for (int i = 0; i < maxSize; i++) {
-//        delete heapArray[i].data;
-//    }
-//    delete heapArray;
+    for (int i = 0; i < size; i++) {
+        delete heapArray[i].data;
+    }
+    delete heapArray;
 }
 
 
@@ -45,8 +45,8 @@ void PriorityQueue<Priority,Data>::insert(Priority priority, Data *data) throw(F
 
 template <typename Priority, typename Data>
 Data* PriorityQueue<Priority,Data>::removeMin() {
-    Node tempNode = std::move(heapArray[0]);
-    heapArray[0] = std::move(heapArray[size - 1]);
+    Node tempNode = heapArray[0];
+    heapArray[0] = heapArray[size - 1];
     size--;
     downheap(0);
     return tempNode.data;

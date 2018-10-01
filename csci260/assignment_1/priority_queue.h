@@ -49,7 +49,7 @@ private:
 
     void swap(Node *x, Node *y);
 
-    Node heapArray[10];
+    Node* heapArray;
     int maxSize;
     int size;
 };

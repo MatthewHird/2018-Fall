@@ -19,7 +19,7 @@
 
 BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
     : queueCapacity(queueCapacity)
-    , batchFilePath(std::move(batchFilePath))
+    , batchFilePath(batchFilePath)
 {
     priorityQueue = new PriorityQueue<float,Job>(queueCapacity);
 }
@@ -105,9 +105,9 @@ void BatchQueue::loadBatchFile(std::string &batchFilePath) {
                 std::getline(inputFile, startCommand);
                 std::getline(inputFile, resourceList);
 
-                Job job;
+                Job* job;
                 try {
-                    job = Job(estExecTime, submitterId, startCommand, resourceList);
+                    job = new Job(estExecTime, submitterId, startCommand, resourceList);
 
                 } catch (std::exception &e) {
                     std::cout << e.what();
@@ -116,7 +116,7 @@ void BatchQueue::loadBatchFile(std::string &batchFilePath) {
                 }
 
                 try {
-                    priorityQueue->insert(estExecTime, &job);
+                    priorityQueue->insert(estExecTime, job);
                 } catch (FullHeapException &e) {
                     std::cout << "Failed to load entry " << (i + 1) << " from inputFile: batch queue is full\n";
                 }
@@ -240,6 +240,7 @@ void BatchQueue::executeNext() {
     Job* job = priorityQueue->removeMin();
     std::cout << job->getEstExecTime() << " " << job->getSubmitterId() << " "
         << job->getStartCommand() << " " << job->getResourceList() << "\n";
+    delete job;
 }
 
 
