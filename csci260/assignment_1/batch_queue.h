@@ -40,8 +40,11 @@ private:
     float getFloatInput();
     std::string getWordInput(int maxLength=0);
     std::string getLineInput(int maxLength=0);
+    void executeJob(Job* job);
 
     const std::string CMD_PROMPT = ">>>  ";
+    const std::string LINE_BREAK =
+            "-------------------------------------------------\n\n";
     int queueCapacity;
     std::string batchFilePath;
     std::string testOutputFile = "batch_TEST.txt";

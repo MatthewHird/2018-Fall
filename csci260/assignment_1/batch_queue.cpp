@@ -44,6 +44,7 @@ void BatchQueue::menu() {
     // random
     // quit
     // invalid entry
+    std::cout << "\n**** Welcome to the Batch Queue System ****\n\n";
 
     displayMenuOptions();
     bool terminate = false;
@@ -64,7 +65,7 @@ void BatchQueue::menu() {
             terminate = true;
             redisplayMenu = false;
         } else {
-            std::cout << "Invalid command: please try again\n" << CMD_PROMPT;
+            std::cout << "Invalid command: please try again\n";
             redisplayMenu = false;
         }
 
@@ -79,7 +80,11 @@ void BatchQueue::menu() {
 
 
 void BatchQueue::displayMenuOptions() {
-    std::cout << "List menu options\n";
+    std::cout << "Please enter one of the following commands:\n\n"
+        << "submit: input job data and store job in the system\n"
+        << "execute: executes the program with the shortest expected executiontime\n"
+        << "random: randomly executes a program stored in the system\n"
+        << "quit: saves the stored programs to be executed later and exits the application\n\n";
 }
 
 
@@ -148,9 +153,11 @@ void BatchQueue::saveBatchFile(std::string &batchFilePath) {
 
         } else {
             outFile << saveString;
+            std::cout << "The program list has been saved\n";
         }
     } else {
         outFile << saveString;
+        std::cout << "The program list has been saved\n";
     }
 }
 
@@ -178,30 +185,47 @@ void BatchQueue::submitJob() {
         std::cout << "Failed to create job: invalid data submitted\n";
     } else if (insertResult == 2) {
         std::cout << "Failed to insert job: batch queue is full\n";
+    } else {
+        std::cout << "Job successfully submitted\n" << LINE_BREAK;
     }
 }
 
 
 void BatchQueue::executeNext() {
     Job* job = priorityQueue->removeMin();
-    std::cout << job->getEstExecTime() << " " << job->getSubmitterId() << " "
-        << job->getStartCommand() << " " << job->getResourceList() << "\n";
+    executeJob(job);
     delete job;
 }
 
 
-void BatchQueue::executeRandom() {}
-
-
-void BatchQueue::quitProgram() {
-//    saveBatchFile(batchFilePath);
-    saveBatchFile(testOutputFile);
-    std::cout << "Exit message\n";
+void BatchQueue::executeRandom() {
+    Job* job = priorityQueue->removeRandom();
+    executeJob(job);
+    delete job;
 }
 
 
-int BatchQueue::insertJob(float estExecTime, std::string submitterId, std::string startCommand,
-                           std::string resourceList) {
+void BatchQueue::executeJob(Job* job) {
+    std::cout << "~~~ EXECUTING JOB ~~~\n"
+              << "\nExecution time of program: " << job->getEstExecTime()
+              << "\nSubmitter ID: " << job->getSubmitterId()
+              << "\nProgram start command: " << job->getStartCommand()
+              << "\nResource List: " << job->getResourceList()
+              << "\n" << LINE_BREAK;
+}
+
+
+void BatchQueue::quitProgram() {
+    std::cout << "Saving list of programs to be run\n";
+//    saveBatchFile(batchFilePath);
+    saveBatchFile(testOutputFile);
+    std::cout << LINE_BREAK << "Thank-you for using the Batch Queue System\n"
+        << LINE_BREAK;
+}
+
+
+int BatchQueue::insertJob(float estExecTime, std::string submitterId,
+        std::string startCommand, std::string resourceList) {
     Job* job;
     try {
         job = new Job(estExecTime, submitterId, startCommand, resourceList);
@@ -232,14 +256,16 @@ float BatchQueue::getFloatInput() {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             badInput = true;
-            std::cout << "Input must be a valid positive floating point number\n";
+            std::cout << "\nInput must be a valid positive floating point number\n";
         } else {
             if (num <= 0) {
                 badInput = true;
-                std::cout << "Input must be a valid positive floating point number\n";
+                std::cout << "\nInput must be a valid positive floating point number\n";
+            } else {
+                std::cout << "\n";
             }
+            std::cin.ignore();
         }
-        std::cin.ignore();
     } while (badInput == true);
     return num;
 }
@@ -274,6 +300,7 @@ std::string BatchQueue::getLineInput(int maxLength) {
         badInput = false;
         std::cout << CMD_PROMPT;
         std::getline(std::cin, line);
+        std::cout << "\n";
 
         if (maxLength > 0) {
             if (line.length() > maxLength) {

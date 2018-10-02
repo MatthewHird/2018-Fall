@@ -39,7 +39,6 @@ private:
 
     void upheap(int index);
     void downheap(int index);
-    // heapify
 
     void decreasePriority(int index, Priority newValue) throw(InvalidPriority);
 
