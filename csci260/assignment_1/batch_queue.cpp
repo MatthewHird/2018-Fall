@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <regex>
 #include <fstream>
+#include <limits>
 
 
 BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
@@ -78,7 +79,7 @@ void BatchQueue::menu() {
 
 
 void BatchQueue::displayMenuOptions() {
-    std::cout << "List menu options\n" << CMD_PROMPT;
+    std::cout << "List menu options\n";
 }
 
 
@@ -105,22 +106,13 @@ void BatchQueue::loadBatchFile(std::string &batchFilePath) {
                 std::getline(inputFile, startCommand);
                 std::getline(inputFile, resourceList);
 
-                Job* job;
-                try {
-                    job = new Job(estExecTime, submitterId, startCommand, resourceList);
-
-                } catch (std::exception &e) {
-                    std::cout << e.what();
+                int insertResult = insertJob(estExecTime, submitterId, startCommand, resourceList);
+                if (insertResult == 1) {
                     std::cout << "Failed to load inputFile: inputFile contains invalid data\n";
                     break;
-                }
-
-                try {
-                    priorityQueue->insert(estExecTime, job);
-                } catch (FullHeapException &e) {
+                } else if (insertResult == 2) {
                     std::cout << "Failed to load entry " << (i + 1) << " from inputFile: batch queue is full\n";
                 }
-
             }
             inputFile.close();
         }
@@ -169,70 +161,24 @@ void BatchQueue::submitJob() {
         return;
     }
 
-    float estExecTime = 1.0e30;
-    std::string submitterId;
-    std::string startCommand;
-    std::string resourceList;
+    std::cout << "Input estExecTime\n";
+    float estExecTime = getFloatInput();
 
-    std::cout << "Input estExecTime\n" << CMD_PROMPT;
+    std::cout << "Input submitterId\n";
+    std::string submitterId = getWordInput(8);
 
-    bool invalidInput = true;
-    while (invalidInput) {
-        estExecTime = getFloatInput();
-        if (estExecTime > 0) {
-            invalidInput = false;
-        } else {
-            std::cout << "invalid input: try again\n" << CMD_PROMPT;
-        }
+    std::cout << "Input startCommand\n";
+    std::string startCommand = getWordInput();
+
+    std::cout << "Input resourceList\n";
+    std::string resourceList = getLineInput(80);
+
+    int insertResult = insertJob(estExecTime, submitterId, startCommand, resourceList);
+    if (insertResult == 1) {
+        std::cout << "Failed to create job: invalid data submitted\n";
+    } else if (insertResult == 2) {
+        std::cout << "Failed to insert job: batch queue is full\n";
     }
-
-    std::cout << "Input submitterId\n" << CMD_PROMPT;
-
-    invalidInput = true;
-    while(invalidInput) {
-        submitterId = getWordInput();
-        if (submitterId.length() <= 8) {
-            invalidInput = false;
-        } else {
-            std::cout << "invalid input: try again\n" << CMD_PROMPT;
-        }
-    }
-
-    std::cout << "Input startCommand\n" << CMD_PROMPT;
-
-    invalidInput = true;
-    while(invalidInput) {
-        startCommand = getWordInput();
-        invalidInput = false;
-    }
-
-    std::cout << "Input resourceList\n" << CMD_PROMPT;
-
-    invalidInput = true;
-    while(invalidInput) {
-        resourceList = getLineInput();
-        if (resourceList.length() <= 80) {
-            invalidInput = false;
-        } else {
-            std::cout << "invalid input: try again\n" << CMD_PROMPT;
-        }
-    }
-
-    Job* job;
-    try {
-        job = new Job(estExecTime, submitterId, startCommand, resourceList);
-    } catch (std::exception &e) {
-        std::cout << e.what();
-        return;
-    }
-
-    try {
-        priorityQueue->insert(estExecTime, job);
-    } catch (FullHeapException &e) {
-        std::cout << e.what();
-        return;
-    }
-
 }
 
 
@@ -254,23 +200,87 @@ void BatchQueue::quitProgram() {
 }
 
 
+int BatchQueue::insertJob(float estExecTime, std::string submitterId, std::string startCommand,
+                           std::string resourceList) {
+    Job* job;
+    try {
+        job = new Job(estExecTime, submitterId, startCommand, resourceList);
+
+    } catch (std::exception &e) {
+        std::cout << e.what();
+        return 1;
+    }
+
+    try {
+        priorityQueue->insert(estExecTime, job);
+    } catch (FullHeapException &e) {
+        return 2;
+    }
+    return 0;
+}
+
+
 float BatchQueue::getFloatInput() {
     float num;
-    std::cin >> num;
-    std::cin.ignore();
+    bool badInput;
+
+    do {
+        badInput = false;
+        std::cout << CMD_PROMPT;
+
+        if (!(std::cin >> num)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            badInput = true;
+            std::cout << "Input must be a valid positive floating point number\n";
+        } else {
+            if (num <= 0) {
+                badInput = true;
+                std::cout << "Input must be a valid positive floating point number\n";
+            }
+        }
+        std::cin.ignore();
+    } while (badInput == true);
     return num;
 }
 
 
-std::string BatchQueue::getWordInput() {
+std::string BatchQueue::getWordInput(int maxLength) {
+    bool badInput;
     std::string word;
-    std::getline(std::cin, word);
+
+    do
+    {
+        badInput = false;
+        word = getLineInput(maxLength);
+
+        if (word.length() == 0) {
+            badInput = true;
+            std::cout << "Input must not be left blank\n";
+        } else if (std::regex_search(word, std::regex("\\s"))) {
+            badInput = true;
+            std::cout << "Input must be a single word with no spaces\n";
+        }
+    } while (badInput == true);
     return word;
 }
 
 
-std::string BatchQueue::getLineInput() {
+std::string BatchQueue::getLineInput(int maxLength) {
+    bool badInput;
     std::string line;
-    std::getline(std::cin, line);
+
+    do {
+        badInput = false;
+        std::cout << CMD_PROMPT;
+        std::getline(std::cin, line);
+
+        if (maxLength > 0) {
+            if (line.length() > maxLength) {
+                badInput = true;
+                std::cout << "Input must be " << maxLength << " characters or less\n";
+            }
+        }
+    } while (badInput == true);
     return line;
 }

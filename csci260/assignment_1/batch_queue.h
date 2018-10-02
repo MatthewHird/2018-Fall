@@ -34,9 +34,12 @@ private:
     void executeRandom();
     void quitProgram();
 
+    int insertJob(float estExecTime, std::string submitterId,
+            std::string startCommand, std::string resourceList);
+
     float getFloatInput();
-    std::string getWordInput();
-    std::string getLineInput();
+    std::string getWordInput(int maxLength=0);
+    std::string getLineInput(int maxLength=0);
 
     const std::string CMD_PROMPT = ">>>  ";
     int queueCapacity;
