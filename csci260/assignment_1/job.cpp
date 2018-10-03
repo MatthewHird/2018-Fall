@@ -1,9 +1,12 @@
 //------------------------------------------------------------------------------
-// @file       job.cpp
-// @author     Matthew Hird
-// @date       September 13, 2018
+// @file    job.cpp
+// @author  Matthew Hird
+// @date    October 4, 2018
 //
-// @brief      x
+// @brief   The Job data class represents a program a user wants to execute.
+//          It contains various member variables that hold information related
+//          to the job. Each member variable must be set within its specified
+//          range or else the setter function will throw.
 //------------------------------------------------------------------------------
 
 #include <exception>

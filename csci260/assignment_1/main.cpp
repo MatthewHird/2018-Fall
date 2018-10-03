@@ -1,16 +1,21 @@
 //------------------------------------------------------------------------------
-// @file       main.cpp
-// @author     Matthew Hird
-// @date       September 23, 2018
+// @file    main.cpp
+// @author  Matthew Hird
+// @date    October 4, 2018
 //
-// @brief      The main function for the program pex1. Checks commandline
-//             arguments, then starts BatchQueue controller class.
+// @brief   The main function for the program pex1. Checks commandline
+//          arguments, then starts BatchQueue controller class.
 //------------------------------------------------------------------------------
 
 #include <iostream>
 #include "batch_queue.h"
 
 
+/**
+ * .pex1 [queueCapacity]
+ *
+ * queueCapacity    the maximum number of jobs the batch queue can contain (default = 10).
+ */
 int main(int argc, char **argv) {
     if (argc > 2) {
         std::cout << "Error: Invalid number of arguments\n";

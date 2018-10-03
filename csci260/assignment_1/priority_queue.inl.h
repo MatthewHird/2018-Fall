@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------
-// @file       priority_queue.inl.h
-// @author     Matthew Hird
-// @date       September 13, 2018
+// @file    priority_queue.inl.h
+// @author  Matthew Hird
+// @date    October 4, 2018
 //
-// @brief      x
+// @brief   x
 //------------------------------------------------------------------------------
 
 #include <cstdlib>
@@ -44,7 +44,11 @@ void PriorityQueue<Priority,Data>::insert(Priority priority, Data *data) throw(F
 
 
 template <typename Priority, typename Data>
-Data* PriorityQueue<Priority,Data>::removeMin() {
+Data* PriorityQueue<Priority,Data>::removeMin() throw (EmptyHeapException) {
+    if (isEmpty()) {
+        throw EmptyHeapException();
+    }
+
     Node tempNode = heapArray[0];
     heapArray[0] = heapArray[size - 1];
     size--;
@@ -54,7 +58,11 @@ Data* PriorityQueue<Priority,Data>::removeMin() {
 
 
 template <typename Priority, typename Data>
-Data* PriorityQueue<Priority,Data>::removeRandom() {
+Data* PriorityQueue<Priority,Data>::removeRandom() throw (EmptyHeapException) {
+    if (isEmpty()) {
+        throw EmptyHeapException();
+    }
+
     int index = std::rand() % getSize();
     decreasePriority(index, 0);
     return removeMin();

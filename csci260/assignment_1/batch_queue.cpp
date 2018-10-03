@@ -1,11 +1,13 @@
-#include <utility>
-
 //------------------------------------------------------------------------------
-// @file       batch_queue.cpp
-// @author     Matthew Hird
-// @date       September 13, 2018
+// @file    batch_queue.cpp
+// @author  Matthew Hird
+// @date    October 4, 2018
 //
-// @brief      x
+// @brief   PriorityQueue is a templated priority queue ADT. It is implemented
+//          using a binary heap ADT. The expected performance of standard
+//          methods are listed below (N = number of Nodes in queue):
+//          insert = O(LogN), removeMin = O(logN), decreaseKey = O(logN),
+//          minPriority = O(1), minData = O(1)
 //------------------------------------------------------------------------------
 
 #include "batch_queue.h"
@@ -16,6 +18,7 @@
 #include <regex>
 #include <fstream>
 #include <limits>
+#include <utility>
 
 
 BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
@@ -38,12 +41,6 @@ void BatchQueue::run() {
 
 
 void BatchQueue::menu() {
-    // menu options are:
-    // submit
-    // execute
-    // random
-    // quit
-    // invalid entry
     std::cout << "\n**** Welcome to the Batch Queue System ****\n\n";
 
     displayMenuOptions();
@@ -82,7 +79,7 @@ void BatchQueue::menu() {
 void BatchQueue::displayMenuOptions() {
     std::cout << "Please enter one of the following commands:\n\n"
         << "submit: input job data and store job in the system\n"
-        << "execute: executes the program with the shortest expected executiontime\n"
+        << "execute: executes the program with the shortest expected execution time\n"
         << "random: randomly executes a program stored in the system\n"
         << "quit: saves the stored programs to be executed later and exits the application\n\n";
 }
@@ -164,20 +161,20 @@ void BatchQueue::saveBatchFile(std::string &batchFilePath) {
 
 void BatchQueue::submitJob() {
     if (priorityQueue->isFull()) {
-        std::cout << "Cannot submit job: BatchQueue is full\n";
+        std::cout << "Cannot submit job: BatchQueue is full\n" << LINE_BREAK;
         return;
     }
 
-    std::cout << "Input estExecTime\n";
+    std::cout << "Please input the estimated time needed to execute the program\n";
     float estExecTime = getFloatInput();
 
-    std::cout << "Input submitterId\n";
+    std::cout << "Please input the user ID of the individual submitting the program\n";
     std::string submitterId = getWordInput(8);
 
-    std::cout << "Input startCommand\n";
+    std::cout << "Please input the command needed to start the program\n";
     std::string startCommand = getWordInput();
 
-    std::cout << "Input resourceList\n";
+    std::cout << "Please input the list of resources needed by this program to operate\n";
     std::string resourceList = getLineInput(80);
 
     int insertResult = insertJob(estExecTime, submitterId, startCommand, resourceList);
@@ -192,16 +189,26 @@ void BatchQueue::submitJob() {
 
 
 void BatchQueue::executeNext() {
-    Job* job = priorityQueue->removeMin();
-    executeJob(job);
-    delete job;
+    Job* job;
+    try {
+        job = priorityQueue->removeMin();
+        executeJob(job);
+        delete job;
+    } catch (EmptyHeapException &e) {
+        std::cout << "Cannot execute next program: batch queue is empty:\n" << LINE_BREAK;
+    }
 }
 
 
 void BatchQueue::executeRandom() {
-    Job* job = priorityQueue->removeRandom();
-    executeJob(job);
-    delete job;
+    Job* job;
+    try {
+        job = priorityQueue->removeRandom();
+        executeJob(job);
+        delete job;
+    } catch (EmptyHeapException &e) {
+        std::cout << "Cannot execute random program: batch queue is empty:\n" << LINE_BREAK;
+    }
 }
 
 
