@@ -22,62 +22,73 @@ template <typename Priority, typename Data>
 class PriorityQueue {
 public:
     /**
-     * @brief
-     * @param maxSize
+     * @brief Parameterized class constructor.
+     * @param maxSize   Maximum number of Priority/Data pairs the queue can hold
      */
     explicit PriorityQueue(int maxSize);
 
     /**
-     * @brief
+     * @brief Class deconstructor.
      */
     ~PriorityQueue();
 
     /**
-     * @brief
-     * @param priority
-     * @param data
+     * @brief Inserts a Priority/Data (key/value) pair into the priority queue.
+     *
+     * @param priority  The Priority (key) value.
+     * @param data  The Data (value) object.
+     *
+     * @throws FullHeapException    if priority queue if full.
      */
     void insert(Priority priority, Data *data) throw(FullHeapException);
 
     /**
-     * @brief
-     * @return
+     * @brief Removes the Priority/Data pair with the minimum Priority value.
+     *
+     * @return A pointer to the Data from the removed Priority/Data pair.
+     *
+     * @throws EmptyHeapException   if priority queue is empty
      */
     Data* removeMin() throw (EmptyHeapException);
 
     /**
-     * @brief
-     * @return
+     * @brief Removes a random Priority/Data pair (no matter what its priority is).
+     *
+     * @return A pointer to the Data from the removed Priority/Data pair.
+     *
+     * @throws EmptyHeapException   if priority queue is empty.
      */
     Data* removeRandom() throw (EmptyHeapException);
 
     /**
-     * @brief
-     * @return
+     * @return The minimum priority of any Priority/Data pair int the queue.
      */
     Priority minPriority() const;
 
     /**
-     * @brief
-     * @return
+     * @return A pointer to the Data of the Priority/Data pair with the minimum
+     *         priority in the queue.
      */
     const Data* minData() const;
 
     /**
-     * @brief
-     * @return
+     * @brief Checks if the priority queue is empty.
+     *
+     * @return True if queue is empty.
      */
     bool isEmpty() const;
 
     /**
-     * @brief
-     * @return
+     * @brief Checks if priority queue is full.
+     *
+     * @return True if queue is full.
      */
     bool isFull() const;
 
     /**
-     * @brief
-     * @return
+     * @brief Checks number of Priority/Data pairs in queue.
+     *
+     * @return Number of pairs in queue.
      */
     int getSize() const;
 
@@ -88,20 +99,26 @@ private:
     };
 
     /**
-     * @brief
-     * @param index
+     * @brief Restores the heap ordering property along the branch from the Node
+     *        at index to root.
+     *
+     * @param index Index of starting Node.
      */
     void upheap(int index);
 
     /**
-     * @brief
-     * @param index
+     * @brief Restores the heap ordering property along the branch from the Node
+     *        at index to the bottom of the heap tree.
+     *
+     * @param index Index of starting Node.
      */
     void downheap(int index);
 
     /**
-     * @brief
-     * @param index
+     * @brief Lowers the Priority value of the Node at index to newValue, and
+     *        restores the heap ordering property along the branch from the Node
+     *        at index to root.
+     * @param index 
      * @param newValue
      */
     void decreasePriority(int index, Priority newValue) throw(InvalidPriority);
