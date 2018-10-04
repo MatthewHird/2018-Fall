@@ -3,14 +3,18 @@
 smithl
 emacs
 abc.txt
-7.6
-frankdtl
-dbaccess
-ora.da /user/lib/
 5.5
 ivelshaj
 slink
 dlcp.d -l
+6.3
+sveiaght
+gdbk
+/home/sveiaght/equation
+7.6
+frankdtl
+dbaccess
+ora.da /user/lib/
 9.1
 dornamel
 mail
@@ -19,7 +23,3 @@ mail
 smithl
 more
 aldi_la12
-6.3
-sveiaght
-gdbk
-/home/sveiaght/equation

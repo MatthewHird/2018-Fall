@@ -1,0 +1,251 @@
+./pex1 x
+Error: Argument[1] (Queue Capacity) must be a positive integer
+./pex1 -1
+Error: Argument[1] (Queue Capacity) must be a positive integer
+./pex1 2 3
+Error: Invalid number of arguments
+./pex1
+
+**** Welcome to the Batch Queue System ****
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  quit
+
+Saving list of programs to be run
+The program list has been saved
+-------------------------------------------------
+
+Thank-you for using the Batch Queue System
+-------------------------------------------------
+
+./pex1 6
+
+**** Welcome to the Batch Queue System ****
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  
+
+Input must not be left blank
+>>>  n
+
+Invalid command: please try again
+>>>  submit
+
+Cannot submit job: BatchQueue is full
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  execute
+
+~~~ EXECUTING JOB ~~~
+
+Execution time of program: 4.2
+Submitter ID: smithl
+Program start command: emacs
+Resource List: abc.txt
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  EXEcute
+
+~~~ EXECUTING JOB ~~~
+
+Execution time of program: 5.5
+Submitter ID: ivelshaj
+Program start command: slink
+Resource List: dlcp.d -l
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  random
+
+~~~ EXECUTING JOB ~~~
+
+Execution time of program: 9.1
+Submitter ID: dornamel
+Program start command: mail
+Resource List: 
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  submit
+
+Please input the estimated time needed to execute the program
+>>>  d
+
+Input must be a valid positive floating point number
+>>>  -1
+
+Input must be a valid positive floating point number
+>>>  0
+
+Input must be a valid positive floating point number
+>>>  7e+2
+
+Please input the user ID of the individual submitting the program
+>>>   
+
+Input must not be left blank
+>>>  123456789
+
+Input must be 8 characters or less
+>>>  matthew hird
+
+Input must be 8 characters or less
+>>>  my name
+
+Input must be a single word with no spaces
+>>>  mhird
+
+Please input the command needed to start the program
+>>>  my program
+
+Input must be a single word with no spaces
+>>>  ./myProgram
+
+Please input the list of resources needed by this program to operate
+>>>  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+Input must be 80 characters or less
+>>>  
+
+Job successfully submitted
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  submit
+
+Please input the estimated time needed to execute the program
+>>>  1
+
+Please input the user ID of the individual submitting the program
+>>>  1
+
+Please input the command needed to start the program
+>>>  1
+
+Please input the list of resources needed by this program to operate
+>>>  1
+
+Job successfully submitted
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  execute
+
+~~~ EXECUTING JOB ~~~
+
+Execution time of program: 1
+Submitter ID: 1
+Program start command: 1
+Resource List: 1
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+submit: input job data and store job in the system
+execute: executes the program with the shortest expected execution time
+random: randomly executes a program stored in the system
+quit: saves the stored programs to be executed later and exits the application
+
+>>>  quit
+
+Saving list of programs to be run
+The program list has been saved
+-------------------------------------------------
+
+Thank-you for using the Batch Queue System
+-------------------------------------------------
+
+### batch.txt BEFORE test run ###
+6
+4.2
+smithl
+emacs
+abc.txt
+7.6
+frankdtl
+dbaccess
+ora.da /user/lib/
+5.5
+ivelshaj
+slink
+dlcp.d -l
+9.1
+dornamel
+mail
+
+12.5
+smithl
+more
+aldi_la12
+6.3
+sveiaght
+gdbk
+/home/sveiaght/equation
+
+### batch.txt AFTER test run ###
+4
+6.3
+sveiaght
+gdbk
+/home/sveiaght/equation
+7.6
+frankdtl
+dbaccess
+ora.da /user/lib/
+12.5
+smithl
+more
+aldi_la12
+700
+mhird
+./myProgram

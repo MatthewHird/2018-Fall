@@ -16,8 +16,9 @@
 
 
 template <typename Priority, typename Data>
-PriorityQueue<Priority,Data>::PriorityQueue(int maxSize)
-        : maxSize(maxSize)
+PriorityQueue<Priority,Data>::PriorityQueue(Priority minPriority, int maxSize)
+        : minimumPriority(minPriority)
+        , maxSize(maxSize)
         , size(0)
 {
     heapArray = new Node[maxSize];
@@ -68,7 +69,7 @@ Data* PriorityQueue<Priority,Data>::removeRandom() throw (EmptyHeapException) {
     }
 
     int index = std::rand() % getSize();
-    decreasePriority(index, 0);
+    decreasePriority(index, minimumPriority);
     return removeMin();
 }
 

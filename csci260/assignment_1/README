@@ -1,15 +1,145 @@
-Overview: briefly describe the requirement of this program
+README  
 
-Design: briefly describe the modules in your design and why you choose your current design.
+Program Name: pex1
+Author: Matthew Hird
+Date: October 4, 2018
 
-Implementation: briefly describe the concrete data structures used in each module. List the advantage and disadvantage of using these data structures. Explain whether there are alternative ways to implement this program.
 
-Analysis: for each command submit, execute and random, give a rough analysis about the time efficiency of your implementation.
+    1: Overview
 
-Accomplishment: state clearly which parts of the assignment you completed.
+This program is meant to simulate a batch queue by allowing the user to submit 
+jobs into the job queue. Each job has four fields: an estimated execution time 
+(positive floating point number), a user id indicating who submitted this job 
+(non-empty string containing no whitespace with a maximum length of 
+8 characters), a command name to start this job (non-empty string containing 
+no whitespace), and a list of resources the job requires to run (string with a
+maximum length of 80 characters that may be blank or contain whitespace).
 
-Testing: list the test cases you have covered to test your program. For each test case, describe the data you used and the result shown by your program. Alternatively, if you used script to capture the sample run of your program, then you only need to describe your test cases and refer to your typescript file for the test run result.
+The program can be compiled from the saved directory using the command "make". 
+To start the program from the terminal enter the command
+"<directory_path>/pex1 [queueCapacity]". The optional argument "queueCapacity" 
+is the maximum number of jobs the batch queue can contain. If left blank, the 
+queueCapacity defaults to 10.
 
-Known Bug:
+Upon startup, the program loads jobs from a save file into a priority queue to 
+be executed later. The user can then control the program by entering commands.
+"submit" lets the user enter data for a job to be added to the queue. "execute" 
+removes the job with the shortest execution time from the queue and simulates
+executing it. "random" removes a random job from the queue and simulates 
+executing it. "quit" stores the data of any jobs remaining in the queue into a 
+save file to be load next time the batch queue program is run, then terminates 
+the program. The program saves to and loads from the same file ("batch.txt").
 
-Note: anything you would like to draw to the attention of the marker.
+As required by the specifications document, this program implements a priority 
+queue ADT. It is implemented using a binary heap ADT. The expected performance 
+of the standard methods of the priority queue are listed below 
+(N = number of jobs in batch queue): 
+
+insert = O(LogN) 
+removeMin = O(logN)
+decreaseKey = O(logN)
+minPriority = O(1)
+minData = O(1)
+
+
+    2: Design
+
+This program contains the main function, one primary controller class,
+BatchQueue; a templated priority queue ADT class, PriorityQueue; a data class,
+Job; and seven exception classes that all inherit from std::exception:
+FullHeapException, EmptyHeapException, InvalidPriority, InvalidEstExecTime,
+InvalidSubmitterId, InvalidStartCommand, and InvalidResourceList.
+
+The main function parses the commandline arguments, then runs an instance of
+BatchQueue. BatchQueue takes in user input commands and executes actions based
+on those commands. PriorityQueue contains the basic functionality of a priority
+queue ADT, as well as a removeRandom() method that removes and returns a random
+Data object from the queue. Job stores information about a job (program) that a
+user wants to execute.
+
+
+    3: Implementation
+
+Job contains member variables for each relevant data field for submitted jobs in
+the program. It contains public setter and getter methods for each of these 
+variables. The variables each have their own valid ranges, so each setter 
+function will throw an exception if the passed value is outside of that 
+variable's valid range. The parameterized constructor uses the setter methods to
+initialize each variable, so it will also throws if any of the variable's values
+are invalid.
+
+PriorityQueue inserts pairs of Priority and Data objects and stores them in a 
+struct called Node. PriorityQueue is implemented as a binary heap ADT. Nodes are
+stored in an array following the heap ordering properties. The expected 
+performance of the insert, removeMin, and decreaseKey methods are O(logN), 
+which shows that a binary heap is appropriate for implementing an efficient 
+priority queue.
+
+PriorityQueue uses while loops to implement the upheap and downheap methods,
+though it could have used recursion instead. Loops should take up less memory
+space, but lack the ability to do a backtracking (for more complex problems). 
+Neither of those factors are relevant in this case, and performance wise, they
+are comparable at this scale, so the choice of one over the other was arbitrary.
+
+BatchQueue displays messages to the user, reads and parses commands and entries 
+from the user and based on those takes appropriate actions, and manages jobs 
+submitted by the user to be executed using a PriorityQueue.
+
+
+    4: Accomplishment
+
+I have completed all parts of the assignment that were listed under the "Problem
+Description" and the "Design and Documentation" sections of the Assignment 1
+web page.
+
+
+    5: Testing
+
+The output of my testing is in test_output.txt. For an example of each item
+tested in that document, I will list out the line number of the example followed
+by a description of what is being tested:
+
+  1 Non-integer queueCapacity commandline argument (error message and terminate)
+  3 Negative queueCapacity commandline argument (error message and terminate).
+  5 Invalid number of commandline arguments (error message and terminate).
+  7 No queueCapacity commandline argument (queueCapacity defaults to 10).
+ 27 Start program with queueCapacity = 6.
+ 38 Empty input in command menu (error message and reprompt).
+ 41 Invalid input in command menu (error message and reprompt).
+ 44 "submit" command when batch queue if full (error message and return to menu)
+ 56 Valid "execute" command.
+ 73 Valid "execute" command with mixed case input.
+ 90 Valid "random" command.
+107 Valid "submit" command.
+110 Input a non-numeric string instead of float for estimated execution time
+        (error message and reprompt).
+113 Input negative value for execution time (error message and reprompt).
+116 Input "0" for execution time (error message and reprompt).
+119 Valid floating point input for execution time.
+122 Blank input for submitter ID (error message and reprompt).
+125 9 character long string input for submitter ID (error message and reprompt).
+131 String including whitespace for submitter ID (error message and reprompt).
+134 Valid input for submitter ID.
+137 Start command input containing whitespace (error message and reprompt).
+140 Valid start command input.
+143 128 charcter long input for resources list (error message and reprompt).
+146 Valid blank input for resources list.
+158 Submitted job with lowest execution time in queue.
+182 "execute" command executed job just submitted (the correct program as it had
+        the lowest execution time).
+199 Valid "quit" command.
+208 Contents of "batch.txt" before and after the test run (shows the program 
+        correctly added and removed jobs from the queue, and the contents of the
+        queue were correctly saved in the save file).
+
+
+    6: Know Bugs
+
+There are no known bugs in this program.
+
+
+    7: Note
+
+PriorityQueue<Priority,Data> is a templated class that uses key/value pairs of 
+types Priority and Data. This means Priority (key) can be any comparable 
+datatype, and Data (value) can be any datatype.

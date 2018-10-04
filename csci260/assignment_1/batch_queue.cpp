@@ -28,7 +28,7 @@
 BatchQueue::BatchQueue(int queueCapacity)
     : queueCapacity(queueCapacity)
 {
-    priorityQueue = new PriorityQueue<float,Job>(queueCapacity);
+    priorityQueue = new PriorityQueue<float,Job>(0, queueCapacity);
 }
 
 
@@ -73,9 +73,6 @@ void BatchQueue::menu() {
             displayMenuOptions();
         }
     }
-
-
-
 }
 
 
@@ -150,7 +147,6 @@ void BatchQueue::saveBatchFile(std::string &saveFilePath) {
         outFile.open("batch_queue_backup.txt");
         if (outFile.fail()) {
             std::cout << "Failed to open batch_queue_backup.txt: aborting program without saving\n";
-
         } else {
             outFile << saveString;
             std::cout << "The program list has been saved\n";
@@ -227,8 +223,8 @@ void BatchQueue::executeJob(Job* job) {
 
 void BatchQueue::quitProgram() {
     std::cout << "Saving list of programs to be run\n";
-//    saveBatchFile(batchFilePath);
-    saveBatchFile(testOutputFile);
+    saveBatchFile(batchFilePath); // Save to real save file
+//    saveBatchFile(testOutputFile); // Used for testing save functionality
     std::cout << LINE_BREAK << "Thank-you for using the Batch Queue System\n"
         << LINE_BREAK;
 }

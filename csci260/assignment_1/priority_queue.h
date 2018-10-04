@@ -23,9 +23,12 @@ class PriorityQueue {
 public:
     /**
      * @brief Parameterized class constructor.
-     * @param maxSize   Maximum number of Priority/Data pairs the queue can hold
+     *
+     * @param minPriority   The minimum valid priority value.
+     * @param maxSize       Maximum number of Priority/Data pairs the queue can
+     *                      contain.
      */
-    explicit PriorityQueue(int maxSize);
+    explicit PriorityQueue(Priority minPriority, int maxSize);
 
     /**
      * @brief Class deconstructor.
@@ -162,6 +165,7 @@ private:
     void swap(Node *x, Node *y);
 
     Node* heapArray;
+    Priority minimumPriority;
     int maxSize;
     int size;
 };
