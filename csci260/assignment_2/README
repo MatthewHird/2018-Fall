@@ -1,0 +1,48 @@
+README
+
+Program Name: pex2
+Author: Matthew Hird
+Date: , 2018
+
+
+    1: Overview
+
+
+
+
+    2: Design
+
+
+
+
+    3: Implementation
+
+
+
+
+    4: Accomplishment
+
+I have completed all parts of the assignment that were listed under the "Problem
+Description" and the "Design and Documentation" sections of the Assignment 2
+web page.
+
+
+    5: Testing
+
+The output of my testing is in test_output.txt. For an example of each item
+tested in that document, I will list out the line number of the example followed
+by a description of what is being tested:
+
+  1 Non-integer queueCapacity commandline argument (error message and terminate)
+ 13 Negative queueCapacity commandline argument (error message and terminate).
+115 Invalid number of commandline arguments (error message and terminate).
+
+
+
+    6: Know Bugs
+
+There are no known bugs in this program.
+
+
+    7: Note
+
