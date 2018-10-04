@@ -3,11 +3,15 @@
 // @author  Matthew Hird
 // @date    October 4, 2018
 //
-// @brief   PriorityQueue is a templated priority queue ADT. It is implemented
-//          using a binary heap ADT. The expected performance of standard
-//          methods are listed below (N = number of Nodes in queue):
-//          insert = O(LogN), removeMin = O(logN), decreaseKey = O(logN),
-//          minPriority = O(1), minData = O(1)
+// @brief   A program meant to simulate a batch queue. The program loads jobs
+//          from a save file into a priority queue to be executed later. The
+//          user enters commands to control the program. Submit lets the user
+//          enter data for a job to be added to the queue. Execute removes the
+//          job with the shortest execution time from the queue and simulates
+//          executing it. Random removes a random job from the queue and
+//          simulates executing it. Quit stores the data of any jobs remaining
+//          in the queue into a save file to be load next time the batch queue
+//          program is run, then terminates the program.
 //------------------------------------------------------------------------------
 
 #include "batch_queue.h"
@@ -21,9 +25,8 @@
 #include <utility>
 
 
-BatchQueue::BatchQueue(int queueCapacity, std::string batchFilePath)
+BatchQueue::BatchQueue(int queueCapacity)
     : queueCapacity(queueCapacity)
-    , batchFilePath(batchFilePath)
 {
     priorityQueue = new PriorityQueue<float,Job>(queueCapacity);
 }
@@ -85,12 +88,12 @@ void BatchQueue::displayMenuOptions() {
 }
 
 
-void BatchQueue::loadBatchFile(std::string &batchFilePath) {
+void BatchQueue::loadBatchFile(std::string &loadFilePath) {
     std::ifstream inputFile;
-    inputFile.open(batchFilePath.c_str());
+    inputFile.open(loadFilePath.c_str());
     try {
         if (inputFile.fail()) {
-            std::cout << "Failed to load inputFile: unable to open " << batchFilePath << "\n";
+            std::cout << "Failed to load inputFile: unable to open " << loadFilePath << "\n";
         } else {
             int entryCount;
             inputFile >> entryCount;
@@ -119,12 +122,12 @@ void BatchQueue::loadBatchFile(std::string &batchFilePath) {
             inputFile.close();
         }
     } catch (std::exception &e) {
-        std::cout << "Failed to load inputFile: invalid syntax in " << batchFilePath << "\n";
+        std::cout << "Failed to load inputFile: invalid syntax in " << loadFilePath << "\n";
     }
 }
 
 
-void BatchQueue::saveBatchFile(std::string &batchFilePath) {
+void BatchQueue::saveBatchFile(std::string &saveFilePath) {
     int entryCount = priorityQueue->getSize();
     std::stringstream stringStream;
     stringStream << entryCount << "\n";
@@ -141,9 +144,9 @@ void BatchQueue::saveBatchFile(std::string &batchFilePath) {
     std::string saveString = stringStream.str();
 
     std::ofstream outFile;
-    outFile.open(batchFilePath.c_str());
+    outFile.open(saveFilePath.c_str());
     if (outFile.fail()) {
-        std::cout << "Failed to open " << batchFilePath << ": attempting to save to backup file batch_queue_backup.txt instead\n";
+        std::cout << "Failed to open " << saveFilePath << ": attempting to save to backup file batch_queue_backup.txt instead\n";
         outFile.open("batch_queue_backup.txt");
         if (outFile.fail()) {
             std::cout << "Failed to open batch_queue_backup.txt: aborting program without saving\n";

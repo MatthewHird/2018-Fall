@@ -118,36 +118,46 @@ private:
      * @brief Lowers the Priority value of the Node at index to newValue, and
      *        restores the heap ordering property along the branch from the Node
      *        at index to root.
-     * @param index 
-     * @param newValue
+     *
+     * @param index Index of Node whose priority is to be lowered.
+     *
+     * @param newValue  New priority value of Node at index.
      */
     void decreasePriority(int index, Priority newValue) throw(InvalidPriority);
 
     /**
-     * @brief
-     * @param index
-     * @return
+     * @brief Finds the index of the left child Node of the Node at index.
+     *
+     * @param index Index of Node.
+     *
+     * @return Index of left child Node.
      */
     int leftChildIndex(int index);
 
     /**
-     * @brief
-     * @param index
-     * @return
+     * @brief Finds the index of the right child Node of the Node at index.
+     *
+     * @param index Index of Node.
+     *
+     * @return Index of right child Node.
      */
     int rightChildIndex(int index);
 
     /**
-     * @brief
-     * @param index
-     * @return
+     * @brief Finds the index of the parent Node of the Node at index.
+     *
+     * @param index Index of Node.
+     *
+     * @return Index of right child Node.
      */
     int parentIndex(int index);
 
     /**
-     * @brief
-     * @param x
-     * @param y
+     * @brief Swaps the contents of two Node addresses.
+     *
+     * @param x Node to swap.
+     *
+     * @param y Node to swap.
      */
     void swap(Node *x, Node *y);
 

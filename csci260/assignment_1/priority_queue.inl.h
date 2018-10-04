@@ -3,7 +3,11 @@
 // @author  Matthew Hird
 // @date    October 4, 2018
 //
-// @brief   x
+// @brief   PriorityQueue is a templated priority queue ADT. It is implemented
+//          using a binary heap ADT. The expected performance of standard
+//          methods are listed below (N = number of Nodes in queue):
+//          insert = O(LogN), removeMin = O(logN), decreaseKey = O(logN),
+//          minPriority = O(1), minData = O(1)
 //------------------------------------------------------------------------------
 
 #include <cstdlib>
