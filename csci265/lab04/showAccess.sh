@@ -14,8 +14,8 @@ fi
 endInSlash='/$'
 arg=$1
 
-if ! [[ $arg =~ $endInSlash ]] ; then
-    arg="$arg/"
+if [[ $arg =~ $endInSlash ]] ; then
+    arg=${arg%?}
 fi
 
 function dirAccess()
@@ -23,8 +23,9 @@ function dirAccess()
     if [[ -d $1 ]] ; then
         if [[ -r $1 ]] && [[ -x $1 ]] ; then
             echo "    Accessible directory: $1"
-            for dir in "$1"*/ ; do
-                dirAccess "$dir"
+            local dirList=$(ls $1)
+            for dir in $dirList ; do
+                dirAccess "$1/$dir"
             done
         fi
     fi
