@@ -1,0 +1,53 @@
+# Lab 4
+# =====
+
+# task: to create a script named showAccess.sh that allows the
+#       user to specify a starting directory as a command line argument,
+#       then displays all its subdirectories (and their subdirectories
+#       and so on) that are both executable and readable, and will
+#       in turn recursively explore those subdirectories
+#
+# usage:
+#    the user runs the script with the directory as an argument, e.g.
+#        ./showAccess.sh dirname
+#    (directory names may include paths)
+#
+# recommendation:
+#    create a recursive function to carry out the actual exploration,
+#        and have the script call the function, passing the command
+#        line argument
+#
+# exception handling:
+#    if an incorrect number of command line arguments is provided
+#       a suitable error message is displayed and the script ends
+#    note that an invalid starting directory name should not cause
+#       the script to crash, nor should locked directories cause the
+#       script to crash
+
+# example:
+#    suppose we have the following directory structure
+#    (showing only the directories here, not files)
+#
+#         myproject
+#        /    |    \
+#      code  docs   bin
+#     /   \
+#   hdrs  src
+#
+# suppose the directories are all readable and executable except
+#     src, which is not executable, and
+#     bin, which is not readable
+#
+# then if the script is run as
+#
+#    showAccess.sh myproject
+#
+# the output might look something like:
+#
+#    List of accessible directories within myproject:
+#       Accessible directory: myproject
+#       Accessible directory: myproject/code
+#       Accessible directory: myproject/code/hdrs
+#       Accessible directory: myproject/docs
+#    end of list
+
