@@ -23,17 +23,12 @@ function dirAccess()
     if [[ -d $1 ]] ; then
         if [[ -r $1 ]] && [[ -x $1 ]] ; then
             echo "    Accessible directory: $1"
+            for dir in "$1"*/ ; do
+                dirAccess "$dir"
+            done
         fi
-
-        for dir in "$1"*/ ; do
-            echo "$dir"
-            dirAccess "$dir"
-        done
     fi
-
 }
-
-# ls -l "$1"
 
 echo -e "\n*** List of accessible directories within $arg: ***"
 dirAccess "$arg"
