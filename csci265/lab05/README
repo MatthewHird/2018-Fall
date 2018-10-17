@@ -1,0 +1,74 @@
+Lab 05
+======
+
+This repository contains a collection of C and C++ header files (.h),
+object files (.o), and source code files (.c and .C), divided into several
+directories:
+
+    key: contains files related to capturing keypresses
+    server: contains files related to server-side code
+    client: contains files related to client-side code
+    doc: contains documentation for an old network lab
+         (the original source for the code used here).
+         The content there is for information only, you do
+         NOT need to do any of the actions discussed there.
+
+Originally the files were all in a single directory, and the various commands
+used to build the object and executable files were:
+
+   # to make tcpServer.o and the tcpServer executable
+   g++ -Wall -c tcpServer.c -o tcpServer.o
+   g++ -Wall -o tcpServer tcpServer.o
+
+   # to make tcpClient.o and the tcpClient executable
+   g++ -Wall -c tcpClient.c -o tcpClient.o
+   g++ -Wall -o tcpClient tcpClient.o
+
+   # to make client.o and the client executable
+   g++ -Wall -c client.C -o client.o
+   g++ -Wall -o client client.o
+
+   # to make keyPress.o, server.o, and the server executable
+   g++ -Wall -c keyPress.C -o keyPress.o
+   g++ -Wall -c server.C -o server.o
+   g++ -Wall -o server server.o keyPress.o
+
+Your task is to finish the makefile included in this repository,
+so it correctly recompiles executables and object files as needed,
+taking into account the dependencies between files and the new
+directory structure.
+
+Note that each object files depends on one C/C++ file and an
+associated header file, and that each executable depends on its
+associated object file EXCEPT the server executable, which also
+depends on the keyPress object file.
+
+At the moment the only rule in the makefile is the "all" rule,
+which must remain as the "top" target in your makefile, so the
+user can ensure everything is up to date (if they so choose) by
+simply typing make.
+
+You must also include a "clean" target, which specifically removes
+the .o files created above.  (Do NOT use *.o in your remove command.)
+
+You must also configure your makefile to use the following variables
+to simplify later changes to the makefile compiler, assembler, or options:
+CC=g++
+Options=-Wall
+(You may use any additional variables you find convenient.)
+
+Be sure your makefile works, and only recompiles what is absolutely necessary.
+
+For testing purposes, it is recommended you use the command
+    touch filename
+which alters the modification date for the specified file without
+needing to actually edit it.
+
+   E.g. I could run make all, then touch keyPress.h and run make again
+   to see if it compiles just the necessary files rather than all of them.
+
+Notes on the programs themselves:
+
+   While you don't really need to understand the program or what the various functions
+   are doing, you are more than welcome to see if the programs still actually work.
+

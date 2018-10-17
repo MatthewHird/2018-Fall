@@ -1,0 +1,92 @@
+<html>
+<head>
+<title id="WindowCaption">CSCI lab</title>
+</head>
+<body style="background-image: url(../../../../pics/bkgd.gif);">
+<center>
+
+<p><table border="1"><tr><td><b>
+The code for the CSCI 265 makefile lab comes from an old lab exercise for a different
+course, and the documentation below is for <em>that</em> exercise.
+<p>For the current (2018) 265 lab05 you do not need to do any of the steps below,
+the notes are just left here for anyone curious about the code origins.
+</b></td></tr></table><p>
+
+<h3>non-blocking udp sends and receives with C++</h3>
+</center>
+
+This lab exercise will focus on
+using non-blocking keyboard input and non-blocking receives
+to develop single-threaded clients and servers
+with connectionless communication.
+<p>
+C++ code for a client (<a href="client.C"> client.C </a>
+and server (<a href="server.C"> server.C </a> are provided,
+along with code to grab keystrokes without waiting for the
+user to press enter (<a href="keyPress.h"> keypress.h</a>,
+<a href="keyPress.C"> keyPress.C</a>) and a 
+<a href="Makefile"> makefile</a>.
+<p>
+"make server" and "make client" will build the server and client,
+which can then be run on the pups (in 102) or the cubs (in 115).
+<p>
+To run the server, type "server".  When it starts it will tell you
+the name of the machine you are on and the name of the port it
+is listening to.  This information is needed by the client.
+<p>
+To run the client, type "client".  When the command menu comes up,
+select H to specify a hostname to send messages to.  At the prompts,
+enter the hostname and port number obtained from the server in the
+previous step.
+<p>
+Note that you can have multiple different clients and servers
+running on different machines, and have the clients send to
+the different servers whenever you want, just remember to use
+the H command on the client to change which server it wishes
+to send its messages to.
+<p>
+Once both server and client are running, you can send messages from
+the client to the server using the M command.
+<p>
+Once you wish to quit, enter the Q command on both the client and the
+server.
+<p>
+<p><b>Lab exercise</b><p>
+<p>
+After experimenting with basic use of the client and server,
+crack open the various source code files to see what makes it tick.
+<p>
+At the moment, there is code for the client to "send" and the
+server to "receive", but nothing for communication in the opposite
+direction.
+<p>
+See if you can work out how to set up a port for the client to
+listen on, and get the server to send messages to the client.
+<p>
+<hr><p>
+<center>
+<h3>Extra: tcp client/server connections using perl scripts</h3>
+</center>
+
+The code below, modified from that posted on xmodulo.com by D. Nanni,
+allows you to run a server, <a href="server.pl"> server.pl</a>,
+on one of the pups or cubs, and a client, <a href="client.pl"> client.pl</a>,
+on another one.  
+<p>
+(1) Run server.pl: the server identifies which port it is listening on,
+and what its hostname is.  
+<p>(2) Edit client.pl: the client code has the hostname/port information
+hardcoded near the top of the file, so you'll need to edit the client.pl
+file before connecting.
+<p>(3) Run client.pl: it sends one message then quits.
+<p>(4) The server should get the message, then you can kill it with
+control-C.
+
+<p>
+As with the previous exercise, familiarize yourself with the code,
+and see if you can establish more advanced communication sequences
+between the client and server before they hang up.
+</body>
+</html>
+
+
