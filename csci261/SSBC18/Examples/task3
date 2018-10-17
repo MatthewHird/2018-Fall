@@ -1,0 +1,81 @@
+--  Task2 Assembly Code                                   
+--    File Name
+--      task3
+
+--    Author; Date
+--      Matthew Hird; Oct 4, 2018
+
+--    Assumptions
+--      none
+
+--    Behaviour
+--      Read a value from Port B and store the value
+--      at address label 'a'. Invoke the subroutine Increment,
+--      passing the address 'a' as a parameter on the stack.
+--      On return from Increment, write the value stored at
+--      address 'a' to Port C.
+
+--      i.e. write to Port C the value read from Port B plus 1
+
+-- ----------------------------Main-----------------------------
+
+Main:   pushext B       -- set 'a' to value read from Port B
+        popext a
+
+        pushimm L(M1)   -- pass return address
+        pushimm H(M1)   
+        
+        pushimm L(a)    -- pass 'a' as parameter address x
+        pushimm H(a)
+        
+        pushimm 0
+        popext PSW      -- set Z=0, N=0
+        
+        jnz Inc         -- call subroutine Increment (a += 1)
+
+M1:     pushext a
+        popext C        -- write 'a' to Port C
+        halt    
+        
+a:      val 00         
+
+-- --------------------------Increment--------------------------
+    
+--    Assumptions
+--      destroys PSW 
+
+--    Variables
+--      x = input parameter address
+--      *x = value referenced by address x
+--      H(x) = high byte of input parameter address x
+--      L(x) = low byte of input parameter address x
+--      H(return) = high byte of return address
+--      L(return) = low byte of return address
+
+--    Stack I/O
+--      stack in: H(x)/L(x)/H(return)/L(return)
+--      stack out:
+
+--    Behaviour
+--      Increment the value referenced by x by 1
+--      i.e. *x = *x + 1 
+   
+Inc:    popext I1 +1d   -- 'load' address x to be incremented
+        popext I1 +2d
+
+        popext IRet +1d -- set return address
+        popext IRet +2d
+        
+        pushext I1 +1d  -- 'load' address x to be written to
+        popext I2 +1d   
+        pushext I1 +2d  
+        popext I2 +2d   
+
+I1:     pushext 0000    -- push value referenced by x
+        pushimm 1
+        add             -- increment value by 1
+I2:     popext 0000     -- write new value into address x
+        
+        pushimm 0
+        popext PSW
+IRet:   jnz 0000        -- return from Increment
