@@ -4,7 +4,7 @@
 // @date    October 4, 2018
 //
 // @brief   The main function for the program pex2. Checks commandline
-//          arguments, then starts BatchQueue controller class.
+//          arguments, then starts UniversityRecords controller class.
 //------------------------------------------------------------------------------
 
 #include <iostream>
