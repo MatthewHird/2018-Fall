@@ -3,7 +3,11 @@
 // @author  Matthew Hird
 // @date    October 23, 2018
 //
-// @brief
+// @brief   The Student data class holds the student record information for an
+//          individual student. This includes a 6 digit student number that
+//          should be used as a unique identifier for the student. Each member
+//          variable must be set within its specified range or else the setter
+//          function will throw an exception.
 //------------------------------------------------------------------------------
 
 #include "student.h"

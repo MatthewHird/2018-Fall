@@ -7,3 +7,86 @@
 //------------------------------------------------------------------------------
 
 #include "university_records.h"
+#include <iostream>
+#include "binary_search_tree.h"
+#include "two_four_tree.h"
+#include "student.h"
+#include "my_exceptions.h"
+#include "menu_command.h"
+
+
+UniversityRecords::UniversityRecords() {}
+
+
+UniversityRecords::~UniversityRecords() {}
+
+
+void UniversityRecords::run(std::string* arrayOfCsvFileNames) {
+
+}
+
+
+void UniversityRecords::menu() {
+
+}
+
+
+void UniversityRecords::displayMenuOptions() {
+
+}
+
+
+void UniversityRecords::loadCsvFile(std::string fileName) {
+
+}
+
+
+void UniversityRecords::saveAllToCsvFile(std::string fileName) {
+
+}
+
+
+void UniversityRecords::submitStudentInfo() {
+
+}
+
+
+void UniversityRecords::displayStudentInfo(Student student) {
+
+}
+
+
+void UniversityRecords::listAllStudentNumber() {
+
+}
+
+
+void UniversityRecords::listAllStudentName() {
+
+}
+
+
+void UniversityRecords::quitProgram() {
+
+}
+
+
+std::string UniversityRecords::getStringInput(int maxLength) {
+    return "";
+}
+
+
+MenuCommand* UniversityRecords::getCommand() {
+    auto butt = new std::string[1];
+    return new MenuCommand('i', 1, butt);
+}
+
+
+std::string UniversityRecords::getStudentNumber() {
+    return "";
+}
+
+
+bool UniversityRecords::validateStudentNumber(std::string studentNumber) {
+    return true;
+}
