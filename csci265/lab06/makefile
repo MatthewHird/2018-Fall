@@ -16,4 +16,4 @@ cleanx:
 submit:
 	git add -v lab6.cpp lab6.h lab6.txt makefile README
 	git commit -m "Submit lab06"
-	git push -all origin
+	git push --all origin
