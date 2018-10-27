@@ -14,8 +14,6 @@ cleanx:
 	-rm lab6x lab6.o
 
 submit:
-	echo "Testing 1, 2, 3..."
-	$(shell ls)
-	# $(shell git add -v lab6.cpp lab6.h lab6.txt makefile README)
+	$(shell git add -v lab6.cpp lab6.h lab6.txt makefile README)
 	# $(shell git commit -m "Submit lab06")
 	# $(shell git push -all origin)
