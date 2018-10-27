@@ -14,7 +14,6 @@ cleanx:
 	-rm lab6x lab6.o
 
 submit:
-	$(shell echo *);
-	$(shell git add -v lab6.cpp lab6.h lab6.txt makefile README);
-	# $(shell git commit -m "Submit lab06");
-	# $(shell git push -all origin);
+	git add -v lab6.cpp lab6.h lab6.txt makefile README
+	git commit -m "Submit lab06"
+	git push -all origin
