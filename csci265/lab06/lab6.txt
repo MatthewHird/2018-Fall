@@ -1,3 +1,18 @@
 
 lab6.txt
 
+(2)  In the example code provided, there is(are) potential issue(s) with
+     the line    list<int> L = (*V_it);
+
+     Briefly discuss these issues and possible solutions, putting your
+     answer in file lab6.txt
+     
+(3)  Research the use of SHELL in makefiles, and provide a short
+     explanation of its purpose in file lab6.txt.
+
+     Write a makefile that:
+     (a) includes an illustration of the use of SHELL
+     (b) includes targets for lab6x (an executable for your program)
+         and lab6.o, with appropriate rules and dependencies
+     (c) has a 'submit' target that performs a git add,
+         commit, and push of your lab solutions.
