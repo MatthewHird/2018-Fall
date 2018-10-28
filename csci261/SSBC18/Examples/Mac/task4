@@ -1,0 +1,91 @@
+00000010 main: pushimm 0  -- clear Z flag
+00000000
+00000101 popext PSW
+11111111
+11111011
+00000010 pushimm L(m1)  -- pass return address
+00001111
+00000010 pushimm H(m1)
+00000000
+00000011 pushext B  -- pass n, read from Port B, as param_x
+11111111
+11111101
+00000110 jnz powTwo  -- call PowerTwo subroutine
+00000000
+00010011
+00000101 m1: popext A  -- write pow(2, n) to Port A
+11111111
+11111100
+00000001 halt
+00000010 powTwo: pushimm 0  -- check for base case (x = 0)
+00000000
+00001000 add
+00000110 jnz p1  -- if not base case, Recursive Call
+00000000
+00100111
+00000101 popext PSW  -- if base case, clear Z flag
+11111111
+11111011
+00000101 popext pRet +1d  -- load p2 address
+00000000
+00100101
+00000101 popext pRet +2d
+00000000
+00100110
+00000010 pushimm 1  -- push base case f(0) = 1
+00000001
+00000110 pRet: jnz 0000  -- start Recursive Return process
+00000000
+00000000
+00000101 p1: popext pVar  -- save x in pVar
+00000000
+01011010
+00000010 pushimm L(p2)  -- push p2 address to stack
+00111100
+00000010 pushimm H(p2)  -- # of times p2 address is on stack = # of times result gets double
+00000000
+00000010 pushimm 1  -- push x-1 to stack
+00000001
+00000011 pushext pVar
+00000000
+01011010
+00001001 sub
+00000010 pushimm 0  -- clear Z flag
+00000000
+00000101 popext PSW
+11111111
+11111011
+00000110 p1Ret: jnz powTwo  -- return to PowerTwo
+00000000
+00010011
+00000101 p2: popext pVar  -- save f(x - 1) in pVar
+00000000
+01011010
+00000011 pushext pVar  -- f(x) = f(x - 1) * 2
+00000000
+01011010
+00000011 pushext pVar
+00000000
+01011010
+00001000 add
+00000101 popext pVar  -- save f(x) in pVar
+00000000
+01011010
+00000010 pushimm 0  -- clear Z flag
+00000000
+00000101 popext PSW
+11111111
+11111011
+00000101 popext p2Ret +1d  -- load return address
+00000000
+01011000
+00000101 popext p2Ret +2d
+00000000
+01011001
+00000011 pushext pVar  -- return f(x) on stack
+00000000
+01011010
+00000110 p2Ret: jnz 0000
+00000000
+00000000
+00000000 pVar: val 0

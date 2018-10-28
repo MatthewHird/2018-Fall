@@ -280,7 +280,6 @@ float BatchQueue::getFloatInput() {
 std::string BatchQueue::getWordInput(int maxLength) {
     bool badInput;
     std::string word;
-
     do
     {
         badInput = false;

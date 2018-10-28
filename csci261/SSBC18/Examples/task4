@@ -1,0 +1,98 @@
+--  Task4 Assembly Code                                   
+--    File Name
+--      task4
+
+--    Author; Date
+--      Matthew Hird; Oct 11, 2018
+
+--   Assumptions
+--      program uses recursion to advantage
+--      0 <= n < 5
+
+--   Behaviour
+--      program reads n from Port B and writes f(n) to Port A
+--      f(n) = f(n-1) * 2  where n >= 0 and f(0) = 1
+
+-- ----------------------------Main-----------------------------
+
+main:   pushimm 0       -- clear Z flag
+        popext PSW      
+
+        pushimm L(m1)   -- pass return address
+        pushimm H(m1)
+        
+        pushext B       -- pass n, read from Port B, as param_x
+        
+        jnz powTwo      -- call PowerTwo subroutine
+
+m1:     popext A        -- write pow(2, n) to Port A
+        halt           
+
+-- --------------------------PowerTwo---------------------------
+    
+--    Assumptions
+--      destroys PSW 
+
+--    Variables
+--      x = param_x = input parameter
+--      H(return) = high byte of return address
+--      L(return) = low byte of return address
+
+--    Stack I/O
+--      stack in: param_x/H(return)/L(return)
+--      stack out: pow(2, x)
+
+--    Behaviour
+--      Return 2 to the power of param_x
+--      i.e. pow(2, x)
+   
+powTwo: pushimm 0           -- check for base case (x = 0)
+        add
+
+        jnz p1              -- if not base case, Recursive Call 
+
+        popext PSW          -- if base case, clear Z flag
+        
+        popext pRet +1d     -- load p2 address
+        popext pRet +2d
+        
+        pushimm 1           -- push base case f(0) = 1
+pRet:   jnz 0000            -- start Recursive Return process
+
+
+-- Recursive Call --
+p1:     popext pVar         -- save x in pVar
+
+        pushimm L(p2)       -- push p2 address to stack
+        pushimm H(p2)       -- # of times p2 address is on stack = # of times result gets double
+
+        pushimm 1           -- push x-1 to stack
+        pushext pVar
+        sub
+
+        pushimm 0           -- clear Z flag
+        popext PSW
+
+p1Ret:  jnz powTwo          -- return to PowerTwo
+
+
+-- Recursive Return --
+p2:     popext pVar         -- save f(x - 1) in pVar
+
+        pushext pVar        -- f(x) = f(x - 1) * 2
+        pushext pVar
+        add
+
+        popext pVar         -- save f(x) in pVar
+
+        pushimm 0           -- clear Z flag
+        popext PSW
+
+        popext p2Ret +1d    -- load return address
+        popext p2Ret +2d
+
+        pushext pVar        -- return f(x) on stack
+p2Ret:  jnz 0000
+
+
+pVar:   val 0
