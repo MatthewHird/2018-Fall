@@ -1,19 +1,26 @@
 # lab 6 makefile
 SHELL=/bin/bash
+SRC=lab6
+SRCFILES=$(shell echo ${SRC}{".cpp",".h",".txt"})
+CC=g++
+OPTIONS=-Wall
 
-lab6x: lab6.o
-	g++ -Wall lab6.o -o lab6x
+${SRC}x: ${SRC}.o
+	${CC} ${OPTIONS} ${SRC}.o -o ${SRC}x
 
-lab6.o: lab6.cpp lab6.h
-	g++ -Wall -c lab6.cpp
+${SRC}.o: ${SRC}.cpp ${SRC}.h
+	${CC} ${OPTIONS} -c ${SRC}.cpp
+
+listSrcFiles: 
+	 @ls -l ${SRCFILES}
 
 clean:
-	-rm lab6.o
+	-rm ${SRC}.o
 
 cleanx:
-	-rm lab6x lab6.o
+	-rm ${SRC}{"x",".o"}
 
 submit:
-	git add -v lab6.cpp lab6.h lab6.txt makefile README
-	git commit -m "Submit lab06"
+	git add -v ${SRC}.cpp ${SRC}.h ${SRC}.txt makefile README
+	git commit -m "Submit ${SRC}"
 	git push --all origin

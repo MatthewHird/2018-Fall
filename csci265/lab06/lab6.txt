@@ -1,19 +1,24 @@
+==== lab6.txt ====
 
-lab6.txt
+**** Question 2 - Potential issue(s) with the line: list<int> L = (*V_it); ****
 
-(2)  In the example code provided, there is(are) potential issue(s) with
-     the line    list<int> L = (*V_it);
+There is a potential efficiency issue with this line of code. This assignment is copying the entire contents of a list into L. If the list is long, this could take a long time. The fix for this is extremely simple. L could either be made into a pointer or a reference so the list won't need to be copied. As the iterator is guaranteed to be pointing at a real object (rather than a possible nullptr), and the fact L doesn't get reassigned at all, L should be declared as a reference. So the line ```list<int> L = (*V_it);``` should be replaced by the line ```list<int>& list = (*V_it);```
 
-     Briefly discuss these issues and possible solutions, putting your
-     answer in file lab6.txt
+    
+**** Question 3 - SHELL in makefiles ****
 
-(3)  Research the use of SHELL in makefiles, and provide a short
-     explanation of its purpose in file lab6.txt.
+There are two different items called shell in makefiles; one is a make variable, and the other is function.
 
-     Write a makefile that:
-     (a) includes an illustration of the use of SHELL
-     (b) includes targets for lab6x (an executable for your program)
-         and lab6.o, with appropriate rules and dependencies
-     (c) has a 'submit' target that performs a git add,
-         commit, and push of your lab solutions.
-         
+The make variable, SHELL, is used to set which shell will be used in the makefile (ex. SHELL=/bin/bash). If SHELL is set at the top of the file (before/outside of targets), that shell will be used throughout the makefile. If SHELL is set in a target, that shell will be used just for that target, and if set during a command, it will only be used for that command.
+
+If SHELL is not set in the makefile, the default shell for the OS is used (whatever is pointed to by /bin/sh). Although bash is the default shell for the terminal on most linux systems, the default shell for the OS is often different (bash is popular in terminal use because it has a lot of human friendly functionality. This functionality makes bash bigger and slower than some other shells, and human functionality servers no purpose for the OS's uses. Because of this, many systems use leaner, quicker shells to prioritize speed during startup.). On modern Debian systems, like Debian (used by VIU), Ubuntu, and Mint, the default shell, pointed to by /bin/sh, is dash.
+
+Though dash has a lot of the functionality of bash, bash does have some unique features that will either not work or work differently with dash. In my makefile, I use bash to take advantage of brace expansions. 
+
+Example of brace expansion: echo myFile{".h",".cpp",".o","x"} 
+Output with bash: myFile.h myFile.cpp myFile.o myFilex
+Output with dash: myFile{.h,.cpp,.o,x}
+
+The make function, shell, is used to perform a command expansion in a makefile. It takes a shell command as an argument, and evaluates to whatever the output of the command is. Each time the shell function is called, it will generate a new shell, evaluate the command, then close the shell.
+
+The shell function allows the user to assign the results of a shell command to a make variable. This can be used to assign the contents of files to variables, or to simply use bash's brace expansions in make variable assignments (which what I used it for in my makefile).
