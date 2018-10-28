@@ -1,0 +1,1 @@
+My makefile requires an obj/ directory (I added it to the file system so all of the .o files are in one place), and git will not add empty directories. This README was added to fulfill this requirement.
