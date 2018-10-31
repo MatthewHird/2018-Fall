@@ -7,3 +7,31 @@
 //------------------------------------------------------------------------------
 
 #include "two_four_tree.h"
+#include <iostream>
+#include "student.h"
+
+
+TwoFourTree::TwoFourTree() {}
+
+
+TwoFourTree::~TwoFourTree() {}
+
+
+Student& TwoFourTree::lookup(int numberId) {
+
+}
+
+
+void TwoFourTree::insert(int numberId, Student &studentInfo) {
+
+}
+
+
+Student& TwoFourTree::remove(int numberId) {
+
+}
+
+
+TwoFourTree::Node* TwoFourTree::search(int numberId) {
+
+}

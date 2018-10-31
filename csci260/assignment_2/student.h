@@ -37,15 +37,13 @@ public:
      * @param cityAddress   City name of the student's address.
      * @param emailAddress  Student's email address.
      *
-     * @throws InvalidStudentNumber if length != 6 characters or contains any
-     *                              non-numeric characters or first characters
-     *                              is '0'.
+     * @throws InvalidStudentNumber if value > 999999 or value < 100000.
      * @throws InvalidStudentName   if length > 80 characters.
      * @throws InvalidStreetAddress if length > 80 characters.
      * @throws InvalidCityAddress   if length > 80 characters.
      * @throws InvalidEmailAddress  if length > 80 characters.
      */
-    Student(std::string studentNumber, std::string studentName,
+    Student(int studentNumber, std::string studentName,
             std::string streetAddress, std::string cityAddress,
             std::string emailAddress) throw(InvalidStudentNumber,
                     InvalidStudentName, InvalidStreetAddress,
@@ -61,11 +59,9 @@ public:
      *
      * @param studentNumber 6 digit number to uniquely identify the student.
      *
-     * @throws InvalidStudentNumber if length != 6 characters or contains any
-     *                              non-numeric characters or first characters
-     *                              is '0'.
+     * @throws InvalidStudentNumber if value > 999999 or value < 100000.
      */
-    void setStudentNumber(std::string studentNumber) throw(InvalidStudentNumber);
+    void setStudentNumber(int studentNumber) throw(InvalidStudentNumber);
 
     /**
      * @brief Sets the student name member variable.
@@ -108,7 +104,7 @@ public:
     /**
      * @return  The value of the studentNumber member variable.
      */
-    std::string getStudentNumber();
+    int getStudentNumber();
 
     /**
      * @return  The value of the studentName member variable.
@@ -131,7 +127,7 @@ public:
     std::string getEmailAddress();
 
 private:
-    std::string studentNumber;
+    int studentNumber;
     std::string studentName;
     std::string streetAddress;
     std::string cityAddress;

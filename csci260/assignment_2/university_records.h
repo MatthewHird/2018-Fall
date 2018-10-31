@@ -10,46 +10,115 @@
 #define ASSIGNMENT_2_UNIVERSITY_RECORDS_H
 
 #include <iostream>
-#include "binary_search_tree.h"
+#include "string_id_bst.h"
 #include "two_four_tree.h"
 #include "student.h"
 #include "my_exceptions.h"
 #include "menu_command.h"
 
+
 class UniversityRecords {
 public:
+    /**
+     * @brief
+     */
     UniversityRecords();
+
+    /**
+     * @brief
+     */
     ~UniversityRecords();
 
+    /**
+     * @brief
+     *
+     * @param arrayOfCsvFileNames
+     */
     void run(std::string* arrayOfCsvFileNames);
 
 private:
-
+    /**
+     * @brief
+     */
     void menu();
 
+    /**
+     * @brief
+     */
     void displayMenuOptions();
 
+    /**
+     * @brief
+     *
+     * @param fileName
+     */
     void loadCsvFile(std::string fileName);
 
+    /**
+     * @brief
+     *
+     * @param fileName
+     */
     void saveAllToCsvFile(std::string fileName);
 
+    /**
+     * @brief
+     */
     void submitStudentInfo();
 
-    void displayStudentInfo(Student student);
+    /**
+     * @brief
+     *
+     * @param student
+     */
+    void displayStudentInfo(Student &student);
 
+    /**
+     * @brief
+     */
     void listAllStudentNumber();
 
+    /**
+     * @brief
+     */
     void listAllStudentName();
 
+    /**
+     * @brief
+     */
     void quitProgram();
 
+    /**
+     * @brief
+     *
+     * @param maxLength
+     *
+     * @return
+     */
     std::string getStringInput(int maxLength=80);
 
+    /**
+     * @brief
+     *
+     * @return
+     */
     MenuCommand* getCommand();
 
+    /**
+     * @brief
+     *
+     * @return
+     */
     std::string getStudentNumber();
 
-    bool validateStudentNumber(std::string studentNumber);
+    /**
+     * @brief
+     *
+     * @param studentNumber
+     *
+     * @return
+     */
+    bool validateStudentNumber(int studentNumber);
 
     const std::string CMD_PROMPT = ">>>  ";
     const std::string SUB_FIELD_PROMPT = "  >  ";
@@ -57,7 +126,7 @@ private:
             "-------------------------------------------------\n\n";
 
     TwoFourTree numberTree;
-    BinarySearchTree nameTree;
+    StringIdBST nameTree;
 };
 
 

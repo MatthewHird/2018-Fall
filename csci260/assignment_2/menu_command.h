@@ -9,8 +9,8 @@
 #ifndef ASSIGNMENT_2_MENU_COMMAND_H
 #define ASSIGNMENT_2_MENU_COMMAND_H
 
+#include <iostream>
 
-#include <string>
 
 class MenuCommand {
 public:

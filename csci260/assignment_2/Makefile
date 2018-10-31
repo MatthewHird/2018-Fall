@@ -1,14 +1,14 @@
-pex2: main.o university_records.o binary_search_tree.o two_four_tree.o student.o menu_command.o
+pex2: main.o university_records.o string_id_bst.o two_four_tree.o student.o menu_command.o
 	g++ main.o -o pex2
 
 main.o: main.cpp university_records.h
 	g++ -g -c main.cpp
 
-university_records.o: university_records.cpp university_records.h binary_search_tree.h two_four_tree.h student.h my_exceptions.h menu_command.h
+university_records.o: university_records.cpp university_records.h string_id_bst.h two_four_tree.h student.h my_exceptions.h menu_command.h
 	g++ -g -c university_records.cpp
 
-binary_search_tree.o: binary_search_tree.cpp binary_search_tree.h student.h
-	g++ -g -c binary_search_tree.cpp
+string_id_bst.o: string_id_bst.cpp string_id_bst.h student.h
+	g++ -g -c string_id_bst.cpp
 
 two_four_tree.o: two_four_tree.cpp two_four_tree.h student.h
 	g++ -g -c two_four_tree.cpp

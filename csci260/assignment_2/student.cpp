@@ -15,11 +15,11 @@
 
 
 Student::Student()
-    : Student("999999", "", "", "", "")
+    : Student(0, "", "", "", "")
 {}
 
 
-Student::Student(std::string studentNumber, std::string studentName,
+Student::Student(int studentNumber, std::string studentName,
         std::string streetAddress, std::string cityAddress,
         std::string emailAddress) throw(InvalidStudentNumber,
                 InvalidStudentName, InvalidStreetAddress,
@@ -32,7 +32,7 @@ Student::Student(std::string studentNumber, std::string studentName,
 }
 
 
-void Student::setStudentNumber(std::string studentNumber) throw(InvalidStudentNumber) {
+void Student::setStudentNumber(int studentNumber) throw(InvalidStudentNumber) {
     this->studentNumber = studentNumber;
 }
 
@@ -57,7 +57,7 @@ void Student::setEmailAddress(std::string emailAddress) throw(InvalidEmailAddres
 }
 
 
-std::string Student::getStudentNumber() {
+int Student::getStudentNumber() {
     return studentNumber;
 }
 

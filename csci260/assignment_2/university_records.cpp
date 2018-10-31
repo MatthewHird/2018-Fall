@@ -8,7 +8,7 @@
 
 #include "university_records.h"
 #include <iostream>
-#include "binary_search_tree.h"
+#include "string_id_bst.h"
 #include "two_four_tree.h"
 #include "student.h"
 #include "my_exceptions.h"
@@ -51,7 +51,7 @@ void UniversityRecords::submitStudentInfo() {
 }
 
 
-void UniversityRecords::displayStudentInfo(Student student) {
+void UniversityRecords::displayStudentInfo(Student& student) {
 
 }
 
@@ -87,6 +87,6 @@ std::string UniversityRecords::getStudentNumber() {
 }
 
 
-bool UniversityRecords::validateStudentNumber(std::string studentNumber) {
+bool UniversityRecords::validateStudentNumber(int studentNumber) {
     return true;
 }

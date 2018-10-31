@@ -52,4 +52,12 @@ public:
     }
 };
 
+
+class DuplicateKeyError: public std::exception {
+public:
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+};
+
 #endif //ASSIGNMENT_1_MY_EXCEPTIONS_H
