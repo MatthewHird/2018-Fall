@@ -1,5 +1,4 @@
-1)
-    Before the first breakpoint, the output is:
+1)  Before the first breakpoint, the output is:
     ```
     Transferring 3 disks from tower 0 to tower 1
         Tower[0]: 3,2,1,
@@ -14,5 +13,33 @@
     75	   int srcNum = pop(currSrc);
     ```
     
-    This states the breakpoint id, the current 
+    This states the breakpoint id, the current function the breakpoint is in, the file the function and breakpoint are in, the line number the breakpoint is on, and a printout of the line to be run next.
 
+
+2)  srcNum = 1074266112.
+    The line hasn't been run yet, so srcNum hasn't been initialized yet.
+
+
+3)  gdb is now stopped on line 47.
+    On the first n command, it tries to step over the pop(currSrc) function, but that function contained a breakpoint, so it stop on it (line 48). The second n command went to the next line within the same function (line 49). The first s command goes to the next line of code to be execute, so pop() returned to line 75, which completed the execution of that line, and moved to the next line (line 76). The second s command stepped into the pop(currDest) function, and stopped on the first line in that function (line 47).
+
+
+4)  The watchpoint was deleted when the the program left the scope that t (and therefore t.currSize) existed in. 
+
+
+k)  The backtrace output the same information as the where command. They both list the functions that are currently open from youngest to oldest, including information for each function, such as the stack level of the function, what the function signature is with parameters, what file they are in, and what line they are currently on (as in on which line did they jump to their current subroutine).
+
+    The info frame command contains the information relating to the current instance of the current function, including the stack level, the location of next instruction to be run, the next instruction to be run in the "parent" frame, the arguments list for the current frame, and the saved registers.
+
+
+5)  The output of the where command was:
+    ```  
+    #0  makeMove (currSrc=..., currDest=...) at broken.cpp:75
+    #1  0x0000555555554d89 in transfer (disks=3, src=..., dest=..., aux=...) at broken.cpp:126
+    #2  0x0000555555554f0a in main (argc=1, argv=0x7fffffffdea8) at broken.cpp:163
+    ```
+
+    The where command had the same output as the backtrace command. It shows that main() was run, main called transfer() on line 163 (main's saved rip is displayed), transfer called makeMove() on line 126 (transfer's saved rip is displayed), and makeMove is currently on line 75, where the program is currently stopped.
+
+
+6)  The fact that all of the commands, except the last one, only display and move disks '1', '2', and '3', but the last command moaves a displays disk '-1'. Also, even if disk '-1' did exist, this would be an incorrect solution, as it should be placed on top of Tower[1].
