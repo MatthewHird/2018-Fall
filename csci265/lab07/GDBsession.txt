@@ -1,0 +1,42 @@
+Script started on Wed 31 Oct 2018 01:48:49 PM PDT
+]0;hirdm@cub15: ~/2018-Fall/csci265/lab07hirdm@cub15:~/2018-Fall/csci265/lab07$ gcc -g broken.cpp -Wall -Wextra -o broken [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@++ -g broken.cpp -Wall -Wextra -o broken [A]0;hirdm@cub15: ~/2018-Fall/csci265/lab07hirdm@cub15:~/2018-Fall/csci265/lab07$ [C[C[C
+
+]0;hirdm@cub15: ~/2018-Fall/csci265/lab07hirdm@cub15:~/2018-Fall/csci265/lab07$ gdb broken
+GNU gdb (Debian 7.12-6) 7.12.0.20161007-git
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from broken...done.
+(gdb) break 48
+Breakpoint 1 at 0xa1a: file broken.cpp, line 48.
+(gdb) break makeMove
+Breakpoint 2 at 0xb40: file broken.cpp, line 75.
+(gdb) run
+Starting program: /home/student/hirdm/2018-Fall/csci265/lab07/broken 
+
+Transferring 3 disks from tower 0 to tower 1
+   Tower[0]: 3,2,1,
+   Tower[1]: 
+   Tower[2]: 
+
+
+Breakpoint 2, makeMove (currSrc=..., currDest=...) at broken.cpp:75
+75	   int srcNum = pop(currSrc);
+(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) [K(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 10649] will be killed.
+
+Quit anyway? (y or n) y
+]0;hirdm@cub15: ~/2018-Fall/csci265/lab07hirdm@cub15:~/2018-Fall/csci265/lab07$ exit

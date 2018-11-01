@@ -1,0 +1,18 @@
+1)
+    Before the first breakpoint, the output is:
+    ```
+    Transferring 3 disks from tower 0 to tower 1
+        Tower[0]: 3,2,1,
+        Tower[1]: 
+        Tower[2]:
+    ```
+    
+    This is the starting state of the Towers problem, before it has before any steps have been taken.
+    
+    The additional information gdb provided when the break point is reached is ```
+    Breakpoint 2, makeMove (currSrc=..., currDest=...) at broken.cpp:75
+    75	   int srcNum = pop(currSrc);
+    ```
+    
+    This states the breakpoint id, the current 
+
