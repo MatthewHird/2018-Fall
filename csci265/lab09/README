@@ -1,0 +1,41 @@
+
+Lab 9
+-----
+
+The objectives in this lab are to gain experience with the use of our own modules
+and the use of perl's Test module, developing a test script to test a solution
+to the buildStatusHash and addStatusFile functions from the previous lab.
+
+In this lab your specific task is to write script lab09.pl, which should
+use perl's Test::More to automate testing of the two functions from lab08.
+
+A skeleton module has been given in module lab08.pm, and the lab09.pl script
+has been set up to use that module.
+
+I'd suggest developing your test cases and applying them to your lab08
+solutions, but I'll also be running your lab09.pl tester on a variety of
+my own implementations of the two functions, each of which may be defective
+in different ways.
+
+Note that to do your tests, you'll need to create a variety of files of
+test data - please put these in a subdirectory named Tests in your repository,
+and make sure they are also included in your add/commit/push of your solution.
+
+Your lab09.pl may make use of extra files/scripts, but (again) make sure these
+are also added/committed/pushed as part of your repository.
+
+The grading for the lab will be based primarily on your effective and efficient
+use of the Test::More module to automate testing and evaluation of a variety of
+different types of potential problems - it is not intended as an exercise in simply
+creating hundreds of similar/repetitive hard-coded test cases.  (Note that in
+assignment 2 you'll be identifying/describing a more complete list of things that
+would eventually need to be tested.)  For example, be sure your automated testing
+covers some cases with missing files, some with invalid usernames, some with 
+invalid status values, some with incomplete lines, some with extra data on lines,
+etc.  It should be simple and safe for the tester to add new specific test cases and
+expected results to your system, and the process to do that should be clearly
+documented.
+
+Some introductory notes and examples on using Test::More are available at
+  csci.viu.ca/~wesselsd/courses/csci265/labs/perl/index.html
+

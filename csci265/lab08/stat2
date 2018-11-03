@@ -1,0 +1,8 @@
+# this file contains a couple of valid entries and some invalid ones
+ImOK temporary
+noStatusGiven
+someone hasBadStatus
+OkExtra active  ... name and status ok but unnecessary stuff on the end
+nameistoolong inactive
+
+ImOKToo locked

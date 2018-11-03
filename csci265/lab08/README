@@ -1,0 +1,61 @@
+
+Lab 8
+=====
+
+The objective in this lab is to complete the implementation of two perl
+functions, buildStatusHash and addStatusFile, in file lab08.pl.
+
+Skeleton versions of the functions are provided in that file, along with detailed
+specifications on the functions and the files and data structures they are supposed
+to process.
+
+The absolute deadline for submission of this lab is 10:30am on Monday November 19th.
+
+
+Infrastructure:
+---------------
+Other scripts must be able to 'require' your lab08.pl file so they
+can call the two functions when needed.  As such:
+
+  (i) your lab08.pl file must end with the following line:
+      1;
+
+  (ii) your lab08.pl file should not include anything other than
+       the specified function implementations - i.e. if you are
+       using any test cases, calls, etc. they MUST be done from
+       other scripts.
+
+  (iii) an example driver08.pl script is included, along with a couple
+        of sample input files (stat1 and stat2) showing how to load and
+        call your lab08 functions from another script.
+
+        A sample run of the driver08.pl on a working lab08 should produce
+        output as follows:
+
+              Running on stat1, NoSuchFile, and stat2:
+              Invalid file: NoSuchFile
+              Invalid username # on line 1
+              Missing data: line 3
+              Invalid userstatus hasBadStatus on line 4
+              Extra data ignored: line 5
+              Invalid username nameistoolong on line 6
+              Missing data: line 7
+              resulting pairs:
+              thelma: locked
+              OkExtra: active
+              freddie: deleted
+              ImOKToo: locked
+              daphne: temporary
+              scooby: active
+              shaggy: inactive
+              ImOK: temporary
+
+
+Testing/Grading
+---------------
+The lab testing/grading will be based only on your lab08.pl file, and will
+be carried out by a script (somewhat like driver08.pl) that "requires" your
+lab08.pl and assumes the file and your functions precisely follow the given
+specifications.  If your file/functions do not follow these requirements
+then they will likely do poorly in testing/grading.
+

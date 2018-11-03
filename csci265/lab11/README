@@ -1,0 +1,21 @@
+
+Lab 11
+======
+
+The objective in this lab is to develop a perl gtk gui to allow
+the user access to run the buildStatusHash function (from lab 8)
+and display the resulting hash table contents.
+
+The look and feel of the interface is left to the student's
+discretion, the only restriction being that the user should
+be able to use the gtk file browsing widget when picking files.
+
+You may use either your own lab 8 implementations of the functions
+or the posted sample solutions.
+
+The repository contains a sample perl gtk script, in file gtk.pl.
+
+---------------------------------------------------------------------
+NOTE: the deadline for submission of this lab is 5pm Friday Dec. 7th.
+---------------------------------------------------------------------
+
