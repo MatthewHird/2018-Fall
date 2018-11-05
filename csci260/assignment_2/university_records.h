@@ -34,7 +34,7 @@ public:
      *
      * @param arrayOfCsvFileNames
      */
-    void run(std::string* arrayOfCsvFileNames);
+    void run(std::string* arrayOfCsvFileNames=nullptr);
 
 private:
     /**

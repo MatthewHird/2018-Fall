@@ -22,7 +22,12 @@ UniversityRecords::~UniversityRecords() {}
 
 
 void UniversityRecords::run(std::string* arrayOfCsvFileNames) {
-
+    nameTree.insert("gary", 2);
+    nameTree.insert("bob", 5);
+    nameTree.insert("jevves", 9);
+    nameTree.insert("jeeves", 10);
+    std::string list = nameTree.getAlphabeticalDataList();
+    std::cout << list;
 }
 
 

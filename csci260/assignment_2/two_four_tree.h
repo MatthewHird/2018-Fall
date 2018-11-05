@@ -13,6 +13,20 @@
 #include "student.h"
 
 
+class TwoFourNode {
+public:
+    friend class TwoFourTree;
+
+private:
+    static const int maxSize = 3;
+    int key[maxSize];
+    Student* data[maxSize];
+    TwoFourNode* childPtr[maxSize + 1];
+    bool isLeaf;
+    int size;
+};
+
+
 class TwoFourTree {
 public:
     /**
@@ -51,12 +65,7 @@ public:
      */
     Student& remove(int numberId);
 private:
-    struct Node {
-        int numId[3];
-        Student* student[3];
-        int size;
-        Node* child[4];
-    };
+
 
     /**
      * @brief
@@ -65,11 +74,13 @@ private:
      *
      * @return
      */
-    Node* search(int numberId);
+    TwoFourNode* search(int numberId);
 
-    Node* root;
+    TwoFourNode* root;
     std::string dataList;
 };
+
+
 
 
 #endif //ASSIGNMENT_2_TWO_FOUR_TREE_H

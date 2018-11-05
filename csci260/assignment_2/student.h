@@ -20,7 +20,7 @@
 class Student {
 public:
     /**
-     * @brief Default class constructor. studentNumber = "999999";
+     * @brief Default class constructor. studentNumber = 0;
      *        studentName, streetAddress, cityAddress, emailAddress = "".
      */
     Student();

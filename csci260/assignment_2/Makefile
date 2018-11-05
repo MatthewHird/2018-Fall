@@ -1,5 +1,5 @@
 pex2: main.o university_records.o string_id_bst.o two_four_tree.o student.o menu_command.o
-	g++ main.o -o pex2
+	g++ main.o university_records.o string_id_bst.o two_four_tree.o student.o menu_command.o -o pex2
 
 main.o: main.cpp university_records.h
 	g++ -g -c main.cpp

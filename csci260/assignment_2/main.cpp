@@ -12,6 +12,8 @@
 
 
 int main(int argc, char **argv) {
-
+    UniversityRecords universityRecords;
+    universityRecords.run();
+    
     return 0;
 }

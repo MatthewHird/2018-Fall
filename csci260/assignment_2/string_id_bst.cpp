@@ -66,7 +66,7 @@ std::string& StringIdBST::getAlphabeticalDataList() {
 
 
 bool StringIdBST::isEmpty() {
-    return !size;
+    return root == nullptr;
 }
 
 

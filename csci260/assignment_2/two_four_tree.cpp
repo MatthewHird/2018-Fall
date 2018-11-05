@@ -18,7 +18,8 @@ TwoFourTree::~TwoFourTree() {}
 
 
 Student& TwoFourTree::lookup(int numberId) {
-
+    Student* stud1 = new Student;
+    return *stud1;
 }
 
 
@@ -28,10 +29,12 @@ void TwoFourTree::insert(int numberId, Student &studentInfo) {
 
 
 Student& TwoFourTree::remove(int numberId) {
-
+    Student* stud1 = new Student;
+    return *stud1;
 }
 
 
-TwoFourTree::Node* TwoFourTree::search(int numberId) {
-
+TwoFourNode* TwoFourTree::search(int numberId) {
+    TwoFourNode* node = new TwoFourNode;
+    return node;
 }
