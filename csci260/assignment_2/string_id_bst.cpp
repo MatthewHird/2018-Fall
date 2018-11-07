@@ -11,11 +11,11 @@
 #include <iostream>
 
 
-StringIdBST::StringIdBST() {
-    root = nullptr;
-    dataList = nullptr;
-    size = 0;
-}
+StringIdBST::StringIdBST()
+    : root(nullptr)
+    , dataList(nullptr)
+    , size(0)
+{}
 
 
 StringIdBST::~StringIdBST() {

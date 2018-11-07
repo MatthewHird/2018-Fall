@@ -70,8 +70,8 @@ private:
     void postOrderDestroyData(Node* node);
 
     Node* root;
-    int size;
     std::string* dataList;
+    int size;
 };
 
 

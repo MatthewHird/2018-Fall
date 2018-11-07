@@ -60,4 +60,28 @@ public:
     }
 };
 
+
+class EmptyTreeError: public std::exception {
+public:
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+};
+
+
+class KeyNotFoundError: public std::exception {
+public:
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+};
+
+
+class FullNodeError: public std::exception {
+public:
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+};
+
 #endif //ASSIGNMENT_1_MY_EXCEPTIONS_H
