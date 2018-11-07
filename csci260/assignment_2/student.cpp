@@ -19,6 +19,12 @@ Student::Student()
 {}
 
 
+// testing
+Student::Student(int studentNumber)
+    : Student(studentNumber, std::to_string(studentNumber), "", "", "")
+{}
+
+
 Student::Student(int studentNumber, std::string studentName,
         std::string streetAddress, std::string cityAddress,
         std::string emailAddress) throw(InvalidStudentNumber,

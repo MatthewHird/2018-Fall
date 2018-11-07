@@ -10,6 +10,7 @@
 #define ASSIGNMENT_2_TWO_FOUR_TREE_H
 
 #include <iostream>
+#include <utility>
 #include "student.h"
 
 
@@ -36,11 +37,11 @@ public:
     /**
      * @brief
      *
-     * @param k
+     * @param key
      *
      * @return
      */
-    TwoFourNode* search(int k);
+    TwoFourNode* search(int key);
 
     /**
      * @brief
@@ -55,99 +56,99 @@ public:
     /**
      * @brief
      *
-     * @param k
+     * @param key
      *
      * @return
      */
-    int findKey(int k);
+    int findKey(int key);
 
     /**
      * @brief
      *
-     * @param k
+     * @param key
      * @param newData
      */
-    void insertNotFull(int k, Student& newData) throw(FullNodeError);
+    void insertNotFull(int key, Student& newData) throw(FullNodeError);
 
     /**
      * @brief
      *
-     * @param i
-     * @param y
+     * @param index
+     * @param oldChild
      */
-    void splitChild(int i, TwoFourNode* y);
+    void splitChild(int index, TwoFourNode* oldChild);
 
     /**
      * @brief
      *
-     * @param k
+     * @param key
      */
-    Student* remove(int k);
+    Student* remove(int key);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    Student* removeFromLeaf(int idx);
+    Student* removeFromLeaf(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    Student* removeFromNonLeaf(int idx);
+    Student* removeFromNonLeaf(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      *
      * @return
      */
-    int getPred(int idx);
+    int getPred(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      *
      * @return
      */
-    int getSucc(int idx);
+    int getSucc(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    void fill(int idx);
+    void fill(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    void borrowFromPrev(int idx);
+    void borrowFromPrev(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    void borrowFromNext(int idx);
+    void borrowFromNext(int index);
 
     /**
      * @brief
      *
-     * @param idx
+     * @param index
      */
-    void merge(int idx);
+    void merge(int index);
 
     friend class TwoFourTree;
 private:
     static const int maxSize = 3;
-    int key[maxSize];
+    int keys[maxSize];
     Student* data[maxSize];
     TwoFourNode* childPtr[maxSize + 1];
     bool isLeaf;

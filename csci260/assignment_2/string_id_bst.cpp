@@ -19,7 +19,9 @@ StringIdBST::StringIdBST()
 
 
 StringIdBST::~StringIdBST() {
-    postOrderDestroyData(root);
+    if (root) {
+        postOrderDestroyData(root);
+    }
 }
 
 

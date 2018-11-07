@@ -13,6 +13,7 @@
 #include "student.h"
 #include "my_exceptions.h"
 #include "menu_command.h"
+#include <math.h>
 
 
 UniversityRecords::UniversityRecords() {}
@@ -22,12 +23,15 @@ UniversityRecords::~UniversityRecords() {}
 
 
 void UniversityRecords::run(std::string* arrayOfCsvFileNames) {
-    nameTree.insert("gary", 2);
-    nameTree.insert("bob", 5);
-    nameTree.insert("jevves", 9);
-    nameTree.insert("jeeves", 10);
-    std::string list = nameTree.getAlphabeticalDataList();
-    std::cout << list;
+    for (int i = 0; i < 15; i++) {
+        int val = (int) std::pow(2,i);
+        numberTree.insert(i, *(new Student(i)));
+    }
+
+    std::cout << numberTree.getKeyDataList();
+    return;
+//    std::string list = nameTree.getAlphabeticalDataList();
+//    std::cout << list;
 }
 
 

@@ -25,6 +25,8 @@ public:
      */
     Student();
 
+    // testing
+    explicit Student(int studentNumber);
 
     /**
      * @brief Parameterized constructor.
