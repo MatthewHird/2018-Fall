@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // @file    student.cpp
 // @author  Matthew Hird
-// @date    October 23, 2018
+// @date    November 7, 2018
 //
 // @brief   The Student data class holds the student record information for an
 //          individual student. This includes a 6 digit student number that
@@ -15,7 +15,7 @@
 
 
 Student::Student()
-    : Student(0, "", "", "", "")
+    : Student(999999, "", "", "", "")
 {}
 
 
@@ -39,26 +39,41 @@ Student::Student(int studentNumber, std::string studentName,
 
 
 void Student::setStudentNumber(int studentNumber) throw(InvalidStudentNumber) {
+    if (studentNumber < 100000 || studentNumber > 999999) {
+        throw InvalidStudentNumber();
+    }
     this->studentNumber = studentNumber;
 }
 
 
 void Student::setStudentName(std::string studentName) throw(InvalidStudentName) {
+    if (studentName.length() > 80) {
+        throw InvalidStudentName();
+    }
     this->studentName = studentName;
 }
 
 
 void Student::setStreetAddress(std::string streetAddress) throw(InvalidStreetAddress) {
+    if (studentName.length() > 80) {
+        throw InvalidStreetAddress();
+    }
     this->streetAddress = streetAddress;
 }
 
 
 void Student::setCityAddress(std::string cityAddress) throw(InvalidCityAddress) {
+    if (studentName.length() > 80) {
+        throw InvalidCityAddress();
+    }
     this->cityAddress = cityAddress;
 }
 
 
 void Student::setEmailAddress(std::string emailAddress) throw(InvalidEmailAddress) {
+    if (studentName.length() > 80) {
+        throw InvalidEmailAddress();
+    }
     this->emailAddress = emailAddress;
 }
 

@@ -1,14 +1,19 @@
 //------------------------------------------------------------------------------
 // @file    id_string_bst.cpp
 // @author  Matthew Hird
-// @date    October 4, 2018
+// @date    November 7, 2018
 //
-// @brief
+// @brief   A binary search tree that uses non-unique strings as keys, and
+//          stores the key with an integer ID. getAlphabeticalDataList() does an
+//          inorder traversal, returning a string containing the stringId key
+//          and intId at each node.
 //------------------------------------------------------------------------------
 
 #include "string_id_bst.h"
 #include "my_exceptions.h"
 #include <iostream>
+#include <regex>
+#include <algorithm>
 
 
 StringIdBST::StringIdBST()
@@ -27,8 +32,9 @@ StringIdBST::~StringIdBST() {
 
 void StringIdBST::insert(std::string stringId, int intId) {
     Node* temp = new Node;
-    temp->stringId = stringId;
-    temp->intId = intId;
+    temp->keyString = generateKeyString(stringId);
+    temp->dataString = stringId;
+    temp->dataInt = intId;
     temp->left = nullptr;
     temp->right = nullptr;
     size++;
@@ -40,13 +46,13 @@ void StringIdBST::insert(std::string stringId, int intId) {
 
     Node* current = root;
     while(true) {
-        if (stringId <= current->stringId)  {
+        if (temp->keyString < current->keyString)  {
             if (current->left == nullptr) {
                 current->left = temp;
                 return;
             }
             current = current->left;
-        } else if (stringId > current->stringId) {
+        } else if (temp->keyString >= current->keyString) {
             if (current->right == nullptr) {
                 current->right = temp;
                 return;
@@ -72,6 +78,17 @@ bool StringIdBST::isEmpty() {
 }
 
 
+std::string StringIdBST::generateKeyString(std::string dataString) {
+    std::string keyString = dataString;
+    std::transform(keyString.begin(), keyString.end(), keyString.begin(), ::tolower);
+
+    std::regex letterPattern ("[^a-z]");
+    keyString = std::regex_replace(keyString, letterPattern, "");
+
+    return keyString;
+}
+
+
 void StringIdBST::inorderListData(StringIdBST::Node* node) {
     if (node == nullptr) {
         return;
@@ -79,9 +96,9 @@ void StringIdBST::inorderListData(StringIdBST::Node* node) {
     inorderListData(node->left);
 
     dataList->append("\n");
-    dataList->append(node->stringId);
+    dataList->append(node->dataString);
     dataList->append("\n");
-    dataList->append(std::to_string(node->intId));
+    dataList->append(std::to_string(node->dataInt));
 
     inorderListData(node->right);
 }

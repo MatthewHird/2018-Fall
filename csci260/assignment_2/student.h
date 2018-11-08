@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // @file    student.h
 // @author  Matthew Hird
-// @date    October 23, 2018
+// @date    November 7, 2018
 //
 // @brief   The Student data class holds the student record information for an
 //          individual student. This includes a 6 digit student number that
@@ -20,7 +20,7 @@
 class Student {
 public:
     /**
-     * @brief Default class constructor. studentNumber = 0;
+     * @brief Default class constructor. studentNumber = 999999;
      *        studentName, streetAddress, cityAddress, emailAddress = "".
      */
     Student();

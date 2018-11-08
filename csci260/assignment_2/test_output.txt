@@ -1,0 +1,452 @@
+/csci260/assignment_2 $ ./pex2
+
+**** Welcome to the University Records System ****
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  l
+
+Error: No student records found in system
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  p
+
+Error: No student records found in system
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  n
+
+Error: No student records found in system
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i
+
+Please input the six digit student number of new student
+  >  111111
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  Bob
+
+Please input the address of the student (street number and street name)
+  >  a
+
+Please input the city the student lives in
+  >  a
+
+Please input the email address of the student
+  >  a
+
+Successfully added record for student number 111111
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i
+
+Please input the six digit student number of new student
+  >  111111
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  Bill
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Error: A student record already exists using student number 111111
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  n
+
+Please enter the student number of the student record you would like to view:
+  >  111111
+
+-------------------------------------------------
+
+*** Student Record of Bob ***
+
+Student Number: 111111
+Student Name:   Bob
+Address:        a
+City:           a
+Email Address:  a
+
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  n
+
+Please enter the student number of the student record you would like to view:
+  >  a
+
+Student number must be an integer in the range of 100000 to 999999
+  >  122222
+
+Error: Student number 122222 is not in the system
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i
+
+Please input the six digit student number of new student
+  >  123456
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  Boom
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Successfully added record for student number 123456
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i
+
+Please input the six digit student number of new student
+  >  777777
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  sammy
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Successfully added record for student number 777777
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i
+
+Please input the six digit student number of new student
+  >  527334
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  Jill
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Successfully added record for student number 527334
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>
+
+Invalid command: please try again
+>>>
+
+Invalid command: please try again
+>>>  i
+
+Please input the six digit student number of new student
+  >  222444
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  dAVe
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Successfully added record for student number 222444
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  l
+
+-------------------------------------------------
+
+Listing student numbers in ascending order:
+
+ Student#    Student Name
+
+  111111      Bob
+  123456      Boom
+  222444      dAVe
+  527334      Jill
+  777777      sammy
+
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  p
+
+-------------------------------------------------
+
+Listing student names in alphabetical order:
+
+ Student#    Student Name
+
+  111111      Bob
+  123456      Boom
+  222444      dAVe
+  527334      Jill
+  777777      sammy
+
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  i 222222
+
+Please input the six digit student number of new student
+  >  222222
+
+Please input the name of the student in the form: 'Lastname, Firstname I.'
+  >  Zander
+
+Please input the address of the student (street number and street name)
+  >
+
+Please input the city the student lives in
+  >
+
+Please input the email address of the student
+  >
+
+Successfully added record for student number 222222
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  l
+
+-------------------------------------------------
+
+Listing student numbers in ascending order:
+
+ Student#    Student Name
+
+  111111      Bob
+  123456      Boom
+  222222      Zander
+  222444      dAVe
+  527334      Jill
+  777777      sammy
+
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  p
+
+-------------------------------------------------
+
+Listing student names in alphabetical order:
+
+ Student#    Student Name
+
+  111111      Bob
+  123456      Boom
+  222444      dAVe
+  527334      Jill
+  777777      sammy
+  222222      Zander
+
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+i: Submit information for a new student and store the student
+   record in the system.
+n: Enter a student number to display all information on that student.
+l: In ascending order of their student number, list the student number
+   and name of all students in the system.
+p: In the alphabetical order of the student names, list the name
+   and student number of all students in the system.
+q: Abandon all information stored in the system and exit the application.
+
+>>>  q
+
+-------------------------------------------------
+
+Thank-you for using the University Records System
+-------------------------------------------------

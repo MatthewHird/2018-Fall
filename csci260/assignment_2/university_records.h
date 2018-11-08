@@ -1,9 +1,14 @@
 //------------------------------------------------------------------------------
 // @file    university_records.h
 // @author  Matthew Hird
-// @date    October 4, 2018
+// @date    November 7, 2018
 //
-// @brief
+// @brief   A program that stores student records for a university. Allows user
+//          to input student record data and add it to the system, display the
+//          record of a specific student number, or list the names and student
+//          numbers of all students in the system, either in ascending order of
+//          the student numbers, or alphabetically based on student name. When
+//          the program terminates, all stored data is destroyed.
 //------------------------------------------------------------------------------
 
 #ifndef ASSIGNMENT_2_UNIVERSITY_RECORDS_H
@@ -14,111 +19,97 @@
 #include "two_four_tree.h"
 #include "student.h"
 #include "my_exceptions.h"
-#include "menu_command.h"
 
 
 class UniversityRecords {
 public:
     /**
-     * @brief
+     * @brief Default class constructor.
      */
-    UniversityRecords();
+    UniversityRecords()= default;
 
     /**
-     * @brief
+     * @brief Class destructor.
      */
-    ~UniversityRecords();
+    ~UniversityRecords()= default;
 
     /**
-     * @brief
-     *
-     * @param arrayOfCsvFileNames
+     * @brief Public entry point of the program. Takes user to main menu.
      */
-    void run(std::string* arrayOfCsvFileNames=nullptr);
+    void run();
 
 private:
     /**
-     * @brief
+     * @brief The control hub of the program.
      */
     void menu();
 
     /**
-     * @brief
+     * @brief Prints menu options to the screen.
      */
     void displayMenuOptions();
 
     /**
-     * @brief
-     *
-     * @param fileName
-     */
-    void loadCsvFile(std::string fileName);
-
-    /**
-     * @brief
-     *
-     * @param fileName
-     */
-    void saveAllToCsvFile(std::string fileName);
-
-    /**
-     * @brief
+     * @brief Prompts user to input information for new student record.
      */
     void submitStudentInfo();
 
     /**
-     * @brief
+     * @brief Prompts user to input a student number, then displays all
+     *        information in the student record of that student number.
+     */
+    void findStudentData();
+
+    /**
+     * @brief Prints student information to the screen.
      *
-     * @param student
+     * @param student   Student object whose information needs to be displayed.
      */
     void displayStudentInfo(Student &student);
 
     /**
-     * @brief
+     * @brief In ascending order of student numbers, displays the student number
+     *        and name of every student in the system.
      */
     void listAllStudentNumber();
 
     /**
-     * @brief
+     * @brief In alphabetical order of student names, displays the student
+     *        number and name of every student in the system.
      */
     void listAllStudentName();
 
     /**
-     * @brief
+     * @brief Abandons all information stored in the system (freeing up the
+     *        memory) and exits the application.
      */
     void quitProgram();
 
     /**
-     * @brief
+     * @brief Prompts user to input string. Displays error message and reprompts
+     *        user if entry exceeds maxLength.
      *
-     * @param maxLength
+     * @param maxLength Maximum length of user input string.
      *
-     * @return
+     * @return String entered by the user.
      */
     std::string getStringInput(int maxLength=80);
 
     /**
-     * @brief
+     * @brief Prompts user to input a command.
      *
-     * @return
+     * @return The first character of the user's entry. Returns "" if user
+     *         enters empty string.
      */
-    MenuCommand* getCommand();
+    std::string getCommand();
 
     /**
-     * @brief
+     * @brief Prompts user to enter 6 digit student number. Displays error
+     *        message and reprompts user if entry is < 100000 or > 999999.
      *
-     * @return
+     * @return  The student number entered by the user.
      */
-    std::string getStudentNumber();
-
-    /**
-     * @brief
-     *
-     * @param studentNumber
-     *
-     * @return
-     */
-    bool validateStudentNumber(int studentNumber);
+    int getStudentNumber();
 
     const std::string CMD_PROMPT = ">>>  ";
     const std::string SUB_FIELD_PROMPT = "  >  ";

@@ -2,22 +2,51 @@ README
 
 Program Name: pex2
 Author: Matthew Hird
-Date: , 2018
+Date: November 7, 2018
 
 
     1: Overview
 
+The program that stores student records for a university. It allows users to
+input student record data and add it to the system, display the record of a
+specific student number, or list the names and student numbers of all students
+in the system, either in ascending order of the student numbers, or
+alphabetically based on student name. When the program terminates, all stored
+data is destroyed.
 
+As specified in the project requirements, the name tree was implemented using a
+binary search tree, and the number tree is implemented using a two-four tree.
 
 
     2: Design
 
-
+This program contains the main function; one primary controller class,
+UniversityRecords; a binary search tree class, StringIdBST; a two-four tree,
+using a tree class, TwoFourTree, that is the friend of the node class,
+TwoFourNode; a data class, Student; and nine exception classes that all inherit
+from std::exception.
 
 
     3: Implementation
 
+The 2-4 tree was implemented using two classes. The node class, TwoFourNode,
+uses recursive functions and helper functions to insert key/data pairs, do
+lookups, traverse the tree, and split full nodes. The tree class, TwoFourTree,
+acts as the public interface, and manges the tree from the top. It does so by
+keeping a pointer to the root node, by keeping track of the number of key/data
+pairs are in the tree, and by starting the recursive routines from the root.
 
+My 2-4 tree uses a proactive insertion algorithm, where every full node enroute
+to where the key will be inserted is split. The advantage of this method is it
+avoids the need to backtrack up the tree if multiple splits are needed to
+complete an insertion. This makes it so there is no need to have parent pointers
+in the nodes, and simplifies the insertion process. The downside to this method
+is it may cause unnecessary splits, wasting time and space.
+
+I think this method is less appropriate for 2-4 trees, as they only hold 1-3
+keys, and therefore are always within a couple of keys of needing to split. I
+think this is more suitable for B-trees of higher degree that could hold large
+numbers of keys, where splits would be relatively rare.
 
 
     4: Accomplishment
@@ -29,20 +58,10 @@ web page.
 
     5: Testing
 
-The output of my testing is in test_output.txt. For an example of each item
-tested in that document, I will list out the line number of the example followed
-by a description of what is being tested:
-
-  1 Non-integer queueCapacity commandline argument (error message and terminate)
- 13 Negative queueCapacity commandline argument (error message and terminate).
-115 Invalid number of commandline arguments (error message and terminate).
+The output of my testing is in test_output.txt.
 
 
 
     6: Know Bugs
 
 There are no known bugs in this program.
-
-
-    7: Note
-
