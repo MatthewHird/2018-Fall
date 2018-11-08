@@ -63,7 +63,7 @@ void TwoFourTree::insert(int numberId, Student &studentInfo) throw(DuplicateKeyE
             newRoot->childPtr[0] = root;
             newRoot->splitChild(0, root);
 
-            int i = (newRoot->keys[0] < numberId) ? 0 : 1;
+            int i = (newRoot->keys[0] < numberId) ? 1 : 0;
 
             newRoot->childPtr[i]->insertNotFull(numberId, studentInfo);
             root = newRoot;
@@ -101,7 +101,6 @@ std::string& TwoFourTree::getKeyDataList() {
     dataList->append(std::to_string(size));
     root->inorderListData(dataList);
     std::string& temp = *(dataList);
-    temp.append("\n");
     dataList = nullptr;
     return temp;
 }
@@ -212,13 +211,13 @@ void TwoFourNode::splitChild(int index, TwoFourNode *oldChild) {
     oldChild->data[2] = nullptr;
 
     if (!oldChild->isLeaf) {
-        newChild->childPtr[0] = oldChild->childPtr[1];
-        newChild->childPtr[1] = oldChild->childPtr[2];
+        newChild->childPtr[0] = oldChild->childPtr[2];
+        newChild->childPtr[1] = oldChild->childPtr[3];
     }
 
     oldChild->size = 1;
 
-    for (int i = 1; i > 0; i--) {
+    for (int i = size; i > index; i--) {
         childPtr[i + 1] = childPtr[i];
     }
 
@@ -241,7 +240,7 @@ Student* TwoFourNode::remove(int key) {
     int index = findKey(key);
 
     if (index < size && keys[index] == key) {
-        return isLeaf ? removeFromLeaf(key) : removeFromNonLeaf(key);
+        return isLeaf ? removeFromLeaf(index) : removeFromNonLeaf(index);
     } else {
         if (isLeaf) {
             return nullptr;
@@ -262,7 +261,7 @@ Student* TwoFourNode::remove(int key) {
 
 Student* TwoFourNode::removeFromLeaf(int index) {
     Student* temp = data[index];
-    for (int i = index; i <= size; i++) {
+    for (int i = index; i < size; i++) {
         keys[i] = keys[i + 1];
         data[i] = data[i + 1];
     }
@@ -402,12 +401,12 @@ void TwoFourNode::merge(int index) {
     sibling->data[0] = nullptr; // cleanup sibling
 
     if (!child->isLeaf) {
-        for (int i = 0; i <= sibling->size ; i++) { // insert from sibling to child
+        for (int i = 0; i < sibling->size + 1 ; i++) { // insert from sibling to child
             child->childPtr[i + 2] = sibling->childPtr[i];
         }
     }
 
-    for (int i = index; i < size; i++) { // close space in parent
+    for (int i = index; i < size - 1; i++) { // close space in parent
         keys[i] = keys[i + 1];
         data[i] = data[i + 1];
     }

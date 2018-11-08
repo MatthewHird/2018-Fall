@@ -29,6 +29,10 @@ void UniversityRecords::run(std::string* arrayOfCsvFileNames) {
     }
 
     std::cout << numberTree.getKeyDataList();
+
+    numberTree.remove(5);
+
+    std::cout << numberTree.getKeyDataList();
     return;
 //    std::string list = nameTree.getAlphabeticalDataList();
 //    std::cout << list;
