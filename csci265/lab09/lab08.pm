@@ -1,6 +1,7 @@
 #! /usr/bin/perl
 use strict;
 use warnings;
+use Scalar::Util qw(looks_like_number);
 
 package lab08;
 
@@ -22,7 +23,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 #
 # After all files have been processed, the function returns a reference
 #    to the constructed hash table.
-sub buildStatusHash()
+sub buildStatusHash
 {
     my %statHash;
 
@@ -101,7 +102,7 @@ our %statusSet = (
     'temporary' => 5
 );
 
-sub addStatusFile()
+sub addStatusFile
 {
     if ((scalar @_) < 2) {
         print "Too few parameters\n";
@@ -109,7 +110,7 @@ sub addStatusFile()
     }
     
     my $filename = $_[0];
-    if (looks_like_number($filename) || !(-r $filename)) {
+    if (Scalar::Util::looks_like_number($filename) || !(-r $filename)) {
         print "Invalid file: $filename\n";
         return;
     }

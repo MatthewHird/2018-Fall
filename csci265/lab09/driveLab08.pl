@@ -2,7 +2,10 @@
 use strict;
 use warnings;
 
-require './lab08.pl';
+# require './lab08.pl';
+
+use lib '.';
+use lab08;
 
 
 # example function to run a test on addStatusFile
