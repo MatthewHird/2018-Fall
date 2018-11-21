@@ -2,11 +2,9 @@
 use strict;
 use warnings;
 
-# require './lab08.pl';
-
 use lib '.';
 use lab08;
-
+#use brokenLab08;
 
 # example function to run a test on addStatusFile
 sub testBuildHash()
@@ -18,7 +16,7 @@ sub testBuildHash()
     #    and file stat2 (example stat1 and stat2 files are in the
     #    repository)
     print "Running on stat1, NoSuchFile, and stat2:\n";
-    $tref = buildStatusHash("stat1", "NoSuchFile", "stat2");
+    $tref = buildStatusHash("Tests/stat1", "NoSuchFile", "Tests/stat2");
 
     # dereference and print the resulting hash table
     my %statTbl = %$tref;

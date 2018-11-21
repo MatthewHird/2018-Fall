@@ -3,12 +3,12 @@ use strict;
 use warnings;
 use Scalar::Util qw(looks_like_number);
 
-# lab08.pl
-# --------
-# provides functions buildStatusHash and addStatusFile, which
-#    can be used in other perl scripts by imcluding the line:
-#       require "lab08.pl";
+package brokenLab08;
 
+require Exporter;
+use vars qw(@ISA @EXPORT @EXPORT_OK);
+@ISA = qw(Exporter);
+@EXPORT = qw(buildStatusHash addStatusFile);
 
 # buildStatusHash
 # ---------------
@@ -23,7 +23,7 @@ use Scalar::Util qw(looks_like_number);
 #
 # After all files have been processed, the function returns a reference
 #    to the constructed hash table.
-sub buildStatusHash()
+sub buildStatusHash
 {
     my %statHash;
 
@@ -102,7 +102,7 @@ our %statusSet = (
     'temporary' => 5
 );
 
-sub addStatusFile()
+sub addStatusFile
 {
     if ((scalar @_) < 2) {
         print "Too few parameters\n";
@@ -110,7 +110,7 @@ sub addStatusFile()
     }
     
     my $filename = $_[0];
-    if (looks_like_number($filename) || !(-r $filename)) {
+    if (Scalar::Util::looks_like_number($filename) || !(-r $filename)) {
         print "Invalid file: $filename\n";
         return;
     }
@@ -137,7 +137,7 @@ sub addStatusFile()
         }
         
         my $username = $word[0];
-        unless ($username =~ '^[A-Za-z]{3,8}$') {
+        unless ($username =~ '^[A-Za-z0-9]{3,8}$') {
             print "Invalid username $username on line $linenum\n";
             next;
         }
@@ -155,6 +155,7 @@ sub addStatusFile()
 
         $$hashRef{$username} = $userstatus;
     }
+    close(FILE);
 }
 
 1;

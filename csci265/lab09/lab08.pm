@@ -155,6 +155,7 @@ sub addStatusFile
 
         $$hashRef{$username} = $userstatus;
     }
+    close(FILE);
 }
 
 1;
