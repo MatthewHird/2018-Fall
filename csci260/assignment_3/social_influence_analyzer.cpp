@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// @file    main.cpp
+// @file    social_influence_analyzer.cpp
 // @author  Matthew Hird
 // @date    November November 18, 2018
 //
@@ -7,11 +7,4 @@
 //          arguments, then starts ... controller class.
 //------------------------------------------------------------------------------
 
-#include <iostream>
-#include "stack.h"
-
-
-int main(int argc, char** argv) {
-
-    return 0;
-}
+#include "social_influence_analyzer.h"

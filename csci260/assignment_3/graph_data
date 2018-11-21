@@ -1,0 +1,192 @@
+20
+Allen
+Bob
+Cathy
+Donald
+Ethan
+Faith
+Gara
+Hilda
+Ida
+Jack
+Kenneth
+Lily
+Mark
+Nathan
+Oprah
+Peter
+Queenie
+Rose
+Scott
+Timothy
+Allen	Bob	1
+Allen	Cathy	-1
+Allen	Donald	1
+Allen	Hilda	1
+Allen	Lily	1
+Allen	Mark	-1
+Allen	Peter	1
+Allen	Queenie	1
+Allen	Scott	1
+Bob	Cathy	-1
+Bob	Hilda	-1
+Bob	Ida	1
+Bob	Oprah	1
+Bob	Queenie	-1
+Bob	Rose	-1
+Bob	Scott	1
+Cathy	Allen	-1
+Cathy	Bob	-1
+Cathy	Hilda	-1
+Cathy	Ida	1
+Cathy	Oprah	-1
+Cathy	Scott	1
+Donald	Faith	1
+Donald	Gara	-1
+Donald	Jack	-1
+Donald	Lily	-1
+Donald	Nathan	-1
+Donald	Peter	1
+Donald	Queenie	1
+Ethan	Faith	1
+Ethan	Gara	-1
+Ethan	Hilda	1
+Ethan	Jack	1
+Ethan	Kenneth	-1
+Ethan	Lily	-1
+Ethan	Mark	-1
+Ethan	Peter	-1
+Ethan	Scott	1
+Ethan	Timothy	1
+Faith	Donald	-1
+Faith	Gara	1
+Faith	Jack	-1
+Faith	Kenneth	1
+Faith	Mark	1
+Faith	Nathan	-1
+Faith	Oprah	1
+Faith	Queenie	-1
+Faith	Rose	-1
+Faith	Scott	-1
+Faith	Timothy	1
+Gara	Allen	1
+Gara	Bob	1
+Gara	Cathy	-1
+Gara	Faith	1
+Gara	Queenie	1
+Gara	Rose	1
+Gara	Scott	1
+Gara	Timothy	1
+Hilda	Allen	1
+Hilda	Bob	1
+Hilda	Cathy	-1
+Hilda	Ethan	-1
+Hilda	Kenneth	1
+Hilda	Mark	-1
+Hilda	Queenie	-1
+Hilda	Timothy	-1
+Ida	Allen	-1
+Ida	Bob	-1
+Ida	Faith	-1
+Ida	Gara	1
+Ida	Hilda	1
+Ida	Lily	-1
+Ida	Nathan	1
+Ida	Rose	1
+Ida	Scott	1
+Ida	Timothy	1
+Jack	Allen	1
+Jack	Bob	1
+Jack	Cathy	-1
+Jack	Faith	1
+Jack	Hilda	-1
+Jack	Oprah	1
+Jack	Queenie	-1
+Jack	Scott	-1
+Kenneth	Allen	-1
+Kenneth	Bob	1
+Kenneth	Ethan	1
+Kenneth	Faith	-1
+Kenneth	Gara	1
+Kenneth	Ida	1
+Kenneth	Peter	1
+Kenneth	Queenie	-1
+Kenneth	Rose	1
+Kenneth	Scott	-1
+Lily	Allen	-1
+Lily	Bob	1
+Lily	Cathy	-1
+Lily	Gara	-1
+Lily	Kenneth	1
+Lily	Mark	-1
+Lily	Nathan	-1
+Lily	Oprah	1
+Lily	Timothy	-1
+Mark	Cathy	-1
+Mark	Ethan	-1
+Mark	Ida	1
+Mark	Lily	1
+Mark	Rose	-1
+Mark	Scott	-1
+Nathan	Donald	-1
+Nathan	Ethan	-1
+Nathan	Faith	-1
+Nathan	Ida	-1
+Nathan	Kenneth	1
+Nathan	Mark	-1
+Nathan	Peter	-1
+Nathan	Queenie	-1
+Nathan	Scott	1
+Oprah	Bob	-1
+Oprah	Donald	-1
+Oprah	Gara	-1
+Oprah	Lily	-1
+Oprah	Peter	1
+Oprah	Queenie	1
+Oprah	Scott	-1
+Peter	Bob	1
+Peter	Cathy	1
+Peter	Ethan	-1
+Peter	Gara	-1
+Peter	Hilda	-1
+Peter	Ida	-1
+Peter	Kenneth	-1
+Peter	Lily	1
+Peter	Mark	1
+Peter	Oprah	-1
+Peter	Rose	-1
+Peter	Timothy	-1
+Queenie	Allen	1
+Queenie	Cathy	1
+Queenie	Ethan	-1
+Queenie	Faith	1
+Queenie	Hilda	1
+Queenie	Ida	-1
+Queenie	Oprah	1
+Queenie	Peter	1
+Queenie	Rose	1
+Rose	Ethan	-1
+Rose	Faith	1
+Rose	Ida	1
+Rose	Jack	1
+Rose	Lily	-1
+Rose	Mark	-1
+Rose	Oprah	-1
+Rose	Queenie	1
+Rose	Timothy	-1
+Scott	Cathy	-1
+Scott	Gara	-1
+Scott	Jack	-1
+Scott	Lily	1
+Scott	Peter	-1
+Scott	Queenie	-1
+Timothy	Ethan	1
+Timothy	Faith	1
+Timothy	Gara	1
+Timothy	Ida	1
+Timothy	Kenneth	-1
+Timothy	Lily	1
+Timothy	Mark	1
+Timothy	Nathan	1
+Timothy	Oprah	-1
+Timothy	Rose	1

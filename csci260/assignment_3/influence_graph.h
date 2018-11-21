@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// @file    main.cpp
+// @file    influence_graph.h
 // @author  Matthew Hird
 // @date    November November 18, 2018
 //
@@ -7,11 +7,17 @@
 //          arguments, then starts ... controller class.
 //------------------------------------------------------------------------------
 
-#include <iostream>
+#ifndef ASSIGNMENT_3_INFLUENCE_GRAPH_H
+#define ASSIGNMENT_3_INFLUENCE_GRAPH_H
+
 #include "stack.h"
 
 
-int main(int argc, char** argv) {
+class InfluenceGraph {
+public:
 
-    return 0;
-}
+private:
+};
+
+
+#endif //ASSIGNMENT_3_INFLUENCE_GRAPH_H

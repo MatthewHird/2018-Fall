@@ -84,4 +84,11 @@ public:
     }
 };
 
+class EmptyStack : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Error: Stack is empty\n";
+    };
+};
+
 #endif //ASSIGNMENT_3_MY_EXCEPTIONS_H
