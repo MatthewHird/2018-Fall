@@ -1,0 +1,17 @@
+Invalid file: Tests/dataFiles/voodoFile
+Invalid file: Tests/dataFiles/33
+Invalid username # on line 1
+Missing data: line 3
+Invalid userstatus hasBadStatus on line 4
+Extra data ignored: line 5
+Invalid username nameistoolong on line 6
+Invalid username name23 on line 7
+Missing data: line 1
+Missing data: line 2
+Invalid username a on line 3
+Invalid username tooLongOfName on line 4
+Invalid username num33 on line 5
+Invalid username 12345 on line 6
+Invalid userstatus badStatus on line 8
+Extra data ignored: line 9
+Invalid userstatus ACTIVE on line 10

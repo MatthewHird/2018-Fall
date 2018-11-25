@@ -1,0 +1,7 @@
+one_argument; 
+singleline_valid; Tests/dataFiles/singlelineValid; 
+multiline_valid; Tests/dataFiles/multilineAllValid; 
+invalid_filename; Tests/dataFiles/fakeName; 
+blank_file; Tests/dataFiles/blankFile; 
+mixed_data_validity_file; Tests/dataFiles/multilineMixed; 
+Each_entry_has_multiple_issues_Tests_to_make_sure_the_correct_one_is_caught; Tests/dataFiles/multiIssueEntries; 

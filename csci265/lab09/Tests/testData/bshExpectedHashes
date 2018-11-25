@@ -1,0 +1,8 @@
+no_arguments; 
+single_multiline_valid_file; freddie deleted thelma locked shaggy inactive daphne temporary scooby active 
+single_invalid_filename; 
+single_multiline_mixed_validity_file; ImOK temporary ImOKToo locked OkExtra active 
+single_singleline_valid_file; myName active 
+single_blank_file; 
+multiple_valid_files; freddie deleted daphne temporary myName active shaggy inactive scooby active thelma locked 
+mix_of_files; freddie deleted OkExtra active gOoD deleted daphne temporary CHAD temporary ImOKToo locked theName active scooby active shaggy inactive bestest locked myName active five inactive ImOK temporary thelma locked 

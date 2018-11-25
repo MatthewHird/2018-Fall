@@ -1,0 +1,8 @@
+no_arguments; 
+single_multiline_valid_file; Tests/dataFiles/multilineAllValid; 
+single_invalid_filename; Tests/dataFiles/fakeFilename; 
+single_multiline_mixed_validity_file; Tests/dataFiles/multilineMixed; 
+single_singleline_valid_file; Tests/dataFiles/singlelineValid; 
+single_blank_file; Tests/dataFiles/blankFile; 
+multiple_valid_files; Tests/dataFiles/singlelineValid; Tests/dataFiles/multilineAllValid; Tests/dataFiles/blankFile; 
+mix_of_files; Tests/dataFiles/voodoFile; Tests/dataFiles/singlelineValid; Tests/dataFiles/33; Tests/dataFiles/multilineMixed; Tests/dataFiles/multilineAllValid; Tests/dataFiles/blankFile; Tests/dataFiles/allDataStates; 

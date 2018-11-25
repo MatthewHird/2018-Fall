@@ -127,8 +127,8 @@ sub addStatusFile
     while (<FILE>) {
         ++$linenum;
         my $line = $_;
-        $line =~ tr/\n//d;
         my @word = split(/ /, $line);
+        chomp @word;
         my $wordCount = scalar @word;
 
         if ($wordCount < 2) {

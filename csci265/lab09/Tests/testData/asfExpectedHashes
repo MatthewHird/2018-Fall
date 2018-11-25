@@ -1,0 +1,7 @@
+one_argument; 
+singleline_valid; myName active 
+multiline_valid; scooby active freddie deleted daphne temporary thelma locked shaggy inactive 
+invalid_filename; 
+blank_file; 
+mixed_data_validity_file; ImOK temporary ImOKToo locked OkExtra active 
+Each_entry_has_multiple_issues_Tests_to_make_sure_the_correct_one_is_caught; 
