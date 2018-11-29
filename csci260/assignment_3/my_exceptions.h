@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // @file    my_exceptions.h
 // @author  Matthew Hird
-// @date    November 18, 2018
+// @date    November 28, 2018
 //
 // @brief   A set of custom exceptions for the program pex3. All exceptions
 //          inherit from std::exception.
@@ -11,9 +11,26 @@
 #define ASSIGNMENT_3_MY_EXCEPTIONS_H
 
 #include <exception>
+#include <string>
 
 
-class InvalidStudentNumber : public std::exception {
+class InvalidUserName : public std::exception {
+public:
+    explicit InvalidUserName(std::string &invalidName) : name(invalidName){};
+
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+
+    std::string getInvalidName() {
+        return name;
+    }
+private:
+    std::string name;
+};
+
+
+class InvalidDistance : public std::exception {
 public:
     const char* what() const noexcept override {
         return exception::what();
@@ -21,7 +38,39 @@ public:
 };
 
 
-class InvalidStudentName : public std::exception {
+class InvalidEdgeToSelf : public std::exception {
+public:
+    explicit InvalidEdgeToSelf(std::string &invalidName) : name(invalidName){};
+
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+
+    std::string getInvalidName() {
+        return name;
+    }
+private:
+    std::string name;
+};
+
+
+class InvalidPathToSelf : public std::exception {
+public:
+    explicit InvalidPathToSelf(std::string &invalidName) : name(invalidName){};
+
+    const char* what() const noexcept override {
+        return exception::what();
+    }
+
+    std::string getInvalidName() {
+        return name;
+    }
+private:
+    std::string name;
+};
+
+
+class SaveFileError : public std::exception {
 public:
     const char* what() const noexcept override {
         return exception::what();
@@ -29,66 +78,19 @@ public:
 };
 
 
-class InvalidStreetAddress : public std::exception {
+class FailedToOpenSaveFile : public SaveFileError {
 public:
     const char* what() const noexcept override {
-        return exception::what();
+        return SaveFileError::what();
     }
 };
 
 
-class InvalidCityAddress : public std::exception {
+class InvalidSaveFileSyntax : public SaveFileError {
 public:
     const char* what() const noexcept override {
-        return exception::what();
+        return SaveFileError::what();
     }
-};
-
-
-class InvalidEmailAddress : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return exception::what();
-    }
-};
-
-
-class DuplicateKeyError: public std::exception {
-public:
-    const char* what() const noexcept override {
-        return exception::what();
-    }
-};
-
-
-class EmptyTreeError: public std::exception {
-public:
-    const char* what() const noexcept override {
-        return exception::what();
-    }
-};
-
-
-class KeyNotFoundError: public std::exception {
-public:
-    const char* what() const noexcept override {
-        return exception::what();
-    }
-};
-
-
-class FullNodeError: public std::exception {
-public:
-    const char* what() const noexcept override {
-        return exception::what();
-    }
-};
-
-class EmptyStack : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "Error: Stack is empty\n";
-    };
 };
 
 #endif //ASSIGNMENT_3_MY_EXCEPTIONS_H
