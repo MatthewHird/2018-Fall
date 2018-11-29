@@ -7,17 +7,35 @@ Date: November 29, 2018
 
     1: Overview
 
-The program
+Program that allows a user to input commands to interact with a social
+influence graph. This graph contains a number of users, and connects them based
+on the influence each user has other users. The edges of the graph are both
+directional and weighted (edges have a value of 1 for positive influence and -1
+for negative influences). The program is started by calling the run
+(std::string filePath) public method. When the program starts, the file at
+filePath is read and used to populate the graph. When the program is exited
+through the "quit" command, the data contained in the graph is saved in
+filePath, overwriting the file. 
 
 
     2: Design
 
-This program contains the main function;
+This program contains the main function; on primary control class,
+SocialInfluenceAnalyzer; a directed, weighted graph, InfluenceGraph, that
+contains a class Edge; and seven
+exception classes that all inherit from std::exception.
 
 
     3: Implementation
 
-hello
+InfluenceGraph was implemented using adjacency lists to track the edges. Each
+list contains Edge objects. Edges contain the index of the destination vertex
+and a distance value (weight). The lists are maintained in an array where the index represents the source vertex.
+
+The positiveLink and userOutreach methods in InfluenceGraph were implemented 
+using an iterative breadth first search. This allowed userOutreach to find all 
+connected users by creating a spanning tree, while also letting positiveLink
+find the shortest positive path.
 
 
     4: Accomplishment
@@ -30,7 +48,6 @@ Assignment 3 web page.
     5: Testing
 
 The output of my testing is in test_output.txt.
-
 
 
     6: Know Bugs

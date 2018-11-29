@@ -3,9 +3,16 @@
 // @author  Matthew Hird
 // @date    November November 28, 2018
 //
-// @brief   The main function for the program pex3. Checks commandline
-//          arguments, then starts ... controller class.
-//------------------------------------------------------------------------------
+// @brief   Program that allows a user to input commands to interact with a 
+//          social influence graph. This graph contains a number of users, and 
+//          connects them based on the influence each user has other users. The
+//          edges of the graph are both directional and weighted (edges have a 
+//          value of 1 for positive influence and -1 for negative influences).
+//          The program is started by calling the run(std::string filePath) 
+//          public method. When the program starts, the file at filePath is read
+//          and used to populate the graph. When the program is exited through
+//          the "quit" command, the data contained in the graph is save in 
+//          filePath, overwriting the file. 
 
 #include "social_influence_analyzer.h"
 
@@ -99,7 +106,7 @@ void SocialInfluenceAnalyzer::displayLongMenuOptions() {
     "help\n"
     "    displays full menu options with explanations (this menu)\n"
     "quit\n"
-    "    quit the system and write the updated graph data back to the original savefile\n\n";
+    "    quit the system and write the updated graph data back to original savefile\n\n";
 }
 
 

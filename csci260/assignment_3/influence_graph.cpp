@@ -3,8 +3,10 @@
 // @author  Matthew Hird
 // @date    November November 28, 2018
 //
-// @brief   The main function for the program pex3. Checks commandline
-//          arguments, then starts ... controller class.
+// @brief   A weighted, directional graph used to store and manipulate social
+//          influence data. Each vertex in the graph is a username, and the 
+//          edges represent the positive or negative influence the user has on
+//          another user.
 //------------------------------------------------------------------------------
 
 #include "influence_graph.h"

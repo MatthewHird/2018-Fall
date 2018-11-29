@@ -4,7 +4,10 @@
 // @date    November November 28, 2018
 //
 // @brief   The main function for the program pex3. Checks commandline
-//          arguments, then starts socialInfluenceAnalyzer controller class.
+//          arguments, then starts socialInfluenceAnalyzer controller class. 
+//          Upon start, the program load a graph from <saveFile>. See README for
+//          more information. To run the program pex3 use the command: 
+//          "pex3 <saveFile>"
 //------------------------------------------------------------------------------
 
 #include <iostream>

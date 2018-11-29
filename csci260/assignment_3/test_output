@@ -1,0 +1,396 @@
+$ ./pex3 graph_data 
+
+**** Thank-you for using the Social Influence Analyzer ****
+
+Please enter one of the following commands:
+
+influence
+    list the name of the user who can directly and positively influence the
+    greatest number of users
+controversial
+    list the name of the user who can directly influence the greatest number of
+    users, either positively or negatively
+outreach <username>
+    count the number of users <username> can influence, whether directly or
+    indirectly, positively or negatively
+link <user1> <user2>
+    list the shortest positive influence link from <user1> to <user2>
+    (this lists the names of all the users in this link)
+update <user1> <user2> <distance>
+    update the influence distance from <user1> to <user2> with <distance>
+help
+    displays full menu options with explanations (this menu)
+quit
+    quit the system and write the updated graph data back to the original savefile
+
+>>>  
+
+Invalid command: please try again
+>>>  a
+
+Invalid command: please try again
+>>>  influence
+
+The most influential user is Timothy with 8 positive links
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  controversial
+
+The most controversial user is Peter with 12 positive or negative links
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  outreach Oprah
+
+Oprah can directly or indirectly influence 19 users
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  outreach a
+
+Invalid username: a
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  outreach
+
+Invalid use of "outreach" command: too few arguments
+Argument one must be a user in the system
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link
+
+Invalid use of "link" command: too few arguments
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link A B
+
+Invalid username: A
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Allen B
+
+Invalid username: B
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Allen Bob
+
+Shortest positive influence link from Allen to Bob:
+    Allen -> Bob
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Allen Oprah
+
+Shortest positive influence link from Allen to Oprah:
+    Allen -> Bob -> Oprah
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Peter Gara
+
+Shortest positive influence link from Peter to Gara:
+    Peter -> Bob -> Ida -> Gara
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Gara Peter
+
+Shortest positive influence link from Gara to Peter:
+    Gara -> Allen -> Peter
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Gara Oprah
+
+Shortest positive influence link from Gara to Oprah:
+    Gara -> Bob -> Oprah
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  update Gara Bob 0
+
+Successfully updated influence distance between
+Gara and Bob to a value of 0
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Gara Oprah
+
+Shortest positive influence link from Gara to Oprah:
+    Gara -> Faith -> Oprah
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Bob Peter
+
+Shortest positive influence link from Bob to Peter:
+    Bob -> Oprah -> Peter
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  link Bob Ida
+
+Shortest positive influence link from Bob to Ida:
+    Bob -> Ida
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  help
+
+Please enter one of the following commands:
+
+influence
+    list the name of the user who can directly and positively influence the
+    greatest number of users
+controversial
+    list the name of the user who can directly influence the greatest number of
+    users, either positively or negatively
+outreach <username>
+    count the number of users <username> can influence, whether directly or
+    indirectly, positively or negatively
+link <user1> <user2>
+    list the shortest positive influence link from <user1> to <user2>
+    (this lists the names of all the users in this link)
+update <user1> <user2> <distance>
+    update the influence distance from <user1> to <user2> with <distance>
+help
+    displays full menu options with explanations (this menu)
+quit
+    quit the system and write the updated graph data back to the original savefile
+
+>>>  update
+
+Invalid use of "update" command: too few arguments
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  update a a a
+
+Invalid username: a
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  update Gara Bob a
+
+Invalid distance: distance must be an integer in the range of -1 to 1
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  update Gara Bob 2
+
+Invalid distance: distance must be an integer in the range of -1 to 1
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  update Gara Bob 1
+
+Successfully updated influence distance between
+Gara and Bob to a value of 1
+-------------------------------------------------
+
+Please enter one of the following commands:
+
+influence
+controversial
+outreach <username>
+link <user1> <user2>
+update <user1> <user2> <distance>
+help
+quit
+
+>>>  quit
+
+-------------------------------------------------
+
+Saving graph data to graph_data...
+Graph successfully saved
+
+-------------------------------------------------
+
+**** Thank-you for using the Social Influence Analyzer ****
