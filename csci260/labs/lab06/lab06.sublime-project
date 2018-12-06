@@ -1,0 +1,14 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+
+    "settings":
+ {
+    "sublimegdb_commandline": "gdb -nx -readnow -fullname --interpreter=mi -args ./sortPro",
+    "sublimegdb_workingdir": "${folder:${project_path:sortPro}}"
+ },
+}

@@ -1,0 +1,1689 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"startIndex"
+			],
+			[
+				"en",
+				"endIndex"
+			],
+			[
+				"s",
+				"startIndex"
+			],
+			[
+				"e",
+				"endIndex"
+			],
+			[
+				"f",
+				"fArray"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"in",
+				"inc\t#include \"…\""
+			],
+			[
+				"i",
+				"inc\t#include \"…\""
+			],
+			[
+				"h",
+				"heapsort"
+			],
+			[
+				"arg",
+				"args"
+			],
+			[
+				"exp",
+				"expHash"
+			],
+			[
+				"a",
+				"args"
+			],
+			[
+				"te",
+				"testName"
+			],
+			[
+				"gen",
+				"genAsfTest"
+			],
+			[
+				"test",
+				"testDataFile"
+			],
+			[
+				"t",
+				"testDataFile"
+			],
+			[
+				"ex",
+				"expHashRef"
+			],
+			[
+				"my",
+				"myRef"
+			],
+			[
+				"m",
+				"myHash"
+			],
+			[
+				"status",
+				"statusSet"
+			],
+			[
+				"us",
+				"userstatus"
+			],
+			[
+				"l",
+				"line"
+			],
+			[
+				"wor",
+				"wordCount"
+			],
+			[
+				"fi",
+				"filename"
+			],
+			[
+				"lo",
+				"looks_like_number"
+			],
+			[
+				"lin",
+				"linenum"
+			],
+			[
+				"add",
+				"addStatusFile"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"w",
+				"wcrlf"
+			],
+			[
+				"c",
+				"cmdPrompt"
+			],
+			[
+				"me",
+				"menuMessage"
+			],
+			[
+				"g",
+				"greeting"
+			],
+			[
+				"ge",
+				"getHexCharsAsInt"
+			],
+			[
+				"ch",
+				"charCount"
+			],
+			[
+				"he",
+				"hexChar"
+			],
+			[
+				"byte",
+				"bytes-printed-this-line"
+			],
+			[
+				"x",
+				"xdumpBytes"
+			],
+			[
+				"new",
+				"newLine"
+			],
+			[
+				"shi",
+				"ship_firing_arcs"
+			],
+			[
+				"ac",
+				"action_bar"
+			],
+			[
+				"upg",
+				"upgrade_type_id"
+			],
+			[
+				"up",
+				"upgrade_bar"
+			],
+			[
+				"man",
+				"maneuver_id"
+			],
+			[
+				"hu",
+				"huge_maneuver_dial"
+			],
+			[
+				"sh",
+				"ship_id"
+			],
+			[
+				"u_n",
+				"u_name_id"
+			],
+			[
+				"si",
+				"ship_id"
+			],
+			[
+				"fac",
+				"faction_id"
+			],
+			[
+				"u",
+				"u_name_id"
+			],
+			[
+				"con",
+				"condition"
+			],
+			[
+				"C",
+				"CREATE"
+			],
+			[
+				"acti",
+				"action_type_id"
+			],
+			[
+				"R",
+				"REFERENCES"
+			],
+			[
+				"pi",
+				"pilot_skill"
+			],
+			[
+				"sm",
+				"smallint"
+			],
+			[
+				"un",
+				"unique_name_id"
+			],
+			[
+				"T",
+				"TABLE"
+			],
+			[
+				"attack",
+				"attack_energy_value"
+			],
+			[
+				"sp",
+				"spend_requirement_options"
+			],
+			[
+				"at",
+				"attack_requirement"
+			],
+			[
+				"condi",
+				"condition_id"
+			],
+			[
+				"sma",
+				"smallint"
+			],
+			[
+				"get",
+				"get_size"
+			],
+			[
+				"per",
+				"per_que"
+			],
+			[
+				"pe",
+				"per_que"
+			],
+			[
+				"is",
+				"is_empty"
+			],
+			[
+				"cap",
+				"capacity"
+			],
+			[
+				"cur",
+				"current_url"
+			],
+			[
+				"In",
+				"InvalidArguments"
+			],
+			[
+				"pu",
+				"push_back"
+			],
+			[
+				"size",
+				"size_t"
+			],
+			[
+				"I",
+				"InvalidArguments"
+			],
+			[
+				"co",
+				"command"
+			],
+			[
+				"ar",
+				"argc"
+			],
+			[
+				"res",
+				"reservations"
+			],
+			[
+				"list",
+				"list_count"
+			],
+			[
+				"nod",
+				"node_count"
+			],
+			[
+				"saved",
+				"saved_res_count"
+			],
+			[
+				"tom",
+				"tomorrowList"
+			],
+			[
+				"to",
+				"todayList"
+			],
+			[
+				"today",
+				"todayList"
+			],
+			[
+				"entry",
+				"entry_count"
+			],
+			[
+				"ent",
+				"entry_count"
+			],
+			[
+				"Res",
+				"ResData"
+			],
+			[
+				"node",
+				"node_count"
+			],
+			[
+				"n",
+				"node_count"
+			],
+			[
+				"save",
+				"save_reservations"
+			],
+			[
+				"cou",
+				"cout"
+			],
+			[
+				"L",
+				"LinkedList"
+			],
+			[
+				"Re",
+				"ResData"
+			],
+			[
+				"min",
+				"minute"
+			],
+			[
+				"b",
+				"bad_input"
+			],
+			[
+				"pick",
+				"pickup_name"
+			],
+			[
+				"int",
+				"int_form"
+			],
+			[
+				"ne",
+				"neg_int"
+			],
+			[
+				"r",
+				"return"
+			],
+			[
+				"str",
+				"str_in"
+			],
+			[
+				"pic",
+				"pickup_hour"
+			],
+			[
+				"Gr",
+				"GrowingArray"
+			],
+			[
+				"neg",
+				"neg_real"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "1111.000000                                                                                           \n45.334999                                                                                             \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make ; ./sortPro ;                        \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n                                                                                                      \n3.600000                                                                                              \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n45.334999                                                                                             \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n                                                                                                      \n3.600000                                                                                              \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n45.334999                                                                                             \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n3.600000                                                                                              \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n45.334999                                                                                             \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n45.334999                                                                                             \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n3.600000                                                                                              \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \nmain.cpp: In function ‘int main()’:                                                                   \nmain.cpp:19:23: error: ‘arr’ was not declared in this scope                                           \n     int size = sizeof(arr)/sizeof(arr[0]);                                                           \n                       ^~~                                                                            \nMakefile:5: recipe for target 'main.o' failed                                                         \nmake: *** [main.o] Error 1                                                                            \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n45.334999                                                                                             \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n3.600000                                                                                              \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $                                           \n",
+			"settings":
+			{
+				"buffer_size": 6901,
+				"line_ending": "Unix",
+				"name": "Terminal",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "main.cpp",
+			"settings":
+			{
+				"buffer_size": 715,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nEasyClangComplete\n-----------------\n\n  A plugin for easy to use clang-based completions::\n  \n      ╔═╗┌─┐┌─┐┬ ┬  ╔═╗┬  ┌─┐┌┐┌┌─┐  ╔═╗┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐\n      ║╣ ├─┤└─┐└┬┘  ║  │  ├─┤││││ ┬  ║  │ ││││├─┘│  ├┤  │ ├┤\n      ╚═╝┴ ┴└─┘ ┴   ╚═╝┴─┘┴ ┴┘└┘└─┘  ╚═╝└─┘┴ ┴┴  ┴─┘└─┘ ┴ └─┘\n  \n  Let't get started!\n  ==================\n  \n  You're just two simple steps away!\n  \n  1. Install clang\n  ----------------\n  \n  - **Ubuntu**        : ``sudo apt-get install clang``\n  - **OSX**           : ships `clang` by default. You are all set!\n  - **Windows**       : install the latest release from clang website.\n  - **Other Systems** : use your package manager or install from clang website.\n  - clang website: http://llvm.org/releases/download.html\n  \n  2. Configure your includes\n  --------------------------\n  \n  Using CMake?\n  ~~~~~~~~~~~~\n  \n  Plugin will run cmake on a proper ``CMakeLists.txt`` in your project folder and\n  will use information from it to complete your code out of the box.\n  \n  Have a compilation database?\n  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n  \n  Plugin will search for a compilation database ``compile_commands.json`` in the\n  project folder and will load it to complete your code. If you want to specify a\n  custom path to a comilation database you can do it in settings::\n  \n      \"flags_sources\": [\n          {\"file\": \"compile_commands.json\", \"search_in\": \"<YOUR_PATH>\"},\n      ]\n  \n  None of the above?\n  ~~~~~~~~~~~~~~~~~~\n  \n  You will need a little bit of manual setup for now. Clang will automatically\n  search for headers in the folder that contains the file you are working on and\n  its parent. If you have a more sophisticated project you will need to help clang\n  just a little bit. There are three ways to do it.\n  \n  Pick **ANY** of the following:\n  \n  - Set include dirs in ``\"common_flags\"`` setting in ``User Settings``.\n  - Override ``\"common_flags\"`` setting in your project file, i.e. one that has\n    extension: ``*.sublime-project``. Just define the same setting in project\n    specific settings with either one of two prefixes: ``\"ecc_\"`` or\n    ``\"easy_clang_complete_\"`` to override a corresponding setting in your user\n    settings. See the project file in this repo for a working example. Minimal\n    example for clarity::\n  \n      {\n        \"settings\":\n        {\n          \"ecc_common_flags\": [\"-Isrc\", \"-I/usr/include\"],\n          \"easy_clang_complete_verbose\": true\n        }\n      }\n  \n  - It is recommended to use one of the above, but if you already have a file with\n    flags, you can add ``.clang_complete`` file to the root of your project\n    folder. This file adds additional flags to the ones defined with in\n    ``\"common_flags\"``. Example::\n  \n      -Isrc\n      -I/usr/include\n  \n  That's it! You're ready to use the plugin!\n  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n  \n  More info here\n  ~~~~~~~~~~~~~~\n  \n  Get more info in a readme:\n  https://github.com/niosus/EasyClangComplete/blob/master/README.md\n  \n  Please see the default settings ``EasyClangComplete.sublime-settings``\n  shipped with the plugin for explanations and sane default values.\n  \n  Thanks!\n  =======\n  \n  💜 this plugin? Consider buying me a 🍵\n  https://github.com/niosus/EasyClangComplete#support-it\n",
+			"settings":
+			{
+				"buffer_size": 3276,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/030-for-int-loop-(fori).sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 270,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Make and Run",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				"Clean"
+			]
+		],
+		[
+			[
+				[
+					"Make and Run",
+					""
+				],
+				[
+					"Run",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				"Clean"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/C++ Build and Run.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build and Run.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C++ Build and Run.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"prv:o",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Snippet: ",
+				"Snippet: For Loop"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"sub",
+				"Preferences: SublimeGDB Settings – User"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 533.0
+	},
+	"console":
+	{
+		"height": 412.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06"
+	],
+	"file_history":
+	[
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/Makefile",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/shellsort.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/heapsort.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/mergesort.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/quicksort.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/shellsort.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/heapsort.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/mergesort.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/quicksort.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/lab06.sublime-project",
+		"/home/hirdm/.config/sublime-text-3/Packages/TerminalView/README.md",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/main.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/handin.sh",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_3/Makefile",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab01/test.txt",
+		"/home/hirdm/sad",
+		"/home/hirdm/test.txt",
+		"/home/hirdm/Desktop/Comp Sci Courses Needed.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/single_invalid_filename",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/single_singleline_valid_file",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/testData/bshExpectedHashes",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/single_multiline_mixed_validity_file",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/invalid_filename",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/mix_of_files",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/Each_entry_has_multiple_issues_Tests_to_make_sure_the_correct_one_is_caught",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/multiline_valid",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/invalid_table",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/lab09.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/one_argument",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/testData/asfExpectedHashes",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/allDataStates",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/multilineAllValid",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/multiIssueEntries",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/multilineMixed",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/singlelineValid",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/blankFile",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/testGenerator.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/lab08.pm",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/testData/asfTests",
+		"/home/hirdm/Desktop/M&FTranscriptionNotes",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/testData/bshTests",
+		"/home/hirdm/Documents/advent_of_code/2018/README.md",
+		"/home/hirdm/Documents/advent_of_code/2018/Graeme/python/data/day_1.txt",
+		"/home/hirdm/Documents/advent_of_code/2018/Graeme/python/advent/runner.py",
+		"/home/hirdm/Documents/advent_of_code/2017/Graeme/python/advent/helper/__init__.py",
+		"/home/hirdm/Documents/advent_of_code/2017/Graeme/python/advent/__init__.py",
+		"/home/hirdm/Documents/advent_of_code/2017/Graeme/python/advent/runner.py",
+		"/home/hirdm/Documents/advent_of_code/2017/Graeme/python/tests/day/day_1.py",
+		"/home/hirdm/Documents/advent_of_code/2017/Graeme/python/bin/.gitignore",
+		"/home/hirdm/Documents/advent_of_code/2018/Matt/README.md",
+		"/home/hirdm/Documents/advent_of_code/2018/Graeme/README.md",
+		"/home/hirdm/Documents/advent_of_code/2017/Matt/README.md",
+		"/home/hirdm/Documents/advent_of_code/2017/README.md",
+		"/home/hirdm/Documents/advent_of_code/2017/__init__.py",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/README",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab08/README",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/university_records.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_3/cmake-build-debug/saved_graph_data",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/university_records.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/wiki_country.cpp",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_4/browser_sim.cpp",
+		"/home/hirdm/Desktop/GraemeTranscriptionGoodCopy",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab06/lab6.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab06/lab6.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab06/lab6.h",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/Answers.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/broken.cpp",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/country_data.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/Untitled Document",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/mixed_data_validity_file",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/no_arguments",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/single_multiline_valid_file",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/dataFiles/multivalid",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/no_arguments",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/NoArgs",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/test_1",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/expResultGen.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/OLDdriveLab08.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/testHash",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/testerTester",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/bsh/testTest",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/asf/test_1",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/scratch",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/test_1",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/expectedOutput/testOutput",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/testOutput",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/driveLab08.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/bshTester.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/Tests/asfTester.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab08/lab08.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab08/driver08.pl",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/brokenLab08.pm",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab09/dave",
+		"/home/hirdm/Desktop/CSCI 310/Module 7/README_module7.txt",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_4/stack.inl.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_3/stack.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/priority_queue.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_4/browser_sim.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_4/my_exceptions.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_4/stack.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_2/image.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_2/main.cpp",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_3/linked_list.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/wiki_country.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/dictionary.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/sorted_list.h",
+		"/home/hirdm/Documents/2018-Spring/CSCI 161/assignment_5/country_data.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/main.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/my_exceptions.h",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/README",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_2/Makefile",
+		"/home/hirdm/.local/share/Trash/files/xwingShipsWithUpgrades",
+		"/home/hirdm/Desktop/Butts",
+		"/home/hirdm/Desktop/symbols.bmml",
+		"/home/hirdm/Desktop/butts.py",
+		"/home/hirdm/Desktop/CSCI 310/Module 6/README_module6.txt",
+		"/home/hirdm/Desktop/CSCI 310/Module 5/README_module5.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab08/stat1",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab08/stat2",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/README",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/batch_queue.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/batch_queue.h",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/Guidelines.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/BugReport.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/GDBsession.txt",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/broken",
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/README",
+		"/home/hirdm/Desktop/task06/main.c"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"test",
+			"long int",
+			"short int",
+			"ch",
+			"Link",
+			"x",
+			"recret",
+			"reccall",
+			"//          ",
+			"inc2",
+			"inc1",
+			"inc_r",
+			"xxr",
+			"xxb",
+			"xxa",
+			"aa",
+			"+",
+			"--",
+			"8d",
+			"==",
+			"adjust",
+			"md5",
+			";\\nDROP VIEW ",
+			"../",
+			"relative_path/",
+			"../",
+			"/home/hirdm/Desktop",
+			";\\nDROP TABLE",
+			";\\nTRUNCATE",
+			";",
+			"DROP TABLE",
+			"shiled",
+			"activation_keywords",
+			"pilot_name",
+			"ship_supertype",
+			"ship_type_name",
+			"maximum_range",
+			"minimum_range",
+			"upgrade_card_name",
+			"unique_name",
+			"upgrade_type_name",
+			"maneuver_type_name",
+			"action_type_name",
+			"firing_arc_type_name",
+			"ship_size_name",
+			"faction_name",
+			"condition_name",
+			"action_type_name",
+			"ship_size_name",
+			"faction_name",
+			"faction",
+			"ship_type_id",
+			"size_id",
+			"faction_id",
+			"faction",
+			"ship_size_id",
+			"ship_size_name",
+			"faction_name",
+			"CONSTRAINT",
+			", ",
+			"</pre>",
+			"<pre>",
+			"<code>",
+			"</code>",
+			"<code>",
+			"<code>*</code>",
+			"lab8",
+			"lab9",
+			"lab8",
+			"lab7",
+			"pex4",
+			"@home ~ $",
+			"@dave-fresh ~/Documents/2018-Spring/CSCI 161/assignment_4 $",
+			"this",
+			"Data",
+			";",
+			"pex3"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"unsigned short",
+			"hexChar",
+			"PDF document",
+			"pVar",
+			"pHold",
+			"rRet",
+			"rCall",
+			"",
+			"i2",
+			"i1",
+			"iRet",
+			"inc_r",
+			"ir",
+			"inc2",
+			"inc1",
+			"a",
+			" + ",
+			"*****",
+			"**********",
+			"~~~~~~~~~~~~",
+			"-=-=-=-=-=-=-=-=-=-=-=-",
+			"==========",
+			"==",
+			"######",
+			"=====",
+			"--",
+			",\\n ",
+			",\\n",
+			"RELATIVE_PATH/",
+			"relative_path/",
+			"..",
+			",\\n",
+			",",
+			"",
+			"TRUNCATE",
+			"shield",
+			"activation_keyword",
+			"name",
+			"max_range",
+			"min_range",
+			"name",
+			"ship_id",
+			"size_id",
+			"name",
+			"CHECK",
+			"', '",
+			"<span class=\"code-inline\">",
+			"<span class=\"code-block\">",
+			"</span>",
+			"<span class=\"code-inline\">",
+			"lab11",
+			"lab10",
+			"lab9",
+			"lab8",
+			"pex5",
+			"@home ~/assignment_4 $",
+			"@home ~ $",
+			"Stack::Data",
+			"",
+			"pex4"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6901,
+						"regions":
+						{
+							"50,16":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										5166,
+										5173
+									]
+								],
+								"scope": "terminalview.black_red"
+							},
+							"51,23":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										5276,
+										5279
+									]
+								],
+								"scope": "terminalview.black_red"
+							},
+							"52,23":
+							{
+								"flags": 272,
+								"regions":
+								[
+									[
+										5379,
+										5382
+									]
+								],
+								"scope": "terminalview.black_red"
+							}
+						},
+						"selection":
+						[
+							[
+								6858,
+								6858
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_commit_on_tab": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"caret_style": "blink",
+							"color_scheme": "Packages/TerminalView/TerminalView.hidden-tmTheme",
+							"draw_centered": false,
+							"draw_indent_guides": false,
+							"draw_white_space": "none",
+							"gutter": false,
+							"highlight_line": false,
+							"scroll_past_end": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"terminal_view": true,
+							"terminal_view_activate_args":
+							{
+								"cmd": "/bin/bash -l",
+								"cwd": "/home/hirdm/Documents/2018-Fall/csci260/labs/lab06",
+								"keep_open": false,
+								"syntax": null,
+								"title": "Terminal"
+							},
+							"terminal_view_last_cursor_pos":
+							[
+								66,
+								60
+							],
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3276,
+								3276
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/030-for-int-loop-(fori).sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										144,
+										147
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/dot.png",
+										"region.yellowish brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										63,
+										72
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"buffer_empty": false,
+							"create_dir": true,
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 208.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 90.0
+	},
+	"pinned_build_system": "",
+	"project": "lab06.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
