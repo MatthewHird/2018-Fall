@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"vec",
+				"vector\t/usr/include/c++/6.5.0"
+			],
+			[
+				"m",
+				"map\t/usr/include/c++/6.5.0"
+			],
+			[
+				"i",
+				"inc\t#include <…>"
+			],
+			[
 				"sta",
 				"startIndex\tint startIndex"
 			],
@@ -18,10 +30,6 @@
 			[
 				"f",
 				"fArray"
-			],
-			[
-				"i",
-				"index\tint index"
 			],
 			[
 				"st",
@@ -82,10 +90,6 @@
 			[
 				"my",
 				"myRef"
-			],
-			[
-				"m",
-				"myHash"
 			],
 			[
 				"status",
@@ -416,7 +420,7 @@
 	"buffers":
 	[
 		{
-			"contents": "75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n3.600000                                                                                              \n1.000000                                                                                              \n75.000000                                                                                             \n18.888000                                                                                             \n1200000.000000                                                                                        \n1111.000000                                                                                           \n45.334999                                                                                             \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n1.000000                                                                                              \n3.600000                                                                                              \n18.888000                                                                                             \n45.334999                                                                                             \n75.000000                                                                                             \n1111.000000                                                                                           \n1200000.000000                                                                                        \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make cleanAll                             \nrm -f *.o sortPro                                                                                     \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make                                      \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \nrm -f *.o                                                                                             \n./sortPro                                                                                             \n1.000000                                                                                              \n3.600000                                                                                              \n18.888000                                                                                             \n45.334999                                                                                             \n75.000000                                                                                             \n1111.000000                                                                                           \n1200000.000000                                                                                        \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \n./sortPro                                                                                             \n1.000000                                                                                              \n3.600000                                                                                              \n18.888000                                                                                             \n45.334999                                                                                             \n75.000000                                                                                             \n1111.000000                                                                                           \n1200000.000000                                                                                        \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $ make run                                  \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o sortPro                                                                                 \nrm -f *.o                                                                                             \n./sortPro                                                                                             \n1.000000                                                                                              \n3.600000                                                                                              \n18.888000                                                                                             \n45.334999                                                                                             \n75.000000                                                                                             \n1111.000000                                                                                           \n1200000.000000                                                                                        \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab06 $                                           \n",
+			"contents": "hirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab08 $ make                                      \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o LAB08                                                                                   \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab08 $ make run                                  \nrm -f *.o                                                                                             \n./LAB08                                                                                               \nHello, World!                                                                                         \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab08 $ make                                      \ng++ -c main.cpp -o main.o                                                                             \ng++ main.o -o LAB08                                                                                   \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab08 $ make run                                  \nrm -f *.o                                                                                             \n./LAB08                                                                                               \nHello, World!                                                                                         \nhirdm@dave-fresh ~/Documents/2018-Fall/csci260/labs/lab08 $                                           \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n                                                                                                      \n",
 			"settings":
 			{
 				"buffer_size": 6901,
@@ -427,10 +431,10 @@
 			}
 		},
 		{
-			"file": "lab06.sublime-project",
+			"file": "Makefile",
 			"settings":
 			{
-				"buffer_size": 257,
+				"buffer_size": 153,
 				"line_ending": "Unix"
 			}
 		},
@@ -438,7 +442,7 @@
 			"file": "main.cpp",
 			"settings":
 			{
-				"buffer_size": 1016,
+				"buffer_size": 588,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -588,6 +592,10 @@
 		"selected_items":
 		[
 			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
 				"prv:o",
 				"PackageResourceViewer: Open Resource"
 			],
@@ -633,10 +641,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06"
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab08"
 	],
 	"file_history":
 	[
+		"/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/std-map-(map).sublime-snippet",
+		"/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/class-..-(class).sublime-snippet",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab08/lab08.sublime-project",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/main.cpp",
+		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/lab06.sublime-project",
 		"/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/030-for-int-loop-(fori).sublime-snippet",
 		"/home/hirdm/.config/sublime-text-3/Packages/C++/Snippets/if-..-(if).sublime-snippet",
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/Makefile",
@@ -648,9 +661,7 @@
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/heapsort.h",
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/mergesort.h",
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/quicksort.h",
-		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/lab06.sublime-project",
 		"/home/hirdm/.config/sublime-text-3/Packages/TerminalView/README.md",
-		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab06/main.cpp",
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/handin.sh",
 		"/home/hirdm/Documents/2018-Fall/csci260/assignment_3/Makefile",
 		"/home/hirdm/Documents/2018-Fall/csci260/labs/lab01/test.txt",
@@ -761,10 +772,7 @@
 		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/README",
 		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/batch_queue.cpp",
 		"/home/hirdm/Documents/2018-Fall/csci260/assignment_1/batch_queue.h",
-		"/home/hirdm/Documents/2018-Fall/csci265/lab07/Guidelines.txt",
-		"/home/hirdm/Documents/2018-Fall/csci265/lab07/BugReport.txt",
-		"/home/hirdm/Documents/2018-Fall/csci265/lab07/GDBsession.txt",
-		"/home/hirdm/Documents/2018-Fall/csci265/lab07/broken"
+		"/home/hirdm/Documents/2018-Fall/csci265/lab07/Guidelines.txt"
 	],
 	"find":
 	{
@@ -936,7 +944,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -947,48 +955,12 @@
 						"buffer_size": 6901,
 						"regions":
 						{
-							"50,16":
-							{
-								"flags": 272,
-								"regions":
-								[
-									[
-										6901,
-										6901
-									]
-								],
-								"scope": "terminalview.black_red"
-							},
-							"51,23":
-							{
-								"flags": 272,
-								"regions":
-								[
-									[
-										6901,
-										6901
-									]
-								],
-								"scope": "terminalview.black_red"
-							},
-							"52,23":
-							{
-								"flags": 272,
-								"regions":
-								[
-									[
-										6901,
-										6901
-									]
-								],
-								"scope": "terminalview.black_red"
-							}
 						},
 						"selection":
 						[
 							[
-								6858,
-								6858
+								2498,
+								2498
 							]
 						],
 						"settings":
@@ -1156,20 +1128,20 @@
 							"terminal_view_activate_args":
 							{
 								"cmd": "/bin/bash -l",
-								"cwd": "/home/hirdm/Documents/2018-Fall/csci260/labs/lab06",
+								"cwd": "/home/hirdm/Documents/2018-Fall/csci260/labs/lab08",
 								"keep_open": false,
 								"syntax": null,
 								"title": "Terminal"
 							},
 							"terminal_view_last_cursor_pos":
 							[
-								66,
+								14,
 								60
 							],
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1177,50 +1149,35 @@
 				},
 				{
 					"buffer": 1,
-					"file": "lab06.sublime-project",
+					"file": "Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 257,
+						"buffer_size": 153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								257,
-								257
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": 49,
+							"bracket_highlighter.clone": 85,
 							"bracket_highlighter.clone_locations":
 							{
 								"close":
 								{
-									"1":
-									[
-										256,
-										257
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										0,
-										1
-									]
 								},
 								"unmatched":
 								{
@@ -1357,13 +1314,13 @@
 								"bh_round_close",
 								"bh_round_content"
 							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1378,15 +1335,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1016,
+						"buffer_size": 588,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1014,
-								1014
+								255,
+								255
 							]
 						],
 						"settings":
@@ -1399,8 +1356,8 @@
 								{
 									"1":
 									[
-										1015,
-										1016
+										535,
+										536
 									]
 								},
 								"icon":
@@ -1415,8 +1372,8 @@
 								{
 									"1":
 									[
-										741,
-										742
+										48,
+										49
 									]
 								},
 								"unmatched":
@@ -1487,8 +1444,8 @@
 								{
 									"1":
 									[
-										1015,
-										1016
+										553,
+										554
 									]
 								},
 								"icon":
@@ -1503,8 +1460,8 @@
 								{
 									"1":
 									[
-										741,
-										742
+										66,
+										67
 									]
 								},
 								"unmatched":
@@ -1575,7 +1532,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1627,12 +1584,16 @@
 	{
 		"height": 0.0
 	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
 	"output.unsaved_changes":
 	{
 		"height": 90.0
 	},
 	"pinned_build_system": "",
-	"project": "lab06.sublime-project",
+	"project": "lab08.sublime-workspace",
 	"replace":
 	{
 		"height": 42.0
