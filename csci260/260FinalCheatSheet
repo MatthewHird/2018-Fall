@@ -1,0 +1,283 @@
+*** ADTs and Concrete Data Structure Implementation ***
+
+Sequence ADTs: 
+    Stack
+        Properties
+            FILO
+        
+        Implementation
+            Array
+            Linked List
+        
+        Operations
+            push
+            pop
+            top
+
+    Queue
+        Properties
+            FIFO
+
+        Implementation
+            Circular Array
+            Linked List
+        
+        Operations
+            enqueue
+            dequeue
+            top
+
+    Priority Queue
+        Properties
+            Maintains <priority,object> pairs
+            Next highest priority is next in queue
+        
+        Implementation
+            Sequence
+                Array
+                    Sorted
+                    Unsorted
+                Linked List
+                    Sorted
+                    Unsorted
+            Heap
+                *Array
+                Binary Tree
+        
+        Operations
+            insert
+            removeTopPriority
+            topPriority
+            topObject
+        
+        Performance
+            Sorted Sequential
+                insert      O(1)
+                removeTop   O(1)
+                topPriority O(1)
+                topObject   O(n)
+                
+            Unsorted Sequential
+                insert      O(1)
+                removeTop   O(n)
+                topPriority O(n)
+                topObject   O(n)
+            
+            Heap
+                insert      O(logn)
+                removeTop   O(1)
+                topPriority O(1)
+                topObject   O(1)
+
+Tree ADTs: 
+    General Tree
+        Traversal
+            Inorder
+            Preorder
+            Postorder
+
+    Binary Search Tree
+        Performance
+            All Operations: O(h) -> Avg O(logn), Worst Case O(n)
+
+    AVL Tree
+        Properties
+            Self balancing BST
+            The difference between heights of left and right subtrees cannot be more than one for all nodes.
+
+        Performance
+            All Operations: Worst Case O(logn)
+
+    Thread Tree
+        Properties
+            Makes inorder traversal faster without stack or recursion. 
+            All right child pointers that would normally be NULL point to the inorder successor of the node (if it exists).
+
+        Implementation
+            Single Threaded: 
+                Each node is threaded towards either the in-order predecessor or successor (left or right)
+
+            Double Threaded: 
+                Each node is threaded towards both the in-order predecessor and successor (left and right)
+                    The predecessor threads are useful for reverse inorder traversal and postorder traversal.
+                    The threads are also useful for fast accessing ancestors of a node.
+    
+    Red Black Tree
+        Properties
+            Every Red Black Tree with n nodes has height <= 2Log2(n+1)
+            Balance Properties
+                1) Every node is either red or black.
+                2) The root node is always black.
+                3) There are no two adjacent red nodes.
+                4) Every path from a nodeto any of its descendant NULL nodes has the same number of black nodes.
+
+        Performance
+            All Operations: Worst Case O(logn)
+            
+
+    Multi-way Search Tree 
+        ((2,4)-Tree)
+
+Dictionary [Set/Bag/Collection]:
+        Properties
+            Contains a set of <key,value> pairs
+
+        Implementation
+            Sequential
+                Array 
+                    *Hash Table
+                            Hash Function
+                                String
+                                Integer
+                            Conflict Resolution
+                                Seperate Chaining
+                                Open Addressing
+                                    Linear Probing
+                                    Quadratic Probing
+                                    Double Hashing
+                Linked List
+            Tree
+                Array
+                Pointer Based
+                    *BST
+                    *B-tree/2,4tree
+            Skip List ADTs
+                Pointer Based
+
+        Operations
+            insert
+            remove
+            lookup
+
+        Performance
+            Skip List
+                All operations: Avg O(logn), Worst Case O(n)
+
+
+Graph ADT
+    Direction
+        Directed
+        Undirected
+    Weight
+        Weighted
+        Unweighted
+    Degree of Vertex
+        Incoming Degree
+        Outgoing Degree
+    Implementation of Edges
+        List of Edges
+        Adjacency Matrix
+        Adjacency List
+
+    Operations:
+        Queries
+            # of vertices
+            # of edges
+            Traverse vertices
+            Traverse edges
+            Membership queries
+            Incident edges of v
+            Endpoints of e
+            areAdjacent(v,w)
+            areConnected(v,w)
+            areReachable(v,w)
+        Updates
+            Insert a vertex
+            Insert an edge
+            Remove a vertex
+            Remove an edge
+            Update vertex info
+            Update edge info
+
+Graph algorithms
+    Dijkstra's Algorithm
+    All pairs partition
+    Minimum Spanning Tree
+
+    Floyd-Warshall(all pairs)
+    Kruskal(minimum spanning tree)
+
+String Matching Algorithms
+    Brute Force Algorithm
+    Preprocess Pattern String
+        BM: Boyer-Moore
+            last-function
+        KMP: Knuth-Morris-Pratt
+            failure function
+        Alternate KMP Algorithm
+    Preprocess Test String
+    Hashing
+        KR: Rabin-Karp/Karp-Rabin Algorithm
+            hash code
+
+Data Encoding and Compression Algorithms
+    Tries: pattern matching
+        Standard Tries
+        Compressed Tries
+        hash coded tries : suffix tries
+    Huffman Encoding
+    LZW: Lempel-Ziv-Welsh
+
+Sorting Algorithms
+    Comparison Based    
+        theta(n^2)
+            Insertion Sort
+            Selection Sort
+        theta(nlogn)
+            Quick Sort
+            Merge Sort
+            Heap Sort
+            Shell Sort
+    Non-Comparison Based
+        Theta Varies
+            Bucket Sort
+            Radix Sort
+
+Algorithm Analysis
+    Big-O Notation
+        Little Omicron: Strict Upper Bound
+        Big Omicron: Upper bound
+        Theta: Equal Growth Rate
+        Big Omega: Lower Bound
+        Small Omega: Strict Lower Bound
+
+    Non-recursive Algorithms
+        Count Primitive Operations
+    Recursive Algorithms
+        Find Recurrence Equation and Solve
+            Find (guess) Pattern and Prove by Induction
+            Use Master Theorem
+                Case 1
+                Case 2
+                Case 3
+Master Theorem
+
+T(n) = i) c                     if n < d
+      ii) a * T(n/b) + f(n)     if n >= d
+
+- compare growth rates of s=nlogba and f(n).
+3 Cases:
+1) f(n) is polynomially smaller than nlogba
+       T(n)θ(nlogba)
+2) f(n) is asymptotically close to nlogba
+       T(n)θ(nlogbalogk+1(n))
+3) f(n) is polynomially greater than nlogba
+       T(n)θ(f(n))
+Examples
+case 1: T(n) = 4 * T(n/2) + n
+    s=nlogba=nlog24=n2
+n2> n for all n > 1, so we are in case 1.
+Therefore T(n) = θ(n2)
+
+case 2: T(n) = 2 * T(n/2) + nlogn
+    s=nlogba=nlog22=n
+nlognθ(nlogn) (f(n)θ(slogk(n))when k=1), so we are in case 2.
+Therefore T(n)θ(slogk+1(n))->
+T(n)θ(nlog2(n))
+
+case 3: T(n) = T(n/3) + n
+    s=nlogba=nlog31=n0=1
+n>1 for all n>1
+f(n)(n0+) where <1
+af(n)=f(n/3)f(n)->n/3n for =1, n/3n
+Therefore T(n)θ(n)

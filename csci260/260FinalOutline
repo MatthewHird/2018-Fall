@@ -1,0 +1,115 @@
+*** ADTs and Concrete Data Structure Implementation ***
+
+Sequence ADTs: 
+    Stack
+        Array
+        Linked List
+    Queue
+        Circular Array
+        Linked List
+    Priority Queue
+        Sequence
+            Array
+            Linked List
+        Heap
+            *Array
+            Pointer Based
+
+Tree ADTs: 
+    General Tree
+    Binary Search Tree
+    AVL Tree
+    Thread Tree
+    Red Black Tree
+    Multi-way Search Tree 
+        ((2,4)-Tree)
+
+Dictionary [Set/Bag/Collection]:
+    Sequential
+        Array 
+            *Hash Table
+                    Hash Function
+                        String
+                        Integer
+                    Conflict Resolution
+                        Seperate Chaining
+                        Open Addressing
+                            Linear Probing
+                            Quadratic Probing
+                            Double Hashing
+        Linked List
+    Tree
+        Array
+        Pointer Based
+            *BST
+            *B-tree
+    Skip List ADT
+
+Graph ADT
+    Direction
+        Directed
+        Undirected
+    Weight
+        Weighted
+        Unweighted
+    Degree of Vertex
+        Incoming Degree
+        Outgoing Degree
+    Implementation of Edges
+        List of Edges
+        Adjacency Matrix
+        Adjacency List
+
+Graph algorithms
+    Dijkstra's Algorithm
+    Floyd-Warshall
+    Kruskal
+    Boruvka
+    Bellman-Ford
+
+String Matching Algorithms
+    Brute Force Algorithm
+    Preprocess Pattern String
+        BM: Boyer-Moore
+        KMP: Knuth-Morris-Pratt
+        Alternate KMP Algorithm
+    Preprocess Test String
+    Hashing
+        KR: Rabin-Karp/Karp-Rabin Algoritm
+
+Data Encoding and Compression Algorithms
+    Tries
+        Standard Tries
+        Compressed Tries
+    Huffman Encoding
+    LZW: Lempel-Ziv-Welsh
+
+Sorting Algorithms
+    Comparison Based    
+        theta(n^2)
+            Insertion Sort
+            Selection Sort
+        theta(nlogn)
+            Quick Sort
+            Merge Sort
+            Heap Sort
+            Shell Sort
+    Non-Comparison Based
+        Theta Varies
+            Bucket Sort
+            Radix Sort
+
+Algorithm Analysis
+    Count Primitive Operations
+    Big-O Notation
+        Little Omicron: Strict Upper Bound
+        Big Omicron: Upper bound
+        Theta: Equal Growth Rate
+        Big Omega: Lower Bound
+        Small Omega: Strict Lower Bound
+    Find Recurrence Equation and Solve
+        Find pattern and Prove by Induction
+        Master Theorem
+            Case 1
+            Case 2
+            Case 3

@@ -1,0 +1,50 @@
+main:   pushimm L(m1)
+        pushimm H(m1)
+        pushext B
+        pushimm 0
+        popext PSW
+        jnz sr
+m1:     popext A
+        halt
+
+
+hold:   val 0
+
+sr:     popext hold
+        
+        pushimm 1
+        pushext hold
+        sub
+        popinh
+        jnz s1
+        pushimm 0
+        popext PSW
+        jnz srx
+
+s1:     pushimm 0
+
+s2:     pushext hold
+        add
+        pushimm 1
+        add
+        pushimm 1
+        pushext hold
+        sub
+        popext hold
+
+        pushimm 1
+        pushext hold
+        sub
+        popinh
+        jnz s2
+
+        pushimm 1
+        add
+        popext hold
+
+srx:    popext srxx +1d
+        popext srxx +2d
+        pushimm 0
+        popext PSW
+        pushext hold
+srxx:   jnz 0000

@@ -8,8 +8,7 @@ use Gtk2 '-init';
 #    and start the event loop
 # ----------------------------------------------------------------------
 
-sub main()
-{
+sub main() {
 
 }
 
