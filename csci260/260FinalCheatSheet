@@ -1,32 +1,5 @@
 *** ADTs and Concrete Data Structure Implementation ***
 
-Sequence ADTs: 
-    Stack
-        Properties
-            FILO
-        
-        Implementation
-            Array
-            Linked List
-        
-        Operations
-            push
-            pop
-            top
-
-    Queue
-        Properties
-            FIFO
-
-        Implementation
-            Circular Array
-            Linked List
-        
-        Operations
-            enqueue
-            dequeue
-            top
-
     Priority Queue
         Properties
             Maintains <priority,object> pairs
@@ -72,9 +45,9 @@ Sequence ADTs:
 Tree ADTs: 
     General Tree
         Traversal
-            Inorder
-            Preorder
-            Postorder
+            Inorder: Left, Root, Right
+            Preorder: Root, Left, Right
+            Postorder: Left, Right, Root
 
     Binary Search Tree
         Performance
@@ -115,8 +88,17 @@ Tree ADTs:
             All Operations: Worst Case O(logn)
             
 
-    Multi-way Search Tree 
-        ((2,4)-Tree)
+    (2,4)-Tree
+        Properties
+            Grow and shrink from the root.
+            All leaves on same level.
+            Every node must contain 1-3 keys.
+            Internal nodes must have key + 1 children.
+            Nodes are sorted in ascending order
+            Child pointer between two keys k1 and k2 contains all keys from range k1 to k2
+
+        Performance
+            All Operations: Avg and Worst Case O(logn)
 
 Dictionary [Set/Bag/Collection]:
         Properties
@@ -190,6 +172,24 @@ Graph ADT
             Update edge info
 
 Graph algorithms
+    BFS
+        while (!queue.isEmpty())
+            current = queue.dequeue()
+            doAction(current)
+            foreach node in current.adjacent[] 
+                if (!visited[node]) 
+                    visited[node] = true
+                    queue.enqueue(node)
+                
+    DFS
+        while (!stack.isEmpty())
+            current = stack.pop()
+            foreach node in current.adjacent[]
+                if (!visited[node])
+                    visited[node] = true
+                    doAction(node)
+                    stack.push(node)
+
     Dijkstra's Algorithm
         1) Create a set sptSet (shortest path tree set) that keeps track of vertices included in shortest path tree, i.e., whose minimum distance from source is calculated and finalized. Initially, this set is empty.
         2) Assign a distance value to all vertices in the input graph. Initialize all distance values as INFINITE. Assign distance value as 0 for the source vertex so that it is picked first.
@@ -207,14 +207,12 @@ String Matching Algorithms
     Brute Force Algorithm
     Preprocess Pattern String
         BM: Boyer-Moore
-            last-function
+            Last-Function
         KMP: Knuth-Morris-Pratt
-            failure function
-        Alternate KMP Algorithm
-    Preprocess Test String
+            Failure Function
+
     Hashing
         KR: Rabin-Karp/Karp-Rabin Algorithm
-            hash code
 
 Data Encoding and Compression Algorithms
     Tries: pattern matching
@@ -226,10 +224,10 @@ Data Encoding and Compression Algorithms
 
 Sorting Algorithms
     Comparison Based    
-        theta(n^2)
+        θ(n^2)
             Insertion Sort
             Selection Sort
-        theta(nlogn)
+        θ(nlogn)
             Quick Sort
             Merge Sort
             Heap Sort
@@ -239,51 +237,4 @@ Sorting Algorithms
             Bucket Sort
             Radix Sort
 
-Algorithm Analysis
-    Big-O Notation
-        Little Omicron: Strict Upper Bound
-        Big Omicron: Upper bound
-        Theta: Equal Growth Rate
-        Big Omega: Lower Bound
-        Small Omega: Strict Lower Bound
 
-    Non-recursive Algorithms
-        Count Primitive Operations
-    Recursive Algorithms
-        Find Recurrence Equation and Solve
-            Find (guess) Pattern and Prove by Induction
-            Use Master Theorem
-                Case 1
-                Case 2
-                Case 3
-Master Theorem
-
-T(n) = i) c                     if n < d
-      ii) a * T(n/b) + f(n)     if n >= d
-
-- compare growth rates of s=nlogba and f(n).
-3 Cases:
-1) f(n) is polynomially smaller than nlogba
-       T(n)θ(nlogba)
-2) f(n) is asymptotically close to nlogba
-       T(n)θ(nlogbalogk+1(n))
-3) f(n) is polynomially greater than nlogba
-       T(n)θ(f(n))
-Examples
-case 1: T(n) = 4 * T(n/2) + n
-    s=nlogba=nlog24=n2
-n2> n for all n > 1, so we are in case 1.
-Therefore T(n) = θ(n2)
-
-case 2: T(n) = 2 * T(n/2) + nlogn
-    s=nlogba=nlog22=n
-nlognθ(nlogn) (f(n)θ(slogk(n))when k=1), so we are in case 2.
-Therefore T(n)θ(slogk+1(n))->
-T(n)θ(nlog2(n))
-
-case 3: T(n) = T(n/3) + n
-    s=nlogba=nlog31=n0=1
-n>1 for all n>1
-f(n)(n0+) where <1
-af(n)=f(n/3)f(n)->n/3n for =1, n/3n
-Therefore T(n)θ(n)
